@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation
+  attr_accessible :login, :email, :name, :password, :password_confirmation, :reset_code
 
 
 
@@ -47,8 +47,21 @@ class User < ActiveRecord::Base
     write_attribute :email, (value ? value.downcase : nil)
   end
 
-  protected
-    
+  def create_reset_code  
+    @reset = true  
+    self.attributes = {:reset_code => Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )}  
+    save(false)  
+  end  
 
+  def recently_reset?  
+    @reset  
+  end  
+
+  def delete_reset_code  
+    self.attributes = {:reset_code => nil}  
+    save(false)  
+  end
+  
+  protected
 
 end
