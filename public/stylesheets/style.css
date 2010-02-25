@@ -1,0 +1,9 @@
+#header, #content, #footer	{
+	margin-top: 20px;
+}
+#footer	{
+	background-color:#cccccc;
+	height:100px;
+	margin-top:20px;
+	padding-top: 10px;
+}
