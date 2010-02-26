@@ -2,8 +2,12 @@
 
 <p><%=h @post.content %></p>
 
-<div class="posted_by"><%=h @post.user.login %></div>
+<div class="posted_by">posted by <%= link_to @post.user.login, @post.user %></div>
 
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<% if authorized? %>
+	<div class="admin">
+		<%= link_to 'Edit', edit_post_path(@post) %> | <%= link_to 'Destroy', @post, :confirm => 'Are you sure?', :method => :delete %>
+	</div>
+<% end %>
+<br/>
 <%= link_to 'Back', posts_path %>
