@@ -7,3 +7,20 @@
 	margin-top:20px;
 	padding-top: 10px;
 }
+
+.blog_post	{
+	margin-bottom: 50px;
+}
+.blog_date	{
+	color:#AAA;
+}
+
+.admin	{
+	background-color:#333;
+	color:#AAA;
+	margin-top:3px;
+	padding:10px;
+}
+.admin a			{ color:#aaa;}
+.admin a:visited	{ color:#bbb;}
+.admin a:hover		{ color:#ccc;}

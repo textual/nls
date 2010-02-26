@@ -5,7 +5,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>nls</title>
-  <%= stylesheet_link_tag 'reset', 'text', '960', 'style' %>
+  <%= stylesheet_link_tag 'scaffold', 'reset', 'text', '960', 'style' %>
 </head>
 <body>
 	<div class="container_12">
@@ -34,10 +34,10 @@
 		
 		<div id="footer">
 			<div class="grid_10">
-				home | info | contact
+				<%= link_to 'home', :root %> | <%= link_to 'blog', posts_path %> | contact
 			</div>
 			<div class="grid_2">
-				advertise | inquire
+				advertise | legal
 			</div>
 			<div class="clear"></div>
 		</div>

@@ -1,0 +1,9 @@
+<h1><%=h @post.title %></h1>
+
+<p><%=h @post.content %></p>
+
+<div class="posted_by"><%=h @post.user.login %></div>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

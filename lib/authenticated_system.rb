@@ -32,7 +32,7 @@ module AuthenticatedSystem
     #  end
     #
     def authorized?(action = action_name, resource = nil)
-      logged_in?
+      logged_in? && current_user.email == "mr.dan.marks@gmail.com"
     end
 
     # Filter method to enforce a login requirement.
@@ -65,6 +65,7 @@ module AuthenticatedSystem
       respond_to do |format|
         format.html do
           store_location
+          flash[:error] = "you must be logged in to access this feature"
           redirect_to new_session_path
         end
         # format.any doesn't work in rails version < http://dev.rubyonrails.org/changeset/8987
