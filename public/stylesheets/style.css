@@ -1,4 +1,10 @@
-#header, #content, #footer	{
+
+#header	{
+	margin: 0px;
+	padding: 0px;
+}
+
+#content, #footer	{
 	margin-top: 20px;
 }
 #footer	{
@@ -6,6 +12,9 @@
 	height:100px;
 	margin-top:20px;
 	padding-top: 10px;
+}
+.side_bar {
+	padding:5px;
 }
 
 .blog_post	{
@@ -23,4 +32,4 @@
 }
 .admin a			{ color:#aaa;}
 .admin a:visited	{ color:#bbb;}
-.admin a:hover		{ color:#ccc;}
+.admin a:hover		{ color:#FFF; background-color:#333;}
