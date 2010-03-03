@@ -2,4 +2,4 @@ source :gemcutter
 
 gem "rails"
 gem "mysql"
-gem 'geokit'
+gem "geokit"
