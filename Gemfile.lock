@@ -1,5 +1,5 @@
 --- 
-hash: 00a32be438e980ad022942228291d52530cc59f4
+hash: 30b5d2a69c7c2c40b06ee1216c798b4c51ff6a44
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org
@@ -26,11 +26,9 @@ specs:
     version: 2.3.5
 dependencies: 
   rails: 
-    version: ~> 2.3.5
+    version: ">= 0"
     group: 
     - :default
-    require: []
-
   mysql: 
     version: ">= 0"
     group: 
