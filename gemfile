@@ -1,5 +1,5 @@
 source :gemcutter
 
-gem "rails", "~> 2.3.5", :require => nil
+gem "rails"
 gem "mysql"
 gem 'geokit'
