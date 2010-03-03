@@ -89,7 +89,7 @@ class LocationsController < ApplicationController
     @loc = Location.geocode(@location.full_address)
     
     if @loc.success
-      if @loc.all.count == 1
+      if @loc.all.size == 1
         # if zip and street are present
         # or if precision = "address"
         if @loc.precision == "address"

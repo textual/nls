@@ -46980,3 +46980,1010 @@ Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:04:0
 Rendering locations/locations
   [4;36;1mLocation Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
 Completed in 29ms (View: 15, DB: 3) | 200 OK [http://localhost/locations.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-03 09:19:26) [GET]
+Rendering template within layouts/application
+Rendering home/index
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (6.8ms)
+Completed in 45ms (View: 42, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-03-03 09:19:27) [GET]
+  [4;36;1mLocation Load (0.5ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering template within layouts/application
+Rendering locations/index
+Rendered locations/_map (2.2ms)
+  [4;35;1mLocation Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (5.0ms)
+Completed in 79ms (View: 68, DB: 3) | 200 OK [http://localhost/locations]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:19:28) [GET]
+  [4;36;1mLocation Load (1.5ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering locations/locations
+  [4;35;1mLocation Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+Completed in 35ms (View: 24, DB: 3) | 200 OK [http://localhost/locations.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#destroy (for 127.0.0.1 at 2010-03-03 09:23:24) [DELETE]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "id"=>"1"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mLocation Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (2.7ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLocation Destroy (0.2ms)[0m   [0mDELETE FROM `locations` WHERE `id` = 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/locations
+Completed in 44ms (DB: 9) | 302 Found [http://localhost/locations/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-03-03 09:23:24) [GET]
+  [4;35;1mLocation Load (0.7ms)[0m   [0mSELECT * FROM `locations` [0m
+Rendering template within layouts/application
+Rendering locations/index
+Rendered locations/_map (2.2ms)
+  [4;36;1mLocation Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (5.9ms)
+Completed in 96ms (View: 86, DB: 4) | 200 OK [http://localhost/locations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:23:24) [GET]
+  [4;35;1mLocation Load (0.7ms)[0m   [0mSELECT * FROM `locations` [0m
+Rendering locations/locations
+  [4;36;1mLocation Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+Completed in 71ms (View: 16, DB: 7) | 200 OK [http://localhost/locations.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#destroy (for 127.0.0.1 at 2010-03-03 09:23:26) [DELETE]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "id"=>"2"}
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mLocation Columns (14.8ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `locations` WHERE (`locations`.`id` = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLocation Destroy (0.1ms)[0m   [0;1mDELETE FROM `locations` WHERE `id` = 2[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/locations
+Completed in 26ms (DB: 17) | 302 Found [http://localhost/locations/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-03-03 09:23:26) [GET]
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering template within layouts/application
+Rendering locations/index
+Rendered locations/_map (0.3ms)
+  [4;35;1mLocation Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mUser Columns (10.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (14.4ms)
+Completed in 36ms (View: 18, DB: 12) | 200 OK [http://localhost/locations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:23:28) [GET]
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering locations/locations
+  [4;35;1mLocation Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+Completed in 15ms (View: 9, DB: 2) | 200 OK [http://localhost/locations.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#destroy (for 127.0.0.1 at 2010-03-03 09:23:29) [DELETE]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "id"=>"4"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (15.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mLocation Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 4) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLocation Destroy (0.1ms)[0m   [0mDELETE FROM `locations` WHERE `id` = 4[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/locations
+Completed in 32ms (DB: 20) | 302 Found [http://localhost/locations/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-03-03 09:23:29) [GET]
+  [4;35;1mLocation Load (0.6ms)[0m   [0mSELECT * FROM `locations` [0m
+Rendering template within layouts/application
+Rendering locations/index
+Rendered locations/_map (0.3ms)
+  [4;36;1mLocation Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (4.9ms)
+Completed in 26ms (View: 17, DB: 3) | 200 OK [http://localhost/locations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:23:30) [GET]
+  [4;35;1mLocation Load (1.0ms)[0m   [0mSELECT * FROM `locations` [0m
+Rendering locations/locations
+  [4;36;1mLocation Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+Completed in 19ms (View: 9, DB: 4) | 200 OK [http://localhost/locations.xml]
+  [4;35;1mSQL (0.7ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#destroy (for 127.0.0.1 at 2010-03-03 09:23:31) [DELETE]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "id"=>"6"}
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mLocation Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `locations` WHERE (`locations`.`id` = 6) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLocation Destroy (0.1ms)[0m   [0;1mDELETE FROM `locations` WHERE `id` = 6[0m
+  [4;35;1mSQL (16.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/locations
+Completed in 31ms (DB: 22) | 302 Found [http://localhost/locations/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-03-03 09:23:31) [GET]
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering template within layouts/application
+Rendering locations/index
+Rendered locations/_map (0.3ms)
+  [4;35;1mLocation Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (4.7ms)
+Completed in 27ms (View: 20, DB: 3) | 200 OK [http://localhost/locations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:23:32) [GET]
+  [4;36;1mLocation Load (0.5ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering locations/locations
+  [4;35;1mLocation Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+Completed in 17ms (View: 8, DB: 2) | 200 OK [http://localhost/locations.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#destroy (for 127.0.0.1 at 2010-03-03 09:23:33) [DELETE]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "id"=>"11"}
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mLocation Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 11) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLocation Destroy (0.2ms)[0m   [0mDELETE FROM `locations` WHERE `id` = 11[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/locations
+Completed in 14ms (DB: 4) | 302 Found [http://localhost/locations/11]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-03-03 09:23:33) [GET]
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM `locations` [0m
+Rendering template within layouts/application
+Rendering locations/index
+Rendered locations/_map (0.3ms)
+  [4;36;1mLocation Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mUser Columns (8.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (12.8ms)
+Completed in 31ms (View: 16, DB: 10) | 200 OK [http://localhost/locations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:23:34) [GET]
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM `locations` [0m
+Rendering locations/locations
+  [4;36;1mLocation Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+Completed in 13ms (View: 7, DB: 2) | 200 OK [http://localhost/locations.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#destroy (for 127.0.0.1 at 2010-03-03 09:23:35) [DELETE]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "id"=>"12"}
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mLocation Columns (6.7ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `locations` WHERE (`locations`.`id` = 12) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLocation Destroy (0.1ms)[0m   [0;1mDELETE FROM `locations` WHERE `id` = 12[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/locations
+Completed in 20ms (DB: 9) | 302 Found [http://localhost/locations/12]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-03-03 09:23:35) [GET]
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering template within layouts/application
+Rendering locations/index
+Rendered locations/_map (0.3ms)
+  [4;35;1mLocation Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mUser Columns (11.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (17.1ms)
+Completed in 37ms (View: 20, DB: 13) | 200 OK [http://localhost/locations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:23:36) [GET]
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering locations/locations
+  [4;35;1mLocation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+Completed in 13ms (View: 7, DB: 2) | 200 OK [http://localhost/locations.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#destroy (for 127.0.0.1 at 2010-03-03 09:23:38) [DELETE]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "id"=>"17"}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mLocation Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 17) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLocation Destroy (0.1ms)[0m   [0mDELETE FROM `locations` WHERE `id` = 17[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/locations
+Completed in 15ms (DB: 5) | 302 Found [http://localhost/locations/17]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-03-03 09:23:38) [GET]
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM `locations` [0m
+Rendering template within layouts/application
+Rendering locations/index
+Rendered locations/_map (0.3ms)
+  [4;36;1mLocation Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mUser Columns (9.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (47.0ms)
+Completed in 63ms (View: 47, DB: 11) | 200 OK [http://localhost/locations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:23:38) [GET]
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM `locations` [0m
+Rendering locations/locations
+  [4;36;1mLocation Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+Completed in 13ms (View: 7, DB: 2) | 200 OK [http://localhost/locations.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#destroy (for 127.0.0.1 at 2010-03-03 09:23:39) [DELETE]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "id"=>"18"}
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mLocation Columns (10.8ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `locations` WHERE (`locations`.`id` = 18) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLocation Destroy (0.1ms)[0m   [0;1mDELETE FROM `locations` WHERE `id` = 18[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/locations
+Completed in 26ms (DB: 14) | 302 Found [http://localhost/locations/18]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-03-03 09:23:39) [GET]
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering template within layouts/application
+Rendering locations/index
+Rendered locations/_map (0.3ms)
+  [4;35;1mLocation Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mUser Columns (5.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (10.1ms)
+Completed in 70ms (View: 59, DB: 7) | 200 OK [http://localhost/locations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:23:40) [GET]
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering locations/locations
+  [4;35;1mLocation Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+Completed in 14ms (View: 7, DB: 2) | 200 OK [http://localhost/locations.xml]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#destroy (for 127.0.0.1 at 2010-03-03 09:23:41) [DELETE]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "id"=>"19"}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mLocation Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 19) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLocation Destroy (0.1ms)[0m   [0mDELETE FROM `locations` WHERE `id` = 19[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/locations
+Completed in 15ms (DB: 5) | 302 Found [http://localhost/locations/19]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-03-03 09:23:41) [GET]
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM `locations` [0m
+Rendering template within layouts/application
+Rendering locations/index
+Rendered locations/_map (0.3ms)
+  [4;36;1mLocation Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (5.6ms)
+Completed in 54ms (View: 47, DB: 3) | 200 OK [http://localhost/locations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:23:42) [GET]
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM `locations` [0m
+Rendering locations/locations
+  [4;36;1mLocation Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+Completed in 12ms (View: 5, DB: 5) | 200 OK [http://localhost/locations.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#destroy (for 127.0.0.1 at 2010-03-03 09:23:45) [DELETE]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "id"=>"20"}
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mLocation Columns (17.8ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Load (7.5ms)[0m   [0;1mSELECT * FROM `locations` WHERE (`locations`.`id` = 20) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLocation Destroy (0.1ms)[0m   [0;1mDELETE FROM `locations` WHERE `id` = 20[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/locations
+Completed in 39ms (DB: 28) | 302 Found [http://localhost/locations/20]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-03-03 09:23:45) [GET]
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering template within layouts/application
+Rendering locations/index
+Rendered locations/_map (0.3ms)
+  [4;35;1mLocation Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (4.9ms)
+Completed in 53ms (View: 46, DB: 3) | 200 OK [http://localhost/locations]
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:23:46) [GET]
+  [4;36;1mLocation Load (1.0ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering locations/locations
+  [4;35;1mLocation Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+Completed in 13ms (View: 6, DB: 5) | 200 OK [http://localhost/locations.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#destroy (for 127.0.0.1 at 2010-03-03 09:23:48) [DELETE]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "id"=>"21"}
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (24.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mLocation Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 21) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLocation Destroy (0.1ms)[0m   [0mDELETE FROM `locations` WHERE `id` = 21[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/locations
+Completed in 40ms (DB: 30) | 302 Found [http://localhost/locations/21]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-03-03 09:23:48) [GET]
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `locations` [0m
+Rendering template within layouts/application
+Rendering locations/index
+Rendered locations/_map (0.3ms)
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (39.5ms)
+Completed in 46ms (View: 40, DB: 2) | 200 OK [http://localhost/locations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:23:48) [GET]
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering locations/locations
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/locations.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#new (for 127.0.0.1 at 2010-03-03 09:52:48) [GET]
+  [4;36;1mUser Columns (13.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mLocation Columns (4.8ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+Rendering template within layouts/application
+Rendering locations/new
+Rendered locations/_basic_form (5.3ms)
+Rendered users/_user_bar (1.1ms)
+Completed in 110ms (View: 62, DB: 19) | 200 OK [http://localhost/locations/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#create (for 127.0.0.1 at 2010-03-03 09:53:08) [POST]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "location"=>{"name"=>"borders", "full_address"=>"200 broad st philadelphia pa"}, "commit"=>"save"}
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mLocation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+Google geocoding. Address: 200 broad st philadelphia pa. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>200 broad st philadelphia pa</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>200 N Broad St, Philadelphia, PA 19102, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>PA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Philadelphia</SubAdministrativeAreaName><Locality><LocalityName>Philadelphia</LocalityName><Thoroughfare><ThoroughfareName>200 N Broad St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>19102</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="39.9594002" south="39.9531049" east="-75.1596829" west="-75.1659781" />
+    </ExtendedData>
+    <Point><coordinates>-75.1628421,39.9562539,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>200 S Broad St, Philadelphia, PA 19102, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>PA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Philadelphia</SubAdministrativeAreaName><Locality><LocalityName>Philadelphia</LocalityName><Thoroughfare><ThoroughfareName>200 S Broad St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>19102</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="39.9522116" south="39.9459164" east="-75.1617564" west="-75.1680516" />
+    </ExtendedData>
+    <Point><coordinates>-75.1644820,39.9490280,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+Rendering template within layouts/application
+Rendering locations/verify_multiple
+Rendered users/_user_bar (0.3ms)
+Completed in 375ms (View: 10, DB: 3) | 200 OK [http://localhost/locations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#create (for 127.0.0.1 at 2010-03-03 09:53:13) [POST]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "location"=>{"full_address"=>"200 S Broad St, Philadelphia, PA 19102, USA"}, "commit"=>"Select"}
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mLocation Columns (21.8ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+Google geocoding. Address: 200 S Broad St, Philadelphia, PA 19102, USA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>200 S Broad St, Philadelphia, PA 19102, USA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>200 S Broad St, Philadelphia, PA 19102, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>PA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Philadelphia</SubAdministrativeAreaName><Locality><LocalityName>Philadelphia</LocalityName><Thoroughfare><ThoroughfareName>200 S Broad St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>19102</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="39.9522116" south="39.9459164" east="-75.1617564" west="-75.1680516" />
+    </ExtendedData>
+    <Point><coordinates>-75.1644820,39.9490280,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT `locations`.id FROM `locations` WHERE (`locations`.`full_address` = BINARY '200 S Broad St, Philadelphia, PA 19102, USA') LIMIT 1[0m
+Google geocoding. Address: 200 S Broad St, Philadelphia, PA 19102, USA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>200 S Broad St, Philadelphia, PA 19102, USA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>200 S Broad St, Philadelphia, PA 19102, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>PA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Philadelphia</SubAdministrativeAreaName><Locality><LocalityName>Philadelphia</LocalityName><Thoroughfare><ThoroughfareName>200 S Broad St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>19102</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="39.9522116" south="39.9459164" east="-75.1617564" west="-75.1680516" />
+    </ExtendedData>
+    <Point><coordinates>-75.1644820,39.9490280,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (9.0ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering locations/new
+Rendered locations/_basic_form (4.3ms)
+Rendered users/_user_bar (0.4ms)
+Completed in 458ms (View: 7, DB: 33) | 200 OK [http://localhost/locations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#create (for 127.0.0.1 at 2010-03-03 09:53:20) [POST]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "location"=>{"name"=>"borders", "full_address"=>"200 S Broad St, Philadelphia, PA 19102, USA"}, "commit"=>"save"}
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mLocation Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+Google geocoding. Address: 200 S Broad St, Philadelphia, PA 19102, USA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>200 S Broad St, Philadelphia, PA 19102, USA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>200 S Broad St, Philadelphia, PA 19102, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>PA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Philadelphia</SubAdministrativeAreaName><Locality><LocalityName>Philadelphia</LocalityName><Thoroughfare><ThoroughfareName>200 S Broad St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>19102</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="39.9522116" south="39.9459164" east="-75.1617564" west="-75.1680516" />
+    </ExtendedData>
+    <Point><coordinates>-75.1644820,39.9490280,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT `locations`.id FROM `locations` WHERE (`locations`.`full_address` = BINARY '200 S Broad St, Philadelphia, PA 19102, USA') LIMIT 1[0m
+Google geocoding. Address: 200 S Broad St, Philadelphia, PA 19102, USA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>200 S Broad St, Philadelphia, PA 19102, USA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>200 S Broad St, Philadelphia, PA 19102, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>PA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Philadelphia</SubAdministrativeAreaName><Locality><LocalityName>Philadelphia</LocalityName><Thoroughfare><ThoroughfareName>200 S Broad St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>19102</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="39.9522116" south="39.9459164" east="-75.1617564" west="-75.1680516" />
+    </ExtendedData>
+    <Point><coordinates>-75.1644820,39.9490280,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;35;1mLocation Create (0.3ms)[0m   [0mINSERT INTO `locations` (`name`, `full_address`, `street_address`, `city`, `state`, `zip`, `country_code`, `province`, `lat`, `lng`, `phone`, `website`, `rating`, `created_at`, `updated_at`, `user_id`, `status`) VALUES('borders', '200 S Broad St, Philadelphia, PA 19102, USA', '200 S Broad St', 'Philadelphia', 'PA', '19102', 'US', 'Philadelphia', 39.949028, -75.164482, NULL, NULL, NULL, '2010-03-03 17:53:20', '2010-03-03 17:53:20', 3, NULL)[0m
+  [4;36;1mSQL (22.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/locations/22
+Completed in 387ms (DB: 29) | 302 Found [http://localhost/locations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#show (for 127.0.0.1 at 2010-03-03 09:53:21) [GET]
+  Parameters: {"id"=>"22"}
+  [4;35;1mLocation Columns (4.7ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `locations` WHERE (`locations`.`id` = 22) [0m
+Rendering template within layouts/application
+Rendering locations/show
+Rendered locations/_map (3.1ms)
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (41.6ms)
+Completed in 108ms (View: 90, DB: 7) | 200 OK [http://localhost/locations/22]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#show to xml (for 127.0.0.1 at 2010-03-03 09:53:21) [GET]
+  Parameters: {"id"=>"22"}
+  [4;35;1mLocation Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `locations` WHERE (`locations`.`id` = 22) [0m
+Rendering locations/location
+Completed in 21ms (View: 11, DB: 2) | 200 OK [http://localhost/locations/22.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-03-03 09:56:32) [GET]
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM `locations` [0m
+Rendering template within layouts/application
+Rendering locations/index
+Rendered locations/_map (0.3ms)
+  [4;36;1mLocation Columns (8.1ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (5.9ms)
+Completed in 46ms (View: 31, DB: 11) | 200 OK [http://localhost/locations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:56:32) [GET]
+  [4;35;1mLocation Load (0.7ms)[0m   [0mSELECT * FROM `locations` [0m
+Rendering locations/locations
+  [4;36;1mLocation Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+Completed in 36ms (View: 23, DB: 2) | 200 OK [http://localhost/locations.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#new (for 127.0.0.1 at 2010-03-03 09:56:45) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mLocation Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+Rendering template within layouts/application
+Rendering locations/new
+Rendered locations/_basic_form (4.1ms)
+Rendered users/_user_bar (0.3ms)
+Completed in 21ms (View: 6, DB: 6) | 200 OK [http://localhost/locations/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#create (for 127.0.0.1 at 2010-03-03 09:56:53) [POST]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "location"=>{"name"=>"origin", "full_address"=>"1211 hull st"}, "commit"=>"save"}
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mLocation Columns (29.8ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+Google geocoding. Address: 1211 hull st. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>1211 hull st</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>1211 Hull St, Richmond, VA 23224, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>VA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Richmond</SubAdministrativeAreaName><Locality><LocalityName>Richmond</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>23224</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.5238993" south="37.5176040" east="-77.4412388" west="-77.4475340" />
+    </ExtendedData>
+    <Point><coordinates>-77.4443937,37.5207589,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>1211 Hull St, Corning, IA 50841, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>IA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Adams</SubAdministrativeAreaName><Locality><LocalityName>Corning</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>50841</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="40.9967727" south="40.9904774" east="-94.7430911" west="-94.7493863" />
+    </ExtendedData>
+    <Point><coordinates>-94.7462461,40.9936203,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p3">
+    <address>1211 Hull St, Baltimore, MD 21230, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>MD</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Baltimore</SubAdministrativeAreaName><Locality><LocalityName>Baltimore</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>21230</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="39.2755566" south="39.2692614" east="-76.5883544" west="-76.5946496" />
+    </ExtendedData>
+    <Point><coordinates>-76.5915020,39.2724090,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p4">
+    <address>1211 Hull St, Louisville, KY 40204, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>KY</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Jefferson</SubAdministrativeAreaName><Locality><LocalityName>Louisville</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>40204</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="38.2514251" south="38.2451298" east="-85.7249092" west="-85.7312045" />
+    </ExtendedData>
+    <Point><coordinates>-85.7280622,38.2482838,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p5">
+    <address>1211 Hull St, Chesapeake, VA 23324, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>VA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Chesapeake</SubAdministrativeAreaName><Locality><LocalityName>Chesapeake</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>23324</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="36.8179046" south="36.8116094" east="-76.2742504" west="-76.2805456" />
+    </ExtendedData>
+    <Point><coordinates>-76.2773980,36.8147570,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p6">
+    <address>1211 Hull St, LaBelle, FL 33935, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>FL</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Hendry</SubAdministrativeAreaName><Locality><LocalityName>LaBelle</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>33935</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="26.7474537" south="26.7411584" east="-81.4408814" west="-81.4471767" />
+    </ExtendedData>
+    <Point><coordinates>-81.4440193,26.7443061,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p7">
+    <address>1211 Hull St, Constantine, MI 49042, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>MI</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>St Joseph</SubAdministrativeAreaName><Locality><LocalityName>Constantine</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>49042</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="41.8874437" south="41.8811484" east="-85.6208707" west="-85.6271659" />
+    </ExtendedData>
+    <Point><coordinates>-85.6240183,41.8842888,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p8">
+    <address>1211 Hull St, North Charleston, SC 29405, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>SC</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Charleston</SubAdministrativeAreaName><Locality><LocalityName>North Charleston</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>29405</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="32.8619169" south="32.8556216" east="-79.9924501" west="-79.9987454" />
+    </ExtendedData>
+    <Point><coordinates>-79.9955911,32.8587633,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+Rendering template within layouts/application
+Rendering locations/verify_multiple
+Rendered users/_user_bar (0.3ms)
+Completed in 1580ms (View: 10, DB: 31) | 200 OK [http://localhost/locations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#create (for 127.0.0.1 at 2010-03-03 09:57:24) [POST]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "location"=>{"name"=>"origin", "full_address"=>"1211 hull st"}, "commit"=>"save"}
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mLocation Columns (17.0ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+Google geocoding. Address: 1211 hull st. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>1211 hull st</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>1211 Hull St, Richmond, VA 23224, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>VA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Richmond</SubAdministrativeAreaName><Locality><LocalityName>Richmond</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>23224</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.5238993" south="37.5176040" east="-77.4412388" west="-77.4475340" />
+    </ExtendedData>
+    <Point><coordinates>-77.4443937,37.5207589,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>1211 Hull St, Corning, IA 50841, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>IA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Adams</SubAdministrativeAreaName><Locality><LocalityName>Corning</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>50841</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="40.9967727" south="40.9904774" east="-94.7430911" west="-94.7493863" />
+    </ExtendedData>
+    <Point><coordinates>-94.7462461,40.9936203,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p3">
+    <address>1211 Hull St, Baltimore, MD 21230, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>MD</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Baltimore</SubAdministrativeAreaName><Locality><LocalityName>Baltimore</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>21230</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="39.2755566" south="39.2692614" east="-76.5883544" west="-76.5946496" />
+    </ExtendedData>
+    <Point><coordinates>-76.5915020,39.2724090,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p4">
+    <address>1211 Hull St, Louisville, KY 40204, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>KY</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Jefferson</SubAdministrativeAreaName><Locality><LocalityName>Louisville</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>40204</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="38.2514251" south="38.2451298" east="-85.7249092" west="-85.7312045" />
+    </ExtendedData>
+    <Point><coordinates>-85.7280622,38.2482838,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p5">
+    <address>1211 Hull St, Chesapeake, VA 23324, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>VA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Chesapeake</SubAdministrativeAreaName><Locality><LocalityName>Chesapeake</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>23324</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="36.8179046" south="36.8116094" east="-76.2742504" west="-76.2805456" />
+    </ExtendedData>
+    <Point><coordinates>-76.2773980,36.8147570,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p6">
+    <address>1211 Hull St, LaBelle, FL 33935, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>FL</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Hendry</SubAdministrativeAreaName><Locality><LocalityName>LaBelle</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>33935</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="26.7474537" south="26.7411584" east="-81.4408814" west="-81.4471767" />
+    </ExtendedData>
+    <Point><coordinates>-81.4440193,26.7443061,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p7">
+    <address>1211 Hull St, Constantine, MI 49042, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>MI</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>St Joseph</SubAdministrativeAreaName><Locality><LocalityName>Constantine</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>49042</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="41.8874437" south="41.8811484" east="-85.6208707" west="-85.6271659" />
+    </ExtendedData>
+    <Point><coordinates>-85.6240183,41.8842888,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p8">
+    <address>1211 Hull St, North Charleston, SC 29405, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>SC</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Charleston</SubAdministrativeAreaName><Locality><LocalityName>North Charleston</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>29405</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="32.8619169" south="32.8556216" east="-79.9924501" west="-79.9987454" />
+    </ExtendedData>
+    <Point><coordinates>-79.9955911,32.8587633,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+Rendering template within layouts/application
+Rendering locations/verify_multiple
+Rendered users/_user_bar (0.4ms)
+Completed in 805ms (View: 68, DB: 19) | 200 OK [http://localhost/locations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#create (for 127.0.0.1 at 2010-03-03 09:57:34) [POST]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "location"=>{"name"=>"origin", "full_address"=>"1211 hull st"}, "commit"=>"save"}
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mLocation Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+Google geocoding. Address: 1211 hull st. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>1211 hull st</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>1211 Hull St, Richmond, VA 23224, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>VA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Richmond</SubAdministrativeAreaName><Locality><LocalityName>Richmond</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>23224</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="37.5238993" south="37.5176040" east="-77.4412388" west="-77.4475340" />
+    </ExtendedData>
+    <Point><coordinates>-77.4443937,37.5207589,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p2">
+    <address>1211 Hull St, Corning, IA 50841, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>IA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Adams</SubAdministrativeAreaName><Locality><LocalityName>Corning</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>50841</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="40.9967727" south="40.9904774" east="-94.7430911" west="-94.7493863" />
+    </ExtendedData>
+    <Point><coordinates>-94.7462461,40.9936203,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p3">
+    <address>1211 Hull St, Baltimore, MD 21230, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>MD</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Baltimore</SubAdministrativeAreaName><Locality><LocalityName>Baltimore</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>21230</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="39.2755566" south="39.2692614" east="-76.5883544" west="-76.5946496" />
+    </ExtendedData>
+    <Point><coordinates>-76.5915020,39.2724090,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p4">
+    <address>1211 Hull St, Louisville, KY 40204, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>KY</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Jefferson</SubAdministrativeAreaName><Locality><LocalityName>Louisville</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>40204</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="38.2514251" south="38.2451298" east="-85.7249092" west="-85.7312045" />
+    </ExtendedData>
+    <Point><coordinates>-85.7280622,38.2482838,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p5">
+    <address>1211 Hull St, Chesapeake, VA 23324, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>VA</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Chesapeake</SubAdministrativeAreaName><Locality><LocalityName>Chesapeake</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>23324</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="36.8179046" south="36.8116094" east="-76.2742504" west="-76.2805456" />
+    </ExtendedData>
+    <Point><coordinates>-76.2773980,36.8147570,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p6">
+    <address>1211 Hull St, LaBelle, FL 33935, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>FL</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Hendry</SubAdministrativeAreaName><Locality><LocalityName>LaBelle</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>33935</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="26.7474537" south="26.7411584" east="-81.4408814" west="-81.4471767" />
+    </ExtendedData>
+    <Point><coordinates>-81.4440193,26.7443061,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p7">
+    <address>1211 Hull St, Constantine, MI 49042, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>MI</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>St Joseph</SubAdministrativeAreaName><Locality><LocalityName>Constantine</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>49042</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="41.8874437" south="41.8811484" east="-85.6208707" west="-85.6271659" />
+    </ExtendedData>
+    <Point><coordinates>-85.6240183,41.8842888,0</coordinates></Point>
+  </Placemark>
+  <Placemark id="p8">
+    <address>1211 Hull St, North Charleston, SC 29405, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>SC</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Charleston</SubAdministrativeAreaName><Locality><LocalityName>North Charleston</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>29405</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="32.8619169" south="32.8556216" east="-79.9924501" west="-79.9987454" />
+    </ExtendedData>
+    <Point><coordinates>-79.9955911,32.8587633,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+Rendering template within layouts/application
+Rendering locations/verify_multiple
+Rendered users/_user_bar (0.3ms)
+Completed in 562ms (View: 10, DB: 3) | 200 OK [http://localhost/locations]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#create (for 127.0.0.1 at 2010-03-03 09:57:44) [POST]
+  Parameters: {"authenticity_token"=>"iS+plyLYP+2lQTpvw5HpzE9/P3YSZy4tcPUtV3Q5Bl4=", "location"=>{"full_address"=>"1211 Hull St, Baltimore, MD 21230, USA", "name"=>"origin"}, "commit"=>"Select"}
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mLocation Columns (14.2ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+Google geocoding. Address: 1211 Hull St, Baltimore, MD 21230, USA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>1211 Hull St, Baltimore, MD 21230, USA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>1211 Hull St, Baltimore, MD 21230, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>MD</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Baltimore</SubAdministrativeAreaName><Locality><LocalityName>Baltimore</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>21230</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="39.2755566" south="39.2692614" east="-76.5883544" west="-76.5946496" />
+    </ExtendedData>
+    <Point><coordinates>-76.5915020,39.2724090,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT `locations`.id FROM `locations` WHERE (`locations`.`full_address` = BINARY '1211 Hull St, Baltimore, MD 21230, USA') LIMIT 1[0m
+Google geocoding. Address: 1211 Hull St, Baltimore, MD 21230, USA. Result: <?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0"><Response>
+  <name>1211 Hull St, Baltimore, MD 21230, USA</name>
+  <Status>
+    <code>200</code>
+    <request>geocode</request>
+  </Status>
+  <Placemark id="p1">
+    <address>1211 Hull St, Baltimore, MD 21230, USA</address>
+    <AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>MD</AdministrativeAreaName><SubAdministrativeArea><SubAdministrativeAreaName>Baltimore</SubAdministrativeAreaName><Locality><LocalityName>Baltimore</LocalityName><Thoroughfare><ThoroughfareName>1211 Hull St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>21230</PostalCodeNumber></PostalCode></Locality></SubAdministrativeArea></AdministrativeArea></Country></AddressDetails>
+    <ExtendedData>
+      <LatLonBox north="39.2755566" south="39.2692614" east="-76.5883544" west="-76.5946496" />
+    </ExtendedData>
+    <Point><coordinates>-76.5915020,39.2724090,0</coordinates></Point>
+  </Placemark>
+</Response></kml>
+  [4;36;1mLocation Create (0.3ms)[0m   [0;1mINSERT INTO `locations` (`name`, `full_address`, `street_address`, `city`, `state`, `zip`, `country_code`, `province`, `lat`, `lng`, `phone`, `website`, `rating`, `created_at`, `updated_at`, `user_id`, `status`) VALUES('origin', '1211 Hull St, Baltimore, MD 21230, USA', '1211 Hull St', 'Baltimore', 'MD', '21230', 'US', 'Baltimore', 39.272409, -76.591502, NULL, NULL, NULL, '2010-03-03 17:57:45', '2010-03-03 17:57:45', 3, NULL)[0m
+  [4;35;1mSQL (23.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/locations/23
+Completed in 1400ms (DB: 39) | 302 Found [http://localhost/locations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#show (for 127.0.0.1 at 2010-03-03 09:57:45) [GET]
+  Parameters: {"id"=>"23"}
+  [4;36;1mLocation Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 23) [0m
+Rendering template within layouts/application
+Rendering locations/show
+Rendered locations/_map (0.3ms)
+  [4;36;1mUser Columns (15.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (19.1ms)
+Completed in 32ms (View: 9, DB: 17) | 200 OK [http://localhost/locations/23]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#show to xml (for 127.0.0.1 at 2010-03-03 09:57:46) [GET]
+  Parameters: {"id"=>"23"}
+  [4;36;1mLocation Columns (14.6ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mLocation Load (47.4ms)[0m   [0mSELECT * FROM `locations` WHERE (`locations`.`id` = 23) [0m
+Rendering locations/location
+Completed in 79ms (View: 5, DB: 62) | 200 OK [http://localhost/locations/23.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-03-03 09:57:50) [GET]
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering template within layouts/application
+Rendering locations/index
+Rendered locations/_map (0.3ms)
+  [4;35;1mLocation Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (4.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered users/_user_bar (9.1ms)
+Completed in 62ms (View: 51, DB: 7) | 200 OK [http://localhost/locations]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-03-03 09:57:51) [GET]
+  [4;36;1mLocation Load (4.6ms)[0m   [0;1mSELECT * FROM `locations` [0m
+Rendering locations/locations
+  [4;35;1mLocation Columns (7.5ms)[0m   [0mSHOW FIELDS FROM `locations`[0m
+Completed in 26ms (View: 9, DB: 12) | 200 OK [http://localhost/locations.xml]

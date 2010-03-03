@@ -1,5 +1,6 @@
 <h1>choose proper location...</h1>
-<%= @location.name %>
+<h3><%= @location.name %></h3>
+	
 <% form_tag :action => "create" do%>
 	<% @loc.all.each do |loc| %>
 		<div class="verify_text">
@@ -8,6 +9,7 @@
 		</div>
 		<br/>
 	<% end %>
+	<%= hidden_field_tag "location[name]", @location.name %>
 	<%= submit_tag 'Select' %> | <%= link_to 'Cancel', @location %>
 <% end %>
 
