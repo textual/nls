@@ -8,7 +8,7 @@
   <tr class="<%= cycle("even","odd") %>">
     <td><%= link_to location.name, location %></td>
 	<td><%=h location.full_address %></td>
-	<td><%= image_tag('flags/' + location.country_code + '.png')%></td>
+	<td><%= image_tag('flags/' + location.country_code.downcase + '.png')%></td>
     <td><%= link_to image_tag('icons/application_form_edit.png'), edit_location_path(location) %></td>
     <td><%= link_to image_tag( 'icons/delete.png'), location, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
