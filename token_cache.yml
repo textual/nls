@@ -1,0 +1,6 @@
+--- !ruby/object:Flickr::Auth::Token 
+permisions: write
+token: 72157623548897938-8fcb2010ef9693c1
+user_id: 91418931@N00
+user_real_name: ""
+username: nadskram

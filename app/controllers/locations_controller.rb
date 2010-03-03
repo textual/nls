@@ -1,4 +1,5 @@
 include Geokit::Geocoders
+require 'flickr_fu'
 
 class LocationsController < ApplicationController
   
@@ -20,7 +21,10 @@ class LocationsController < ApplicationController
   # GET /locations/1.xml
   def show
     @location = Location.find(params[:id])
-
+    flickr = Flickr.new('flickr.yml')
+    @photos = flickr.photos.search(:lat => @location.lat, :lon => @location.lng, :per_page => 4, :radius => 10)
+    puts "found #{@photos.size} photo(s)"
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  {render :action => 'location.xml.builder', :layout => false}

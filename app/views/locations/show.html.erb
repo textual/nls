@@ -1,5 +1,15 @@
 <div class="mapmed">
 <%= render :partial => 'map', :locals => {:data => "#{@location.id}.xml"}%>
+
+<br/>
+
+<div class="photos">
+	<% @photos.each do |photo| %>
+		<%= image_tag photo.url(:thumbnail) %>
+	<% end %>
+	<p>images via flickr</p>
+</div>
+
 </div>
 <div class="info">
 	<h1><%=h @location.name %></h1>
@@ -10,5 +20,8 @@
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
+
+
+<%# debug @location %>
 
 
