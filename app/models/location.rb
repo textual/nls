@@ -12,7 +12,7 @@ class Location < ActiveRecord::Base
   private
 
   def geocode_address
-    geo=Geokit::Geocoders::MultiGeocoder.geocode (self.full_address)
+    geo=Geokit::Geocoders::MultiGeocoder.geocode(self.full_address)
     
     if geo.success
       if geo.all.count == 1
