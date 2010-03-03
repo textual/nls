@@ -9,7 +9,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100226012124) do
+ActiveRecord::Schema.define(:version => 20100302040018) do
+
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.text     "full_address"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "country_code"
+    t.string   "province"
+    t.string   "lat"
+    t.string   "lng"
+    t.string   "phone"
+    t.string   "website"
+    t.integer  "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "status"
+  end
 
   create_table "posts", :force => true do |t|
     t.text     "title"

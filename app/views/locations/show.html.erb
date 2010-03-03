@@ -1,0 +1,14 @@
+<div class="mapmed">
+<%= render :partial => 'map', :locals => {:data => "#{@location.id}.xml"}%>
+</div>
+<div class="info">
+	<h1><%=h @location.name %></h1>
+	<%=h @location.street_address %><br/>
+	<%=h @location.city %> <%=h @location.state %>
+	<%= image_tag('flags/' + @location.country_code + '.png')%>
+</div>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
+
+

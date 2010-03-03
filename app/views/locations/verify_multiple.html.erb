@@ -1,0 +1,17 @@
+<h1>choose proper location...</h1>
+<%= @location.name %>
+<% form_tag :action => "create" do%>
+	<% @loc.all.each do |loc| %>
+		<div class="verify_text">
+			<span class="choice"><%= radio_button_tag "location[full_address]", loc.full_address %></span>
+			<span><%= loc.full_address %><span>
+		</div>
+		<br/>
+	<% end %>
+	<%= submit_tag 'Select' %> | <%= link_to 'Cancel', @location %>
+<% end %>
+
+<%= link_to 'Back', locations_path %>
+
+
+

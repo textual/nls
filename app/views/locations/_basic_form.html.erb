@@ -1,0 +1,16 @@
+<% form_for(loc) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :full_address %><br />
+    <%= f.text_area :full_address, :size => "30x5" %>
+  </p>
+  <p>
+    <%= submit_tag 'save' %> | <%= link_to 'cancel', :root %>
+  </p>
+
+<% end %>

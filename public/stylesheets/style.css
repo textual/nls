@@ -7,6 +7,7 @@
 #content, #footer	{
 	margin-top: 20px;
 }
+
 #footer	{
 	background-color:#cccccc;
 	height:100px;
@@ -36,3 +37,28 @@
 .admin a			{ color:#aaa;}
 .admin a:visited	{ color:#bbb;}
 .admin a:hover		{ color:#FFF; background-color:#333;}
+
+table
+{
+border-collapse:collapse;
+width:100%;
+}
+table,th, td
+{
+border: 1px solid #ddd;
+padding: 5px;
+text-align:left;
+}
+
+.even {	background-color:#fff;}
+.odd { background-color:#eee;}
+
+.mapmed {
+	height:220px;
+	width:220px;
+	display:inline;
+	float:left;
+	padding-bottom:10px;
+	padding-right:10px;
+	position:relative;
+}
