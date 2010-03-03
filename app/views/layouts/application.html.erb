@@ -39,6 +39,9 @@
 		<div id="footer">
 			<div class="grid_10">
 				<%= link_to 'home', :root %> | <%= link_to 'blog', posts_path %> | <%= link_to 'locations', locations_path %>
+				<% if authorized? %>
+					 | <%= link_to 'admin', :root %>
+				<% end %>
 			</div>
 			<div class="grid_2">
 				advertise | legal

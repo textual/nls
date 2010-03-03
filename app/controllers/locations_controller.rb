@@ -2,7 +2,8 @@ include Geokit::Geocoders
 
 class LocationsController < ApplicationController
   
-  before_filter :login_required, :only => [:create, :edit, :update, :destroy, :new]
+  before_filter :login_required, :only => [:create, :edit, :update, :new]
+  before_filter :is_authorized, :only => [:destroy]
   
   # GET /locations
   # GET /locations.xml
@@ -14,6 +15,7 @@ class LocationsController < ApplicationController
       format.xml {render :action => 'locations.xml.builder'}
     end
   end
+  
   # GET /locations/1
   # GET /locations/1.xml
   def show
@@ -48,6 +50,7 @@ class LocationsController < ApplicationController
     #@name = params[:name]
     #@address = params[:full_address]
     #if params[:full_address] == "" redirect_to(locations_url)
+    @render_action = "new"
     @location = Location.new(params[:location])
     @location.user = current_user
     #@location.full_address = @address
@@ -62,6 +65,7 @@ class LocationsController < ApplicationController
   # PUT /locations/1
   # PUT /locations/1.xml
   def update
+    @render_action = "edit"
     @location = Location.find(params[:id])
     @location.update_attributes(params[:location])
     #@loc = Location.geocode(@location.full_address)
@@ -75,9 +79,14 @@ class LocationsController < ApplicationController
   # DELETE /locations/1
   # DELETE /locations/1.xml
   def destroy
-    @location = Location.find(params[:id])
-    @location.destroy
-
+    if authorized?
+      flash[:notice] = 'Location was successfully destroyed.'
+      @location = Location.find(params[:id])
+      @location.destroy
+    else
+      flash[:error] = 'You are not authorized to do delete locations.'
+    end
+    
     respond_to do |format|
       format.html { redirect_to(locations_url) }
       format.xml  { head :ok }
@@ -85,6 +94,10 @@ class LocationsController < ApplicationController
   end
   
   # PRIVATE
+  
+  def is_authorized
+    false
+  end
   def validate_location
     @loc = Location.geocode(@location.full_address)
     
@@ -107,7 +120,8 @@ class LocationsController < ApplicationController
           end
           
         else
-            render :action => "verify_geokit"
+          flash[:error] = "Address not a specific location."
+          render :action => @render_action
         end
       else
         render :action => "verify_multiple"
