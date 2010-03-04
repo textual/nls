@@ -1,4 +1,7 @@
-
+body	{
+	background-image:url('top.png');
+	background-repeat:repeat-x;
+}
 #header	{
 	margin: 0px;
 	padding: 0px;
@@ -9,13 +12,15 @@
 }
 
 #footer	{
-	background-color:#cccccc;
 	height:100px;
 	margin-top:20px;
 	padding-top: 10px;
 }
 .side_bar {
+	background-color:#eee;
+	border: 1px solid #ddd;
 	padding:5px;
+	width:140px;
 }
 .messages	{
 	padding:5px;
@@ -61,4 +66,39 @@ text-align:left;
 	padding-bottom:10px;
 	padding-right:10px;
 	position:relative;
+}
+
+#navigation	{
+	background-color:#ccc;
+	border: 1px solid #aaa;
+	list-style-type: none;
+	margin-top:10px;
+	margin-left:0px;
+	padding:0px;
+	width:150px;
+}
+li	{
+	color:#fff;
+	margin-left: 3px;
+	padding: 3px;
+}
+#map_holder {
+	background-color:#900;
+	color:#fff;
+	font-weight:bold;
+	padding:1px;
+}
+#map_search	{
+	font-size:18px;
+	padding:5px;
+}
+.ads	{
+	background-color:#eee;
+	border: 1px solid #ccc;
+	height:400px;
+	width:140px;
+}
+#bottom {
+	border-top: 1px solid #ccc;
+	padding-top: 3px;
 }

@@ -1,3 +1,4 @@
+<div class="side_bar">
 <% if logged_in? -%>
   <div id="user-bar-greeting">hello <%= link_to_current_user :content_method => :login %></div>
   <div id="user-bar-action"  >(<%= link_to "Log out", logout_path, { :title => "Log out" }    %>)</div>
@@ -6,3 +7,14 @@
   <div id="user-bar-action"  ><%= link_to "Log in",  login_path,  { :title => "Log in" } %> /
                                <%= link_to "Sign up", signup_path, { :title => "Create an account" } %></div>
 <% end -%>
+</div>
+
+
+<ul id="navigation">
+	<li><%= link_to 'home', :root %></li>
+	<li><%= link_to 'locations', locations_path %></li>
+	<li><%= link_to 'blog', posts_path %></li>
+	<% if authorized? %>
+		 <li><%= link_to 'admin', :root %></li>
+	<% end %>
+</ul>
