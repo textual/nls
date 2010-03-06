@@ -35,7 +35,6 @@ class LocationsController < ApplicationController
   # GET /locations/new.xml
   def new
     @location = Location.new
-   #@profile = @location.location_profile.build
        
     respond_to do |format|
       format.html # new.html.erb
