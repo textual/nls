@@ -1,0 +1,23 @@
+<h1>Reviews for <%= @location.name %></h1>
+
+<table>
+  <tr>
+    <th>Reviewer</th>
+    <th>Body</th>
+  </tr>
+
+<% for review in @reviews %>
+  <tr>
+    <td><%=h review.user.login %></td>
+    <td><%=h review.comment %></td>
+    <td><%= link_to 'Show', location_review_path(@location, review) %></td>
+    <td>
+        <%= link_to 'Edit', edit_location_review_path(@location, review) %>
+    </td>
+    <td>
+        <%= link_to 'Destroy', location_review_path(@location, review),
+            :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>

@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :locations
+  map.resources :locations, :has_many => :reviews
 
   map.resources :posts
 
@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.reset     'reset/:reset_code', :controller => 'users', :action => 'reset'
   map.blog      '/blog', :controller => 'posts'
   
-  map.resources :users
+  map.resources :users, :has_many => :reviews
 
   map.resource :session
 

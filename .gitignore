@@ -5,3 +5,4 @@ doc/app
 db/data.yml 
 *.*~
 .bundle
+public/images/mocks

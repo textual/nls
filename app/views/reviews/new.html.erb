@@ -1,0 +1,5 @@
+<h1>New review for <%=@location.name%></h1>
+
+<%= render :partial => 'form', :locals => {:location => @location, :review => @location.reviews.new}%>
+
+<%= link_to 'Back', location_reviews_path(@location) %>

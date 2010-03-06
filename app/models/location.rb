@@ -2,6 +2,11 @@ class Location < ActiveRecord::Base
   
   acts_as_mappable #:auto_geocode=>{:field=>:full_address, :error_message=>'Could not geocode address'}
   belongs_to :user
+  has_many :reviews, :order => "created_at DESC"
+  has_many :recent_reviews, 
+            :class_name => "Review",
+            :order => "created_at DESC",
+            :limit => 4
   
   validates_presence_of :name, :full_address
   validates_uniqueness_of :full_address

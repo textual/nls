@@ -1,0 +1,24 @@
+<div class="info">
+	<h1><%=h @location.name %> - edit profile</h1>
+	<%=h @location.street_address %><br/>
+	<%=h @location.city %> <%=h @location.state %>
+	<%= image_tag('flags/' + @location.country_code.downcase + '.png')%>
+</div>
+<br/>
+<% form_for(@location) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :website%><br />
+    http://<%= f.text_field :website %>
+  </p>
+  <p>
+    <%= submit_tag 'save' %> | <%= link_to 'cancel', :root %>
+  </p>
+
+<% end %>
+

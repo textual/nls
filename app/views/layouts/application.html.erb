@@ -5,7 +5,8 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>nls</title>
-  <%= stylesheet_link_tag 'scaffold', 'reset', 'text', '960', 'style' %>
+  <%= stylesheet_link_tag 'scaffold', 'reset', 'text', '960', 'style', 'stars' %>
+  <%= javascript_include_tag :defaults %>
 </head>
 <body>
 	<div class="container_12">
@@ -32,9 +33,7 @@
 				<%= yield %>
 			</div>
 			<div class="grid_2">
-				<div class="ads">
-					ads
-				</div>
+				<div class="ads">ads</div>
 			</div>
 			<div class="clear"></div>
 		</div>

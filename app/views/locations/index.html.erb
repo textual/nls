@@ -1,8 +1,8 @@
-<div id="map_holder">
+<div class="grid_3" style="margin:0px;">
 	
 
 	
-	<%= render :partial => 'map', :locals => {:data => "/locations.xml"}%>
+	<%= render :partial => 'map', :locals => {:data => "/locations.xml", :wide_map => true}%>
 	
 </div>
 <br/>
@@ -11,10 +11,18 @@
 <% @locations.each do |location| %>
   <tr class="<%= cycle("even","odd") %>">
     <td><%= link_to location.name, location %></td>
-	<td><%=h location.full_address %></td>
+	<td><%=h location.city + " " + location.state %></td>
 	<td><%= image_tag('flags/' + location.country_code.downcase + '.png')%></td>
-    <td><%= link_to image_tag('icons/application_form_edit.png'), edit_location_path(location) %></td>
-    <td><%= link_to image_tag( 'icons/delete.png'), location, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>
+    	<ul class="rating <%= (location.rating ? location.rating.en.numwords : "no") %>star"> 
+			<li class="one">1</li> 
+			<li class="two">2</li> 
+			<li class="three">3</li> 
+			<li class="four">4</li> 
+			<li class="five">5</li> 
+		</ul>
+    </td>
+	<td><%= distance_of_time_in_words_to_now(location.created_at) + " ago"%></td>
   </tr>
 <% end %>
 </table>

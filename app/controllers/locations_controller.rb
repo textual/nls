@@ -9,7 +9,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.xml
   def index
-    @locations = Location.all
+    @locations = Location.all(:order => "created_at DESC")
 
     respond_to do |format|
       format.html 
@@ -35,7 +35,8 @@ class LocationsController < ApplicationController
   # GET /locations/new.xml
   def new
     @location = Location.new
-
+   #@profile = @location.location_profile.build
+       
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @location }
@@ -44,6 +45,11 @@ class LocationsController < ApplicationController
 
   # GET /locations/1/edit
   def edit
+    @location = Location.find(params[:id])
+  end
+  
+  # GET /locations/1/edit
+  def profile
     @location = Location.find(params[:id])
   end
 
@@ -114,7 +120,7 @@ class LocationsController < ApplicationController
           respond_to do |format|
             @location.full_address = @loc.full_address
             if @location.save
-              flash[:notice] = 'Location was successfully created.'
+              flash[:notice] = 'Location update was sucessful.'
               format.html { redirect_to(@location) }
               format.xml  { render :xml => @location, :status => :created, :location => @location }
             else

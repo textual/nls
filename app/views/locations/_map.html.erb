@@ -1,6 +1,6 @@
 <%
   google_key='ABQIAAAAdBD8zfYkYr-018qXmU9flhTsVWEftVMjtyZPkQinvvuXLmgWNRQacCnh1XxIIBAimN7uM4GXv1fNxA'
-  full_page ||= false
+  wide_map ||= false
   show_action ||= nil
   new_action ||= nil
   data ||= nil
@@ -8,16 +8,17 @@
 <div id="map"
   align="right"
   style="border: 1px solid #979797;
-		 min-width: 220px;
-<%		 if full_page -%>
-		 min-height: 800px;
-		 height: 800px;
+		 min-width: 218px;
+<%		 if wide_map -%>
+		 min-height: 300px;
+		 height: 300px;
+		 width:618px;
 <%		 else -%>
-		 min-height: 220px;
-		 height: 220px;
+		 min-height: 218px;
+		 height: 218px;
+		 width:218px;
 <%		 end -%>
-		 background-color: #FFFFFF;
-		 border: 1px solid #999999;"></div>
+		 background-color: #FFFFFF;"></div>
 <script
   src="http://maps.google.com/maps?file=api&v=2&key=<%= google_key %>"
   type="text/javascript"></script>
@@ -49,20 +50,23 @@
             new Ajax.Request(link, {
               method: 'get',
               onSuccess: function(transport) {
-                var html = "<div align='left' id='map_info' style='min-width: 220px; min-height: 220px; width: 220px; height: 220px;'>" +
+                var html = "<div align='left' id='map_info' style='min-width: 200px; min-height: 200px; width: 200px; height: 200px;'>" +
                   transport.responseText + "</div>";
                 mark1.openInfoWindowHtml(html);
               }
             });      
        <% else %>
+		
             link = "<br/><a href='/<%=controller.controller_name%>/" + id + "'>More...</a>";
             mark1.openInfoWindowHtml("<div align='left'><strong>" + label + "</strong><br/>"
               + html + link + "</div>");
+	
        <% end %>
-        } else {
-          mark1.openInfoWindowHtml("<div align='left'><strong>" + label + "</strong><br/>"
-            + html + link + "</div>");
-        }
+        } 
+		//else {
+			//alert("not adding info window");
+			//mark1.openInfoWindowHtml("<div align='left'><strong>" + label + "</strong><br/>" + html + link + "</div>");
+        //}
       }
     );
     return mark1;
@@ -74,7 +78,7 @@
      map.setCenter(map_location, 16);
      map.setZoom(2);
      map.addControl(new GLargeMapControl());
-     map.addControl(new GHierarchicalMapTypeControl());
+     //map.addControl(new GHierarchicalMapTypeControl());
      map.enableScrollWheelZoom();
      map.enableDoubleClickZoom();
      map.setMapType(G_NORMAL_MAP);
@@ -168,7 +172,7 @@
            method: 'get',
            parameters: params,
            onSuccess: function(transport) {
-             var html = "<div align='left' id='map_info' style='min-width: 220px; min-height: 220px; width: 220px; height: 220px;'>" +
+             var html = "<div align='left' id='map_info' style='min-width: 200px; min-height: 200px; width: 200px; height: 200px;'>" +
                transport.responseText + "</div>";
              marker.openInfoWindowHtml(html);
            }

@@ -1,25 +1,79 @@
-<div class="mapmed">
-<%= render :partial => 'map', :locals => {:data => "#{@location.id}.xml"}%>
+<div class="grid_3 left_align">
+	<%= render :partial => 'map', :locals => {:data => "#{@location.id}.xml", :show_action => false}%>
 
-<br/>
-
-<div class="photos">
-	<% @photos.each do |photo| %>
-		<%= image_tag photo.url(:thumbnail) %>
-	<% end %>
-	<p>images via flickr</p>
+	<div class="photos" style="margin-top:10px;">
+		<% @photos.each do |photo| %>
+			<%= link_to image_tag( photo.url(:thumbnail)), photo.url(:large) %>
+		<% end %>
+		<p>neighborhood images via flickr</p>
+	</div>
 </div>
 
-</div>
-<div class="info">
+<div class="grid_5 right_align">
 	<h1><%=h @location.name %></h1>
-	<%=h @location.street_address %><br/>
-	<%=h @location.city %> <%=h @location.state %>
-	<%= image_tag('flags/' + @location.country_code.downcase + '.png')%>
+	<div class="grid_2 left_align">
+		<%=h @location.street_address %><br/>
+		<%=h @location.city %> <%=h @location.state %>&nbsp;<%= image_tag('flags/' + @location.country_code.downcase + '.png')%><br/>
+		<% if authorized? || current_user == @location.user%>
+			<%= link_to 'Edit Address', edit_location_path(@location) %>
+		<% end %>
+	</div>
+	<div class="grid_2" style="margin-bottom:10px;">
+		phone: <%=h @location.phone %><br/>
+		website: <%=h @location.website %><br/>
+		<% if authorized? || current_user == @location.user%>
+			<%= link_to 'Edit Info', :action => 'profile', :id => @location.id %>
+		<% end %>
+	</div>
+	<div class="grid_4 left_align">
+		overall rating:
+		<ul class="rating <%= (@location.rating ? @location.rating.en.numwords : "no") %>star"> 
+			<li class="one">1</li> 
+			<li class="two">2</li> 
+			<li class="three">3</li> 
+			<li class="four">4</li> 
+			<li class="five">5</li> 
+		</ul>
+	</div>
+	
+	
+	<div class="grid_5 left_align top_pad">// <b>reviews</b>&nbsp;(<%=@location.reviews.count%>)</div>
+	<% @location.recent_reviews.each do |r| %>
+		<div class="grid_5 left_align review_box <%= cycle("even","odd") %>">
+			<div class="grid_2 left_align">
+			    <%=link_to r.user.login, user_path(r.user) %><br/>
+				<%= distance_of_time_in_words_to_now(r.created_at) + " ago"%>
+			    <ul class="rating <%= (r.rating ? r.rating.en.numwords : "no") %>star"> 
+					<li class="one">1</li> 
+					<li class="two">2</li> 
+					<li class="three">3</li> 
+					<li class="four">4</li> 
+					<li class="five">5</li> 
+				</ul>
+			</div>
+			<div class="grid_3 right_align">
+				<%=h r.comment %>
+		  	</div>
+		</div>		
+	<% end %>
+
+	<% if @location.reviews.count > @location.recent_reviews.count %>
+		<div class="grid_5 left_align"><%= link_to 'view more...', location_reviews_path(@location) %></div>
+	<% end %> 
+	
+		<div class="grid_5 left_align review_box grey">
+			// <b>write your own review</b>
+			<% if logged_in? %>
+				<%= render :partial => 'reviews/form', :locals => {:location => @location, :review => @location.reviews.new}%>
+			<% else %>
+				<br/>
+				<%= link_to "Sign up", signup_path%> / <%= link_to "Log in",  login_path %> and you can create a comment for <%=@location.name %>
+			<% end %>
+		</div>
+
 </div>
 
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+
 
 
 <%# debug @location %>
