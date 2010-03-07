@@ -1,5 +1,6 @@
 <div class="grid_8 left_align">
-	<%= render :partial => 'map', :locals => {:data => "/locations.xml", :wide_map => true}%>
+
+	<%= render :partial => 'map', :locals => {:data => @filename, :wide_map => true}%>
 	
 	<table>
 	<% @locations.each do |location| %>
@@ -25,11 +26,11 @@
 
 <div class="grid_2 right_align">
 	<div class="ads">
-		tools - coming soon!
-		<ul id="navigation">
-			<li>favorites</li>
-			<li>i want to go here</li>
-			<li>+ photos</li>
+		cities
+		<ul class="links">
+			<% @cities.each do |c| %>
+				<li><a href="/locations/city/<%= c.city%>"><%= c.city%> (<%= c.count %>)</a></li>
+			<% end %>
 		</ul>
 	</div>
 </div>

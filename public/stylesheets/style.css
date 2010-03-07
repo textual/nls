@@ -59,7 +59,14 @@ text-align:left;
 .even {	background-color:#fff;}
 .odd { background-color:#f9f9f9;}
 
-
+.links{
+	list-style-type: none;
+	margin-top:20px;
+	padding:0px;
+}
+.links li	{
+	color: #333;
+}
 
 #navigation	{
 	background-color:#eee;
