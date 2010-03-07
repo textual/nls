@@ -10,7 +10,7 @@ class LocationsController < ApplicationController
   # GET /locations.xml
   def index
     @locations = Location.all(:order => "created_at DESC")
-    @cities = Location.find_by_sql("SELECT id, city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
+    @cities = Location.find_by_sql("SELECT city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
     
     @filename = "/locations.xml"
     
@@ -22,7 +22,7 @@ class LocationsController < ApplicationController
   
   def city
     @locations = Location.all(:conditions => ["city = ?", params[:id]])
-    @cities = Location.find_by_sql("SELECT id, city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
+    @cities = Location.find_by_sql("SELECT city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
     
     @filename =  "/locations/city/" + params[:id] + ".xml"
     
