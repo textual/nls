@@ -1,6 +1,6 @@
 <div class="grid_8 left_align">
 
-	<%= render :partial => 'map', :locals => {:data => @filename, :wide_map => true}%>
+	<%= render :partial => 'map', :locals => {:data => @filename, :wide_map => true, :zoom_level => @zoom_level}%>
 	
 	<table>
 	<% @locations.each do |location| %>
@@ -29,7 +29,7 @@
 		cities
 		<ul class="links">
 			<% @cities.each do |c| %>
-				<li><a href="/locations/city/<%= c.city%>"><%= c.city%> (<%= c.count %>)</a></li>
+				<li><a href="/locations/city/<%= c.city%>"><%= h c.city%> (<%= c.count %>)</a></li>
 			<% end %>
 		</ul>
 	</div>

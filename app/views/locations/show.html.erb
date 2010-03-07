@@ -1,5 +1,5 @@
 <div class="grid_3 left_align">
-	<%= render :partial => 'map', :locals => {:data => "#{@location.id}.xml", :show_action => false}%>
+	<%= render :partial => 'map', :locals => {:data => "#{@location.id}.xml", :show_action => false, :zoom_level => @zoom_level}%>
 
 	<div class="photos" style="margin-top:10px;">
 		<% @photos.each do |photo| %>
@@ -13,7 +13,7 @@
 	<h1><%=h @location.name %></h1>
 	<div class="grid_2 left_align">
 		<%=h @location.street_address %><br/>
-		<%=h @location.city %> <%=h @location.state %>&nbsp;<%= image_tag('flags/' + @location.country_code.downcase + '.png')%><br/>
+		<a href="/locations/city/<%= @location.city%>"><%=h @location.city %> <%=h @location.state %>&nbsp;<%= image_tag('flags/' + @location.country_code.downcase + '.png')%></a><br/>
 		<% if authorized? || current_user == @location.user%>
 			<%= link_to 'Edit Address', edit_location_path(@location) %>
 		<% end %>

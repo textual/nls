@@ -10,6 +10,8 @@ class LocationsController < ApplicationController
   # GET /locations.xml
   def index
     @locations = Location.all(:order => "created_at DESC")
+    @zoom_level = 4;
+    
     @cities = Location.find_by_sql("SELECT city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
     
     @filename = "/locations.xml"
@@ -25,6 +27,7 @@ class LocationsController < ApplicationController
     @cities = Location.find_by_sql("SELECT city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
     
     @filename =  "/locations/city/" + params[:id] + ".xml"
+    @zoom_level = 11
     
     respond_to do |format|
       format.html {render :action => 'index'}
@@ -36,6 +39,8 @@ class LocationsController < ApplicationController
   # GET /locations/1.xml
   def show
     @location = Location.find(params[:id])
+    @zoom_level = 13
+    
     flickr = Flickr.new('flickr.yml')
     @photos = flickr.photos.search(:lat => @location.lat, :lon => @location.lng, :per_page => 4, :radius => 10)
     puts "found #{@photos.size} photo(s)"

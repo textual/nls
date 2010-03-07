@@ -1,6 +1,7 @@
 <%
   google_key='ABQIAAAAdBD8zfYkYr-018qXmU9flhTsVWEftVMjtyZPkQinvvuXLmgWNRQacCnh1XxIIBAimN7uM4GXv1fNxA'
   wide_map ||= false
+  zoom_level ||= 13
   show_action ||= nil
   new_action ||= nil
   data ||= nil
@@ -76,7 +77,7 @@
    if (GBrowserIsCompatible()) {
      map = new GMap2(document.getElementById("map"));
      map.setCenter(map_location, 16);
-     map.setZoom(2);
+     map.setZoom(<%=zoom_level%>);
      map.addControl(new GLargeMapControl());
      //map.addControl(new GHierarchicalMapTypeControl());
      map.enableScrollWheelZoom();
@@ -129,11 +130,7 @@
        }
        center = addPoints(points);
        map.setCenter(center);
-       if (multi) {
-         map.setZoom(4);
-       } else {
-         map.setZoom(13);
-       }
+       map.setZoom(<%=zoom_level%>);
      }
    }
    request.send(null);
