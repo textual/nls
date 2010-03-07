@@ -13,7 +13,7 @@
 		
 		<div id="header">
 			<div class="grid_4 prefix_2">
-				<%= link_to( (image_tag 'logo.gif'), :root)%>
+				<%= link_to( (image_tag 'logo.gif', :width => 220), :root)%>
 			</div>
 			<div class="grid_6">
 				<div id="messages">
@@ -29,11 +29,8 @@
 			<div class="grid_2">
 				<%= render :partial => 'users/user_bar'%>
 			</div>
-			<div class="grid_8">
+			<div class="grid_10">
 				<%= yield %>
-			</div>
-			<div class="grid_2">
-				<div class="ads">ads</div>
 			</div>
 			<div class="clear"></div>
 		</div>

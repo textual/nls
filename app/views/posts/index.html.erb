@@ -1,25 +1,39 @@
-<h1>Official nls blog</h1>
+<div class="grid_7 left_align">
+	<h1>Official nls blog</h1>
 
-<% @posts.each do |post| %>
-	<div class="blog_post">
-		<div class="blog_date">
-			<%= distance_of_time_in_words_to_now(post.created_at) + " ago"%>
+	<% @posts.each do |post| %>
+		<div class="blog_post">
+			<div class="blog_date">
+				<%= distance_of_time_in_words_to_now(post.created_at) + " ago"%>
+			</div>
+			<div class="blog_main">
+				<h3><%= link_to post.title, post %></h3>
+				<p><%=h post.content %></p>
+				<div class="posted_by">posted by <%= link_to post.user.login, post.user %></div>
+				<% if authorized? %>
+					<div class="admin">
+						<%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+					</div>
+				<% end %>
+			</div>
+	  	</div>
+	<% end %>
+
+	<br />
+
+	<% if authorized? %>
+		<div class="admin"><%= link_to 'New post', new_post_path %></div>
+	<% end %>
+</div>
+<div class="grid_3 right_align">
+	<div class="grid_3 left_align">
+		<div class="ads">
+			top tags
+			<ul id="navigation">
+				<li>development</li>
+				<li>design</li>
+				<li>gems</li>
+			</ul>
 		</div>
-		<div class="blog_main">
-			<h3><%= link_to post.title, post %></h3>
-			<p><%=h post.content %></p>
-			<div class="posted_by">posted by <%= link_to post.user.login, post.user %></div>
-			<% if authorized? %>
-				<div class="admin">
-					<%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
-				</div>
-			<% end %>
-		</div>
-  	</div>
-<% end %>
-
-<br />
-
-<% if authorized? %>
-	<div class="admin"><%= link_to 'New post', new_post_path %></div>
-<% end %>
+	</div>
+</div>

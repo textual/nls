@@ -1,13 +1,28 @@
-<h1><%=h @post.title %></h1>
+<div class="grid_7 left_align">
+	<h1><%=h @post.title %></h1>
 
-<p><%=h @post.content %></p>
+	<p><%=h @post.content %></p>
 
-<div class="posted_by">posted by <%= link_to @post.user.login, @post.user %></div>
+	<div class="posted_by">posted by <%= link_to @post.user.login, @post.user %></div>
 
-<% if authorized? %>
-	<div class="admin">
-		<%= link_to 'Edit', edit_post_path(@post) %> | <%= link_to 'Destroy', @post, :confirm => 'Are you sure?', :method => :delete %>
+	<% if authorized? %>
+		<div class="admin">
+			<%= link_to 'Edit', edit_post_path(@post) %> | <%= link_to 'Destroy', @post, :confirm => 'Are you sure?', :method => :delete %>
+		</div>
+	<% end %>
+	<br/>
+	<%= link_to 'Back', posts_path %>
+
+</div>
+<div class="grid_3 right_align">
+	<div class="grid_3 left_align">
+		<div class="ads">
+			top tags
+			<ul id="navigation">
+				<li>development</li>
+				<li>design</li>
+				<li>gems</li>
+			</ul>
+		</div>
 	</div>
-<% end %>
-<br/>
-<%= link_to 'Back', posts_path %>
+</div>
