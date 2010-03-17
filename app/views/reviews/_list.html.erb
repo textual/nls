@@ -1,5 +1,5 @@
-<div class="grid_7 left_align">
-	// <b>reviews</b>&nbsp;(<%= reviews.count%>)</div>
+<div class="grid_7 left_align" id="reviews">
+	// <b>reviews</b>&nbsp;(<%= location.reviews.count%>)</div>
 	<% reviews.each do |r| %>
 	<div class="grid_7 left_align review_box <%= cycle("even","odd") %>">
 		<div class="grid_2 left_align">
@@ -14,22 +14,14 @@
 			</ul>
 		</div>
 		<div class="grid_5 right_align">
-			<%=h r.comment %>
+			<%= r.comment %>
 	  	</div>
 	</div>		
 	<% end %>
-
-	<% if location.reviews.count > reviews.count %>
-	<div class="grid_7"><%= link_to 'view more...', location_reviews_path(location) %></div>
-	<% end %> 
-
-	<div class="grid_7 left_align review_box grey">
-		// <b>write your own review</b>
-		<% if logged_in? %>
-			<%= render :partial => 'reviews/form', :locals => {:location => location, :review => location.reviews.new}%>
-		<% else %>
-			<br/>
-			<%= link_to "Sign up", signup_path%> / <%= link_to "Log in",  login_path %> and you can create a comment for <%=location.name %>
-		<% end %>
-	</div>
 </div>
+
+<% if location.reviews.count > reviews.count %>
+<div class="grid_7"><%= link_to 'view more...', location_reviews_path(location) %></div>
+<% end %> 
+
+

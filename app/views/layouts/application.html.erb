@@ -6,7 +6,14 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>nls</title>
   <%= stylesheet_link_tag 'scaffold', 'reset', 'text', '960', 'style', 'stars' %>
-  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'jquery-1.4.2.js', 'jquery.validate.js', 'jquery-lightbox/js/jquery.lightbox.js', 'application' %>
+	<script type="text/javascript">
+		$(function(){
+			$.Lightbox.construct({
+				show_linkback:	false,
+				opacity: 0.6,
+			});
+		});</script>
 </head>
 <body>
 	<div class="container_12">
@@ -34,7 +41,7 @@
 			</div>
 			<div class="clear"></div>
 		</div>
-		
+		<hr/>
 		<div id="footer">
 			<div class="grid_8 prefix_2">
 				<div id="bottom">

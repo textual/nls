@@ -1,0 +1,2 @@
+$("#review_form").html('<div id="flash_notice"><%= escape_javascript(flash.delete(:notice))%><%= escape_javascript(flash.delete(:error))%></div>');
+$("#reviews").html("<%=escape_javascript(render(:partial => 'list',:locals => {:location => @location, :reviews => @location.recent_reviews}))%>");

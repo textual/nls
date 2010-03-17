@@ -107,6 +107,13 @@ li	{
 	padding-right:10px;
 	position:relative;
 }
+.photos	{
+	padding-top:10px;
+}
+.photos img	{
+	margin:4px;
+}
+
 .border	{
 	border: 1px solid #979797;
 	border-style:inset;

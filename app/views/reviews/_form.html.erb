@@ -1,18 +1,32 @@
 <% form_for([location, review]) do |f| %>
   	<%= f.error_messages %>
   	<%= hidden_field_tag( "review[rating]" )%>
-  	<div class="grid_2 left_align">
-    	<ul class="rating nostar" id="reviewer_rating"> 
+	<div class="grid_2 left_align">
+		Step 1: rate
+	</div>
+  	<div class="grid_5 right_align">
+    	<ul class="rating nostar" id="reviewer_rating" value="0"> 
 			<li class="one"><a href="#" onclick="change_rating(1, 'one');" title="1 Star">1</a></li> 
 			<li class="two"><a href="#" onclick="change_rating(2, 'two');" title="2 Stars">2</a></li> 
 			<li class="three"><a href="#" onclick="change_rating(3, 'three');" title="3 Stars">3</a></li> 
 			<li class="four"><a href="#" onclick="change_rating(4, 'four');" title="4 Stars">4</a></li> 
 			<li class="five"><a href="#" onclick="change_rating(5, 'five');" title="5 Stars">5</a></li> 
 		</ul>
-		<%= f.submit "post review" %>
    	</div>
-	<div class="grid_3 right_align">
-	    <%= f.text_area :comment, :size => "60x6" %>
+	<div class="clear"></div>
+	<div class="grid_2 left_align">
+		Step 2: comment
+	</div>
+	<div class="grid_5 right_align">
+	    <%= f.text_area :comment, :size => "65x6" %>
+	</div>
+	
+	<div class="grid_2 left_align">
+		Step 3: submit
+	</div>
+	<div class="grid_5 right_align">
+	    <%= f.submit "post review", :disabled => true %>
 	</div>
 
+	
 <% end %>

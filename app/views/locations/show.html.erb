@@ -1,9 +1,9 @@
 <div class="grid_3 left_align">
 	<%= render :partial => 'map', :locals => {:data => "#{@location.id}.xml", :show_action => false, :zoom_level => @zoom_level}%>
 
-	<div class="photos" style="margin-top:10px;">
+	<div class="photos">
 		<% @photos.each do |photo| %>
-			<%= link_to image_tag( photo.url(:thumbnail)), photo.url(:large) %>
+			<%= link_to image_tag( photo.url(:square), :width => 100), photo.url(:large), :rel => 'lightbox-group', :title => photo.title %>
 		<% end %>
 		<p>neighborhood images via flickr</p>
 	</div>
@@ -25,7 +25,7 @@
 			<%= link_to 'Edit Info', :action => 'profile', :id => @location.id %>
 		<% end %>
 	</div>
-	<div class="grid_4 left_align">
+	<div class="grid_5 left_align">
 		overall rating:
 		<ul class="rating <%= (@location.rating ? @location.rating.en.numwords : "no") %>star"> 
 			<li class="one">1</li> 
@@ -49,7 +49,7 @@
 </div>
 
 <div class="grid_7 right_align top_pad">
-	<%= render :partial => 'reviews/list', :locals => {:location => @location, :reviews => @location.recent_reviews}%>
+	<%= render :partial => 'reviews/list_form', :locals => {:location => @location, :reviews => @location.recent_reviews}%>
 </div>
 
 <%# debug @location %>

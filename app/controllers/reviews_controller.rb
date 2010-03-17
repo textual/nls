@@ -24,11 +24,12 @@ class ReviewsController < ApplicationController
         # update locations over all average
         @location.rating = @location.reviews.average('rating')
         @location.save
-        
-        redirect_to location_url(@location)
       else
         flash[:error] = 'you must have a rating and a comment.'
-        redirect_to location_url(@location) # render :action => "new"
+      end
+      respond_to do |format|
+        format.html {redirect_to location_url(@location)}
+        format.js
       end
     end
 

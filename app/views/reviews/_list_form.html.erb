@@ -1,0 +1,15 @@
+<div>
+	<div class="grid_7 left_align" id="reviews">
+		<%= render :partial => 'reviews/list', :locals => {:location => location, :reviews => reviews}%>
+	</div>
+
+	<div class="grid_7 left_align review_box grey" id="review_form">
+		// <b>write your own review</b>
+		<% if logged_in? %>
+			<%= render :partial => 'reviews/form', :locals => {:location => location, :review => location.reviews.new}%>
+		<% else %>
+			<br/>
+			<%= link_to "Sign up", signup_path%> / <%= link_to "Log in",  login_path %> and you can write a review for <%=location.name %>
+		<% end %>
+	</div>
+</div>

@@ -23,7 +23,7 @@ class LocationsController < ApplicationController
   end
   
   def city
-    @locations = Location.all(:conditions => ["city = ?", params[:id]])
+    @locations = Location.all(:conditions => ["city = ?", params[:id]], :order => "created_at DESC")
     @cities = Location.find_by_sql("SELECT city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
     
     @filename =  "/locations/city/" + params[:id] + ".xml"
@@ -43,7 +43,6 @@ class LocationsController < ApplicationController
     
     flickr = Flickr.new('flickr.yml')
     @photos = flickr.photos.search(:lat => @location.lat, :lon => @location.lng, :per_page => 4, :radius => 10)
-    puts "found #{@photos.size} photo(s)"
     
     respond_to do |format|
       format.html # show.html.erb
