@@ -42,7 +42,7 @@ class LocationsController < ApplicationController
     @zoom_level = 13
     
     flickr = Flickr.new('flickr.yml')
-    @photos = flickr.photos.search(:lat => @location.lat, :lon => @location.lng, :per_page => 4, :radius => 10)
+    @photos = flickr.photos.search(:lat => @location.lat, :lon => @location.lng, :per_page => 4, :radius => 10, :media => 'photos')
     
     respond_to do |format|
       format.html # show.html.erb
