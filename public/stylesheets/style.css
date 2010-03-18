@@ -2,6 +2,9 @@ body	{
 	background-image:url('/images/border.gif');
 	background-repeat:repeat-x;
 }
+ul	{
+	list-style-type: none;
+}
 #header	{
 	height:80px;
 	margin: 0px;
@@ -69,13 +72,13 @@ text-align:left;
 #navigation	{
 	background-color:#eee;
 	border: 1px solid #ccc;
-	list-style-type: none;
+	
 	margin-top:20px;
 	padding:0px;
 	padding-bottom:5px;
 }
 li	{
-	color:#fff;
+	color:#333;
 	margin-left: 5px;
 	padding-top: 5px;
 }

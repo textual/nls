@@ -15,7 +15,7 @@
 	<li><%= link_to 'locations', locations_path %></li>
 	<li><%= link_to 'blog', posts_path %></li>
 	<% if authorized? %>
-		 <li><%= link_to 'admin', :root %></li>
+		 <li><%= link_to 'admin', :controller => 'admin' %></li>
 	<% end %>
 </ul>
 <div class="ads">

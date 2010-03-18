@@ -3,7 +3,7 @@
 
 	<div class="photos">
 		<% @photos.each do |photo| %>
-			<%= link_to image_tag( photo.url(:square), :width => 100), photo.url(:large), :rel => 'lightbox-group', :title => photo.title %>
+			<%= link_to image_tag( photo.url(:square), :width => 100), photo.url(:medium), :rel => 'lightbox-group', :title => photo.title %>
 		<% end %>
 		<p>neighborhood images via flickr</p>
 	</div>
