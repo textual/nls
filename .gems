@@ -3,3 +3,4 @@ mysql
 geokit
 flickr-fu
 linguistics
+acts_as_tree
