@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  criteria: 
+  location: 
+  rating: 1
+
+two:
+  criteria: 
+  location: 
+  rating: 1

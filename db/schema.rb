@@ -9,7 +9,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100304212840) do
+ActiveRecord::Schema.define(:version => 20100319182057) do
+
+  create_table "criterias", :force => true do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "location_criteria_ratings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "locations_criteria_id"
+    t.integer  "rating"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "locations", :force => true do |t|
     t.string   "name"
@@ -30,6 +46,14 @@ ActiveRecord::Schema.define(:version => 20100304212840) do
     t.integer  "user_id"
     t.integer  "status"
     t.string   "address_2"
+  end
+
+  create_table "locations_criterias", :force => true do |t|
+    t.integer  "criteria_id"
+    t.integer  "location_id"
+    t.integer  "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "posts", :force => true do |t|

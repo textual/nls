@@ -139,7 +139,7 @@ class LocationsController < ApplicationController
             @location.full_address = @loc.full_address
             if @location.save
               flash[:notice] = 'Location update was sucessful.'
-              format.html { redirect_to(@location) }
+              format.html { redirect_to(assign_criteria_url(:id => @location.id)) }
               format.xml  { render :xml => @location, :status => :created, :location => @location }
             else
               format.html { render :action => "new" }

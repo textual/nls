@@ -29,7 +29,7 @@
 		cities
 		<ul class="links">
 			<% @cities.each do |c| %>
-				<li><a href="/locations/city/<%= c.city%>"><%= h c.city%> (<%= c.count %>)</a></li>
+				<li><a href="/locations/city/<%= c.city%>"><%= c.city %> (<%= c.count %>)</a></li>
 			<% end %>
 		</ul>
 	</div>

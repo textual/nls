@@ -154,3 +154,98 @@ li	{
 .grey	{
 	background-color:#eee;
 }
+.white {
+	background-color:#fff;
+}
+.first_box	{clear:both;}
+
+/*
+criteria display boxes 
+*/
+.criteria_display {
+	background-color:#333;
+	color:#ccc;
+	font-weight:bold;
+	font-size:16px;
+	padding:5px;
+	margin-bottom:10px;
+}
+.criteria_list{
+	background-color:#fff;
+	font-weight:normal;
+	font-size:12px;
+	padding: 5px;
+}
+.criteria_list_box img {
+	margin-left:5px;
+}
+.criteria_main	{
+	color:#666;
+	font-weight:bold;
+	width:100%;
+}
+.criteria_sub	{
+	margin:0 auto;
+	padding:4px;
+}
+.criteria_name	{
+	color:#333;
+	display:inline;
+	float:left;
+	font-weight:normal;
+	position:relative;
+}
+.criteria_rating	{
+	display:inline;float:right;position:relative;
+}
+.criteria_list_box {
+
+	color:#ccc;
+	margin-left:0px;
+
+}
+.criteria_checkbox	{
+
+	margin:5px;
+}
+.criteria_check_list{
+	background-color:#333;
+		padding-bottom:1px;
+}
+.criteria_option	{
+	color:#333;
+
+}
+.criteria_option img {
+	margin-left:1px;
+}
+.criteria_absent	{
+	font-weight:normal;
+}
+hr.clrfloat { 
+visibility: hidden; 
+clear: both; 
+height: 0; 
+border: 0; 
+margin: 2; 
+padding: 0; 
+}
+.light	{
+	background-color:#fff;
+}
+.caution
+{
+	background-color: #ffffdd;
+	border: 1px solid #ffff66;
+	color:#666;
+	margin-bottom: 15px;
+	padding:10px;
+}
+.caution h2	{
+	font-size:14px;
+	margin:0px;
+	padding:0px;
+}
+.caution p {
+	margin-bottom:10px;
+}

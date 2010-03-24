@@ -21,6 +21,21 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :locations
   has_many :reviews
+  
+  has_many :location_criteria_ratings  do
+    def for_location(location_id)
+      all(:joins => :locations_criteria, :conditions => ["locations_criterias.location_id = ?", location_id])
+    end
+    def for_location_criteria(id)
+      all(:conditions => ["locations_criteria_id = ?", id])
+    end
+  end
+  
+          
+  
+   
+    
+      
     
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation

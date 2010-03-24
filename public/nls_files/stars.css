@@ -1,0 +1,73 @@
+ 
+/* the default rating is placed as a background image in the ul */
+/* use the background position according to the table above to display the required images*/
+.rating{
+	width:80px;
+	height:16px;
+	margin:0px; /* 0 20px 0;*/
+	padding:0;
+	line-height: 4px;
+	list-style:none;
+	clear:both;
+	position:relative;
+	background: url(/images/star-matrix.gif) no-repeat 0 0;
+}
+/* add these classes to the ul to effect the change to the correct number of stars */
+.nostar {background-position:0 0}
+.onestar {background-position:0 -16px}
+.twostar {background-position:0 -32px}
+.threestar {background-position:0 -48px}
+.fourstar {background-position:0 -64px}
+.fivestar {background-position:0 -80px}
+ul.rating li {
+	cursor: pointer;
+ /*ie5 mac doesn't like it if the list is floated\*/
+	float:left;
+	/* end hide*/
+	text-indent:-999em;
+}
+ul.rating li a {
+	position:absolute;
+	left:0;
+	top:0;
+	width:16px;
+	height:16px;
+	text-decoration:none;
+	z-index: 200;
+}
+ul.rating li.one a {left:0}
+ul.rating li.two a {left:16px;}
+ul.rating li.three a {left:32px;}
+ul.rating li.four a {left:48px;}
+ul.rating li.five a {left:64px;}
+ul.rating li a:hover {
+	z-index:2;
+	width:80px;
+	height:16px;
+	overflow:hidden;
+	left:0;	
+	background: url(/images/star-matrix.gif) no-repeat 0 0
+}
+ul.rating li.one a:hover {background-position:0 -96px;}
+ul.rating li.two a:hover {background-position:0 -112px;}
+ul.rating li.three a:hover {background-position:0 -128px}
+ul.rating li.four a:hover {background-position:0 -144px}
+ul.rating li.five a:hover {background-position:0 -160px}
+/* end rating code */
+h3{margin:0 0 2px 0;font-size:110%}
+
+/* jquery stars */
+#rating_cont { background: #1E1D1C url(/images/rating_background.jpg) top left no-repeat; border: 1px solid #F9BA0D; width: 140px; height: 23px; text-align: left; margin-left: 6px;}
+	#rating_on { background: url(/images/rating_onbackground.jpg) top left no-repeat; width: 0px; height: 21px; position: relative; z-index: 50; top: -21px; }
+#rated { display: none; width: 138px; padding: 3px 0px 3px 2px; height: 23px; background-color: #1E1D1C; height: 17px;font-size: 11px;color: #FFC910;}
+	#rated div { display: block; float: left; }
+	#rating { font-size: 11px; font-family: Arial, Helvetica, sans-serif; color: #FFC910; padding-left: 3px; width: 22px; }
+	#small_stars { height: 11px; width: 69px; background-image: url(/images/stars_small_sprite.jpg); background-position: 0px -11px; font-size:1px; line-height: 11px; margin-top:3px; }
+	#rate_edit { line-height: 17px; font-size: 11px; font-family: Arial, Helvetica, sans-serif; color: #FFF; padding-left: 9px; cursor: pointer; }
+	#rate_edit:hover { text-decoration: underline; }
+ 
+	#rating_btns { position: relative; z-index: 100; width: 140px; height: 21px;}
+	#rating_btns ul, #rating_btns li  { padding: 0; margin: 0; }
+	#rating_btns li { float: left; width: 14px; height: 21px; display: block; font-size: 1px; cursor: pointer; color: #1E1D1C;
+	 }
+	

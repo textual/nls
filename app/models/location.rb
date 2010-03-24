@@ -7,6 +7,26 @@ class Location < ActiveRecord::Base
             :class_name => "Review",
             :order => "created_at DESC",
             :limit => 4
+  has_many :locations_criterias do
+    def top_level
+      all(:joins => :criteria, :conditions => "criterias.parent_id is null", :order => "name")
+    end
+    
+    def children(id)
+      all(:joins => :criteria, :conditions => ["criterias.parent_id = ?", id], :order => "name")
+    end
+  end
+  
+  has_many :criterias, :through => :locations_criterias do
+    def parents
+      all(:conditions => "parent_id is null")
+    end
+    def children(id)
+      all(:conditions => ["parent_id = ?", id])
+    end
+  end
+  
+  has_many :location_criteria_ratings, :through => :location_criterias
   
   validates_presence_of :name, :full_address
   validates_uniqueness_of :full_address

@@ -1,0 +1,157 @@
+body	{
+	background-image:url('/images/border.gif');
+	background-repeat:repeat-x;
+}
+ul	{
+	list-style-type: none;
+}
+#header	{
+	height:80px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#content, #footer	{
+	margin-top: 20px;
+}
+
+#footer	{
+	height:100px;
+	margin-top:20px;
+	padding-top: 10px;
+}
+.side_bar {
+	background-color:#fafafa;
+	border: 1px solid #ddd;
+	padding:5px;
+	
+}
+.messages	{
+	padding:5px;
+}
+
+.blog_post	{
+	margin-bottom: 50px;
+}
+.blog_date	{
+	color:#AAA;
+}
+
+.admin	{
+	background-color:#333;
+	color:#AAA;
+	margin-top:3px;
+	padding:10px;
+}
+.admin a			{ color:#aaa;}
+.admin a:visited	{ color:#bbb;}
+.admin a:hover		{ color:#FFF; background-color:#333;}
+
+table
+{
+border-collapse:collapse;
+width:100%;
+}
+table,th, td
+{
+border: 1px solid #ddd;
+padding: 5px;
+text-align:left;
+}
+
+.even {	background-color:#fff;}
+.odd { background-color:#f9f9f9;}
+
+.links{
+	list-style-type: none;
+	margin-top:20px;
+	padding:0px;
+}
+
+
+#navigation	{
+	background-color:#eee;
+	border: 1px solid #ccc;
+	
+	margin-top:20px;
+	padding:0px;
+	padding-bottom:5px;
+}
+li	{
+	color:#333;
+	margin-left: 5px;
+	padding-top: 5px;
+}
+#map_holder {
+	background-color:#900;
+	color:#fff;
+	font-weight:bold;
+	padding:1px;
+}
+#map_search	{
+	font-size:18px;
+	padding:5px;
+}
+.ads	{
+	background-color:#eee;
+	padding:10px;
+}
+#bottom {
+	border-top: 1px solid #ccc;
+	padding-top: 3px;
+}
+.mapmed {
+	border: 1px solid #900;
+	height:500px;
+	width:220px;
+	display:inline;
+	float:left;
+	padding-bottom:10px;
+	padding-right:10px;
+	position:relative;
+}
+.photos	{
+	padding-top:10px;
+}
+.photos img	{
+	margin:4px;
+}
+
+.border	{
+	border: 1px solid #979797;
+	border-style:inset;
+	border-width:1px;
+}
+.info_box	{
+	border: 1px solid #ccc;
+	display:inline;
+	float:left;
+	margin-right:5px;
+	padding:5px;
+	
+}
+/*
+*/
+.container_12 {
+	background: #fff url(/images/12_col.gif) repeat-y;
+	margin-bottom: 20px;
+}
+
+.top_pad	{
+	padding-top:10px;
+}
+.left_align	{
+	margin-left:0px;
+}
+.right_align	{
+	margin-right:0px;
+}
+.review_box	{
+	margin-right:0px;
+	margin-top:4px;
+	padding:6px 0px;
+}
+.grey	{
+	background-color:#eee;
+}
+.first_box	{clear:both;display:block;}

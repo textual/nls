@@ -1,7 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :locations, :has_many => :reviews
+  map.resources :locations, :has_many => [:reviews, :criterias]
 
   map.resources :posts
+  map.resources :criteria
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
@@ -25,7 +26,9 @@ ActionController::Routing::Routes.draw do |map|
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   # This route can be invoked with purchase_url(:id => product.id)
-
+  map.assign_criteria 'locations/:id/criteria', :controller => 'criteria', :action => 'edit_location'
+  map.rate_criteria 'locations/:id/rate_criteria', :controller => 'criteria', :action => 'rate_location'
+  
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
 

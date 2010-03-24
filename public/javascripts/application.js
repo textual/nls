@@ -14,6 +14,21 @@ function change_rating(to_rating_num, to_rating_text)
 	submit_button.disabled = false;
 	
 }
+function rate_criteria(criteria_id, to_rating_num, to_rating_text)
+{
+
+	var rating_element = document.getElementById('criteria_' + criteria_id + '_rating');
+	rating_element.setAttribute("class", "rating " + to_rating_text + "star");
+	
+	// set hidden field value for rating
+	var rating_value = document.getElementById("rating_" + criteria_id );
+	rating_value.value = to_rating_num;
+	
+	//alert("this is " + $(this).parentsUntil('grid_2')); 
+	$(this).parentsUntil("rating nostar").css('background-color', 'red');
+	//$(this).parentsUntil("rate_form").submitWithAjax();
+}
+
 jQuery.ajaxSetup({
 	'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 })
@@ -23,6 +38,12 @@ jQuery.fn.submitWithAjax = function() {
 		$.post($(this).attr("action"), $(this).serialize(), null, "script");
 		return false;
 	})
+};
+
+function check_parent(parent_id)
+{
+	alert("clicked...check " + parent_id);
+
 };
 
 $(document).ready(function () {
@@ -52,6 +73,5 @@ $(document).ready(function () {
 	
 	$("#new_review").submitWithAjax();
 	
-	
-	
+
 });
