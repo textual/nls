@@ -1,0 +1,40 @@
+<h1>rate <%= @location.name %></h1>
+
+<div class="grid_3 left_align">
+	<% if authorized? || current_user == @location.user%>
+	<%= link_to 'edit criteria', assign_criteria_url(:id => @location.id) %>
+	<% end %>
+	<div class="criteria_display">
+		//criteria
+		<div class="criteria_list">
+			<% form_tag do %>
+				<%@location.locations_criterias.top_level.each do |p| %>
+					<div class="criteria_main first_box">
+						<b><%=p.criteria.name %> </b>
+						<% @location.locations_criterias.children(p.criteria_id).each do |c|%>
+							<% @my_rating = current_user.location_criteria_ratings.for_location_criteria(c.id).first%>
+							<%= hidden_field_tag( "rating[" + c.id.to_s + "]", @my_rating ? @my_rating.rating : "")%>
+	
+							<div class="criteria_sub first_box">
+								<div class="criteria_name "><%= c.criteria.name %> </div>
+								<div class="criteria_rating">
+									<ul class="rating <%= (@my_rating ? @my_rating.rating.en.numwords : "no") %>star" id="criteria_<%=c.id%>_rating"> 
+										<li class="one"><a href="#" onclick="rate_criteria(<%=c.id%>, 1, 'one');" title="1 Star">1</a></li> 
+										<li class="two"><a href="#" onclick="rate_criteria(<%=c.id%>, 2, 'two');" title="2 Stars">2</a></li> 
+										<li class="three"><a href="#" onclick="rate_criteria(<%=c.id%>, 3, 'three');" title="3 Stars">3</a></li> 
+										<li class="four"><a href="#" onclick="rate_criteria(<%=c.id%>, 4, 'four');" title="4 Stars">4</a></li> 
+										<li class="five"><a href="#" onclick="rate_criteria(<%=c.id%>, 5, 'five');" title="5 Stars">5</a></li> 
+									</ul>
+								</div>
+							</div>
+						<% end %>
+					</div>
+				<% end %>
+				<br/>
+				<br/>
+				<%= link_to "cancel", location_url(@location), :class => "medium red awesome first_box"%>
+				<%= submit_tag "save rating", :class => "medium green awesome "%>
+			<% end %>
+		</div>	
+	</div>
+</div>

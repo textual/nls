@@ -1,0 +1,42 @@
+<div class="criteria_display">
+	//criteria
+	<% if authorized? || current_user == @location.user%>
+		<%= link_to '( edit )', assign_criteria_url(:id => @location.id)%>
+	<% end %>
+	<div class="criteria_list">
+		<% if @location.criterias.size > 0 %>
+			<% @location.locations_criterias.top_level.each do |p| %>
+				<div class="criteria_main ">
+					<%= p.criteria.name %>
+					<% @location.locations_criterias.children(p.criteria_id).each do |c| %>
+						<div class="criteria_sub first_box">
+							<div class="criteria_name "><%= c.criteria.name %></div>
+							<div class="criteria_rating ">
+								<ul class="rating <%= (c.rating ? c.rating.en.numwords : "no") %>star"> 
+									<li class="one">1</li> 
+									<li class="two">2</li> 
+									<li class="three">3</li> 
+									<li class="four">4</li> 
+									<li class="five">5</li> 
+								</ul>
+							</div>
+						</div>
+					<% end %>
+				</div>
+				<hr class="clrfloat"/>
+			<% end %>
+			<% if logged_in? %>
+				<br/>
+				<%= link_to 'rate the criteria', rate_criteria_url(:id => @location.id), :class => "small green awesome"%>
+			<% end %>
+		<% else %>
+			<div class="criteria_absent">
+				do you know anything about <%=  @location.name %>?<br/>
+				<%= link_to "edit criteria for " + @location.name, assign_criteria_url(:id => @location.id) %>
+			</div>
+		<% end %>	
+	</div>
+</div>
+
+
+
