@@ -81,7 +81,7 @@ class CriteriasController < ApplicationController
         end
       end
       
-     if params[:rating].count > 0 
+     if params[:rating].size > 0 
         flash[:notice] = 'ratings saved.'
       else
         flash[:error] = 'NO RATINGS CLICKED'
