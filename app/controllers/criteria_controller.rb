@@ -1,7 +1,7 @@
 class CriteriaController < ApplicationController
   
   before_filter :login_required, :only => [:edit_location, :rate_location, :assign_location]
-  before_filter :is_authorized, :only => [:index, :create, :destroy]
+  before_filter :authorized?, :only => [:index, :create, :destroy]
    
   def index
     @parents = Criteria.parents #(:all, :conditions => "parent_id IS NULL", :order => 'name')

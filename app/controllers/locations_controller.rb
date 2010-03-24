@@ -4,7 +4,7 @@ require 'flickr_fu'
 class LocationsController < ApplicationController
   
   before_filter :login_required, :only => [:create, :edit, :update, :new]
-  before_filter :is_authorized, :only => [:destroy]
+  before_filter :authorized?, :only => [:destroy]
   
   # GET /locations
   # GET /locations.xml
@@ -123,9 +123,7 @@ class LocationsController < ApplicationController
   
   # PRIVATE
   
-  def is_authorized
-    false
-  end
+
   def validate_location
     @loc = Location.geocode(@location.full_address)
     
