@@ -5,7 +5,7 @@ class EventTypesController < ApplicationController
     @event_types = EventType.all(:order => 'name')
 
     respond_to do |format|
-      format.html { render "events/index"} # index.html.erb
+      format.html
       format.xml  { render :xml => @event_types }
     end
   end

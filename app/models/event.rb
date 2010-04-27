@@ -10,7 +10,14 @@ class Event < ActiveRecord::Base
  
   has_many :event_dates, :dependent => :destroy
   accepts_nested_attributes_for :event_dates, :allow_destroy => true
-  
+
+  named_scope :type,
+              lambda { |*args|
+                {:include => [:event_types],
+                  :conditions => ['event_types.id = ?', (args.first || 1)]
+                }
+              }
+              
   named_scope :on_date, 
               lambda { |use_date = Time.now().strftime("%F"), *|
                 {
@@ -19,12 +26,7 @@ class Event < ActiveRecord::Base
                 }
               }
               
-  named_scope :type,
-              lambda { |use_type = 1, *|
-                {:include => [:event_types],
-                  :conditions => ['event_types.id = ?', use_type]
-                }
-              }
+  
               
   validates_presence_of :location, :name
   
