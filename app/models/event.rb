@@ -19,10 +19,10 @@ class Event < ActiveRecord::Base
               }
               
   named_scope :on_date, 
-              lambda { |use_date = Time.now().strftime("%F"), *|
+              lambda { |*args|
                 {
                   :include => :event_dates,
-                  :conditions => ['event_dates.date = ? OR event_dates.day = ?', use_date, use_date.to_date.wday]
+                  :conditions => ['event_dates.date = ? OR event_dates.day = ?', (args.first || Time.now().strftime("%F")), (args.first.to_date.wday || Time.now().to_date.wday) ]
                 }
               }
               
