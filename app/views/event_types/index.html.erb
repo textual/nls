@@ -1,0 +1,17 @@
+<h1>Listing event_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @event_types.each do |event_type| %>
+  <tr class="<%= cycle("odd", "even")%>">
+    <td><%= link_to event_type.name, edit_event_type_path(event_type) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New event_type', new_event_type_path %>

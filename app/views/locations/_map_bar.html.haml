@@ -1,0 +1,8 @@
+= render :partial => 'locations/map', :locals => {:data => "#{loc_id}.xml", :show_action => false, :zoom_level => @zoom_level}
+
+#photos
+	- @photos.each do |photo|
+		= link_to image_tag( photo.url(:square), :width => 100), photo.url(:medium), :rel => 'lightbox-group', :title => photo.title
+	%p= "neighborhood images via flickr"
+
+= render :partial => 'criterias/locations_criteria', :locals => {:location => @location}

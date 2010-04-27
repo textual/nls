@@ -7,6 +7,7 @@ class Location < ActiveRecord::Base
             :class_name => "Review",
             :order => "created_at DESC",
             :limit => 4
+            
   has_many :locations_criterias do
     def top_level
       all(:joins => :criteria, :conditions => "criterias.parent_id is null", :order => "name")
@@ -27,12 +28,34 @@ class Location < ActiveRecord::Base
   end
   
   has_many :location_criteria_ratings, :through => :location_criterias
+  has_many :events,:include => :event_dates
+
+  has_many :specials,
+            :through => :events,
+            :source => :event_dates,
+            :conditions => "date IS NULL", 
+            :order => "day"
+  
+  has_many :shows,
+            :through => :events,
+            :source => :event_dates,
+            :conditions => "day IS NULL", 
+            :order => "date"
+            
   
   validates_presence_of :name, :full_address
   validates_uniqueness_of :full_address
   
   validate :geocode_address
 
+  def self.search(query)
+    if !query.to_s.strip.empty?
+      tokens = query.split.collect {|c| "%#{c.downcase}%"}
+      find_by_sql(["select * from locations l where #{ (["(lower(l.name) like ? or lower(l.city) like ?)"] * tokens.size).join(" and ") } order by l.created_at desc", *(tokens * 2).sort])
+    else
+      []
+    end
+  end
 
   private
 

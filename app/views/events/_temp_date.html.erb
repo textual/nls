@@ -1,0 +1,90 @@
+%p
+	= form.label :desc
+	%br
+	= form.text_area :desc, :size => "45x7"
+
+	%br
+	from: 
+	= time_select 'event', 'from', {:default => Time.now.change(:hour => 17), :simple_time_select => true, :minute_interval => 10, :time_separator => "" } 
+	to: 
+	= time_select 'event', 'to', {:default => Time.now.change(:hour => 18), :simple_time_select => true, :minute_interval => 10, :time_separator => "" } 
+	all day? 
+	= check_box_tag "event[all_day]"
+
+
+
+<script type="text/javascript">
+
+$().ready(function() {
+	var template = jQuery.format($("#date_template").val());
+	function addRow() {
+		$(template(i)).appendTo("#date_holder");
+		$('#date' + i).datepicker({
+					showOn: 'button',
+					buttonImage: '/images/icons/calendar.png',
+					buttonImageOnly: true,
+					showAnim: 'fadeIn'
+				});
+		i++;
+		
+	}
+
+	var i = 0;
+	// start with one row
+	addRow();
+	// add more rows on click
+	$(".add_date").click(addRow);
+});
+	
+	$(function() {
+		$('.old_datepicker').datepicker({
+					showOn: 'button',
+					buttonImage: '/images/icons/calendar.png',
+					buttonImageOnly: true,
+					showAnim: 'fadeIn'
+				});
+		//$('#datepicker').datepicker('option', {showAnim:'fadeIn'});
+	});
+	
+	$(function() {
+			$("#tabs").tabs();
+		});
+</script>
+<textarea style="display:none" id="date_template">
+	<div>
+	<input type="text" class="datepicker" id="date{0}" name="event_date[date][{0}]">
+	</div>
+</textarea>
+<div class="grid_7 left_align">
+	<div id="tabs">
+		<ul>
+			<li><a href="#tabs-1">days</a></li>
+			<li><a href="#tabs-2">dates</a></li>
+		</ul>
+		<div id="tabs-1">
+			<div class="day_check_holder">
+				<% 7.times do |i|%>
+					<span class="day_check"><%= check_box_tag "event_date[day][]", i %> <%= Date::DAYNAMES[i] %>&nbsp;</span>
+				<% end %>
+			</div>
+		</div>
+		<div id="tabs-2">
+			<div id="date_holder">
+			</div>
+			<%=link_to (image_tag "/images/icons/add.png"), "#", :class => 'add_date'%>
+		</div>
+	</div>
+	<p>
+	  from: <%= time_select 'event_date', 'from', {:default => Time.now.change(:hour => 17), :simple_time_select => true, :minute_interval => 15, :time_separator => "" } %>
+	  to: <%= time_select 'event_date', 'to', {:default => Time.now.change(:hour => 18), :simple_time_select => true, :minute_interval => 15, :time_separator => "" } %>
+	  all day? <%= check_box_tag "event_date[all_day]" %>
+	  <br/>
+	  desc:<br/>
+	  <%= text_area_tag "event_date[desc]", nil, :rows => 7, :cols => 60 %>
+	</p>
+	<p>
+		price advance: $<%= text_field_tag "event_date[price_advance]", nil, :size => 5 %>
+		price at door: $<%= text_field_tag "event_date[price_door]", nil, :size => 5 %><br/>
+		purchase url <%= text_field_tag "event_date[purchase_url]", nil, :size => 50 %>
+	</p>
+</div>

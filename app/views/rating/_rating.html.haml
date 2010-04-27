@@ -1,0 +1,6 @@
+%ul(class="rating #{asset.rating ? asset.rating.en.numwords : "no" }star")
+	%li.one= link_to_remote( "1" , {:url => { :controller => asset_type, :action => "rate", :id => asset.id, :rating => 1}} ) 
+	%li.two= link_to_remote( "2" , {:url => { :controller => asset_type, :action => "rate", :id => asset.id, :rating => 2}} ) 
+	%li.three= link_to_remote( "3" , {:url => { :controller => asset_type, :action => "rate", :id => asset.id, :rating => 3}} )
+	%li.four= link_to_remote( "4" , {:url => { :controller => asset_type, :action => "rate", :id => asset.id, :rating => 4}} ) 
+	%li.five= link_to_remote( "5" , {:url => { :controller => asset_type, :action => "rate", :id => asset.id, :rating => 5}} ) 

@@ -1,7 +1,9 @@
 <h1>admin section</h1>
 <ul>
-	<li>users</li>
+	<li><%= link_to 'users', :controller => 'admin', :action => 'users'%></li>
 	<li>locations</li>
+	<li><%= link_to 'events', :controller => 'admin', :action => 'events' %></li>
 	<li>reviews</li>
 	<li><%= link_to 'criteria', :controller => 'criterias' %></li>
+	<li><%= link_to 'event types', :controller => 'event_types' %></li>
 </ul>

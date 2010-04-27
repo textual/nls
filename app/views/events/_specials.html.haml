@@ -1,0 +1,55 @@
+:javascript
+	$().ready(function() {
+		$("#tabs").tabs();
+		$("#vtabs").jVertTabs();
+	});
+
+- if specials.size > 0
+	%b= "// daily specials"
+	#tabs
+		%ul
+			- 7.times do |i|
+				%li 
+					%a( href="#tabs-#{i}")
+						= Date::ABBR_DAYNAMES[i]
+		- 7.times do |i|
+			- no_specials = true
+			%div{:id => "tabs-#{i}"}
+				- specials.each do |special|					
+					- if special.day == i
+						- no_specials = false
+						%h3= special.event.name
+						= ratings_for special
+						%p= special.event.event_details[0].desc
+						- use_from_time = (special.use_event_time) ? special.event.event_details[0].time_from : "date.event_details[0].time_from"
+						- use_to_time = (special.use_event_time) ? special.event.event_details[0].time_to : "date.event_detail.time_to"
+						= use_from_time.strftime("from: %l%p") + use_to_time.strftime(" to: %l%p")
+						
+
+				- if no_specials
+					= "no specials today"
+- if shows.size > 0
+	%b= "//events"
+	#vtabs
+		%div
+			%ul
+				- shows.each do |s|
+					%li
+						%a( href="#vtab-#{s.id}")
+							= s.event.name
+							= s.date
+		%div
+			- shows.each do |s|
+				%div{:id => "#vtab-#{s.id}"}
+					%h3= s.event.name
+					%p= s.event.event_details[0].desc
+					%p
+						= ("door price: " + real_currency(s.event.event_details[0].price_at_door)) if s.event.event_details[0].price_at_door
+						= (" advance price: " + real_currency(s.event.event_details[0].price_advance)) if s.event.event_details[0].price_advance
+					%p= s.event.events_types.collect { |t| link_to(t.event_type.name, t.event_type) }.join(', ')
+	
+
+		
+			
+
+			

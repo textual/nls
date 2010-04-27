@@ -1,0 +1,64 @@
+.vtabs {
+	position: relative;  border: 1px solid #ffffff;
+}
+.vtabs .vtabs-tab-column {
+	position: absolute; left: 0; margin: 0; /*width: 10%;*/ min-width: 150px;
+}
+.vtabs .vtabs-tab-column ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+/* css for tab that is open */
+.vtabs .vtabs-tab-column ul li.open, .vtabs .vtabs-tab-column ul li.closed {
+	background-color: #eeeeee;
+	margin: 0px;
+	padding-left: 3px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	margin-bottom: 1px;
+	/* round corners do not work in IE */
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+}
+/* css for tab that is closed */
+.vtabs .vtabs-tab-column ul li.closed {
+	background-color: #bbbbbb;
+	border-right: 1px solid #a0a0a0;
+}
+/* css for tab hover */	
+.vtabs .vtabs-tab-column ul li:hover {
+	background-color: #D6DBEB;
+}
+/* css for link on tab that's open */
+.vtabs .vtabs-tab-column ul li a.open, .vtabs .vtabs-tab-column ul li a.closed {
+	font: 11px/14px arial, helvetica, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	color: #9C3A00;
+	font-weight: bold;
+}
+/* css for link on tab that's closed */
+.vtabs .vtabs-tab-column ul li a.closed {
+	color: #777777;
+}	
+.vtabs .vtabs-content-column {
+	padding: 0px;
+	margin: 0px;
+}
+/* css for the content panels */
+.vtabs .vtabs-content-column .vtabs-content-panel {
+	background-color: #eeeeee;
+	padding: 3px;
+	margin: 0px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;	
+	-webkit-border-bottom-left-radius: 3px;	
+}

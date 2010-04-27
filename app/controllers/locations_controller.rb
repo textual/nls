@@ -1,5 +1,5 @@
 include Geokit::Geocoders
-require 'flickr_fu'
+
 
 class LocationsController < ApplicationController
   
@@ -10,12 +10,12 @@ class LocationsController < ApplicationController
   # GET /locations.xml
   def index
     @locations = Location.all(:order => "created_at DESC")
+    @filename = "/locations.xml"
     @zoom_level = 4;
     
-    @cities = Location.find_by_sql("SELECT city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
-    
-    @filename = "/locations.xml"
-    
+    get_cities
+    #@cities = Location.find_by_sql("SELECT city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
+      
     respond_to do |format|
       format.html 
       format.xml {render :action => 'locations.xml.builder'}
@@ -24,7 +24,8 @@ class LocationsController < ApplicationController
   
   def city
     @locations = Location.all(:conditions => ["city = ?", params[:id]], :order => "created_at DESC")
-    @cities = Location.find_by_sql("SELECT city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
+    get_cities
+    #@cities = Location.find_by_sql("SELECT city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
     
     @filename =  "/locations/city/" + params[:id] + ".xml"
     @zoom_level = 11
@@ -37,12 +38,12 @@ class LocationsController < ApplicationController
   
   # GET /locations/1
   # GET /locations/1.xml
-  def show
+  def show    
+    
     @location = Location.find(params[:id])
     @zoom_level = 13
     
-    flickr = Flickr.new('flickr.yml')
-    @photos = flickr.photos.search(:lat => @location.lat, :lon => @location.lng, :per_page => 4, :radius => 10, :media => 'photos')
+    get_flickr_photos(@location)
     
     respond_to do |format|
       format.html # show.html.erb
@@ -121,8 +122,23 @@ class LocationsController < ApplicationController
     end
   end
   
-  # PRIVATE
+  def search
+    @query = params[:query]
+    @locations = Location.search(@query)
+    get_cities
+    
+    @filename =  "/locations.xml"
+    
+     respond_to do |format|
+        format.html {render :action => 'index'}
+        format.xml {render :action => 'locations.xml.builder'}
+      end
+  end
   
+  # PRIVATE
+  def get_cities
+    @cities = Location.find_by_sql("SELECT city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
+  end
 
   def validate_location
     @loc = Location.geocode(@location.full_address)

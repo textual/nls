@@ -8,7 +8,7 @@
 			</div>
 			<div class="blog_main">
 				<h3><%= link_to post.title, post %></h3>
-				<p><%=h post.content %></p>
+				<p><%= format_content( post.content ) %></p>
 				<div class="posted_by">posted by <%= link_to post.user.login, post.user %></div>
 				<% if authorized? %>
 					<div class="admin">

@@ -23,6 +23,9 @@ Rails::Initializer.run do |config|
   #config.gem "paperclip"
   config.gem "linguistics"
   config.gem "acts_as_tree"
+  config.gem "ajaxful_rating"
+  config.gem "authlogic"
+  config.gem "jrails"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

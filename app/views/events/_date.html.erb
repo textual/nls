@@ -1,0 +1,14 @@
+<div class="event_date">
+
+    <%= form.label :day %>
+    <%# form.text_field :day, :size => 15 %><br/>
+		<% 7.times do |i|%>
+			<span class="day_check"><%= check_box_tag "event[event_dates_attributes][0][day][]", i %> <%= Date::DAYNAMES[i] %>&nbsp;</span>
+		<% end %>
+		<hr/>
+</div>
+<p>
+  <%= form.label :desc %>:<br/>
+  <%= form.text_area :desc, :size => "65x5" %>
+</p>
+

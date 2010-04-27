@@ -5,8 +5,11 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>nls</title>
-  <%= stylesheet_link_tag 'scaffold', 'reset', 'text', '960', 'style', 'stars', 'buttons' %>
-  <%= javascript_include_tag 'jquery-1.4.2.js', 'jquery.validate.js', 'jquery-lightbox/js/jquery.lightbox.js', 'application' , 'star_rating'%>
+  <%= stylesheet_link_tag 'scaffold', 'reset', 'text', '960', 'style', 'stars', 'buttons', 'smoothness/jquery-ui-1.8.custom', 'jquery-jvert-tabs-1.1.3' %>
+  <%= javascript_include_tag 'jquery.js', 'jquery-ui-1.8.custom.min', 'jquery.validate.js', 'jquery-lightbox/js/jquery.lightbox.js', 'jquery-jvert-tabs-1.1.3',  'star_rating', 'application'%>
+	
+	<%= ajaxful_rating_style %>
+	
 	<script type="text/javascript">
 		$(function(){
 			$.Lightbox.construct({
@@ -32,11 +35,11 @@
 			<div class="clear"></div>
 		</div>
 		
-		<div id="content">
+		<div id="content">		
 			<div class="grid_2">
 				<%= render :partial => 'users/user_bar'%>
 			</div>
-			<div class="grid_10">
+			<div class="grid_10 right_align">
 				<%= yield %>
 			</div>
 			<div class="clear"></div>

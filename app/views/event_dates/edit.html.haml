@@ -1,0 +1,89 @@
+:javascript
+	$().ready(function() {
+		$('#expiry_date').datepicker({
+			showOn: 'button',
+			buttonImage: '/images/icons/calendar.png',
+			buttonImageOnly: true,
+			dateFormat: 'yy-mm-dd',
+			showAnim: 'fadeIn'
+		});
+		
+		$('#event_date_use_event_price').click(function(){
+			if ($('#event_date_use_event_price').is(':checked'))
+			{
+			  alert('use event price');
+			}
+			else
+			{	
+				alert('use event date price'); 
+			}
+		
+		   
+		});
+		
+		
+	});
+	
+	
+#div.grid_7.left_align
+	%h1= @event_date.event.location.name
+	%h3= "edit " + @event_date.event.name + " for " + (@event_date.date ? @event_date.date.strftime("%B %d %Y") : Date::DAYNAMES[@event_date.day])
+	
+	- form_for(@event_date) do |f|
+		= f.error_messages
+
+		.form_line
+			.form_label= "name"
+			.form_data= @event_date.event.name
+		.form_line
+			.form_label= "type"
+			.form_data
+				- @event_date.event.events_types.each do |t|
+					= t.event_type.name
+		.form_line
+			.form_label= "when"
+			.form_data
+				= (@event_date.day) ? Date::DAYNAMES[@event_date.day] : @event_date.date
+		.form_line
+			.form_label= "Time"
+			.form_data
+				= f.check_box :use_event_time
+				= " use event time?"
+				%br
+				from: 
+				= time_select 'event[event_details_attributes][0]', 'time_from', {:default => Time.now.change(:hour => 17), :simple_time_select => true, :minute_interval => 10, :time_separator => "" } 
+				to: 
+				= time_select 'event[event_details_attributes][0]', 'time_to', {:default => Time.now.change(:hour => 18), :simple_time_select => true, :minute_interval => 10, :time_separator => "" } 
+				all day? 
+				= check_box_tag "event[event_details_attributes][0][time_all_day]"
+		
+		.form_line
+			.form_label= "Description"
+			.form_data
+				= f.check_box :use_event_desc 
+				= " use event description?"
+				%br
+				= text_area_tag "event[event_details_attributes][0][desc]", @event_date.event.event_details[0].desc  , :size => '45x7', :disabled => true
+		
+		.form_line
+			.form_label= "Price"
+			.form_data
+				= f.check_box :use_event_price
+				= " use event price?"
+				%br
+				price in advance $
+				= text_field_tag :price_advance, @event_date.event.event_details[0].price_advance, :size => 5
+				expires:
+				%input( type="text" class="datepicker" id="expiry_date" name="event[event_details_attributes][0][price_advance_expires]")
+				%br
+				price at the door $
+				= text_field_tag :price_door, @event_date.event.event_details[0].price_at_door, :size => 5
+				%br
+				purchase url:
+				= text_field_tag :purchase_url, @event_date.event.event_details[0].purchase_url
+						
+		.form_line
+			.form_label= "&nbsp;"
+			.form_data.no_border
+				= link_to "cancel", @event_date.event, :class => 'medium red awesome'
+				= f.submit 'Edit', :class => 'medium green awesome'

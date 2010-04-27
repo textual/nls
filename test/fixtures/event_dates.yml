@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  day: 1
+  date: 2010-03-25
+  from: 2010-03-25 15:29:14
+  to: 2010-03-25 15:29:14
+  all_day: false
+  desc: MyText
+  price_advance: 9.99
+  price_door: 9.99
+  purchase_url: MyString
+  rating: 1
+  event: 
+
+two:
+  day: 1
+  date: 2010-03-25
+  from: 2010-03-25 15:29:14
+  to: 2010-03-25 15:29:14
+  all_day: false
+  desc: MyText
+  price_advance: 9.99
+  price_door: 9.99
+  purchase_url: MyString
+  rating: 1
+  event: 

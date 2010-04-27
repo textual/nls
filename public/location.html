@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0034)http://localhost:3000/locations/35 -->
+<!-- saved from url=(0046)http://localhost:3000/locations/49/events/new# -->
 <HTML xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <TITLE>nls</TITLE>
@@ -9,17 +9,27 @@
 <LINK href="./location_files/960.css" media="screen" rel="stylesheet" type="text/css">
 <LINK href="./location_files/style.css" media="screen" rel="stylesheet" type="text/css">
 <LINK href="./location_files/stars.css" media="screen" rel="stylesheet" type="text/css">
-  <SCRIPT src="./location_files/prototype.js" type="text/javascript"></SCRIPT>
-<SCRIPT src="./location_files/effects.js" type="text/javascript"></SCRIPT>
-<SCRIPT src="./location_files/dragdrop.js" type="text/javascript"></SCRIPT>
-<SCRIPT src="./location_files/controls.js" type="text/javascript"></SCRIPT>
+<LINK href="./location_files/buttons.css" media="screen" rel="stylesheet" type="text/css">
+<LINK href="./location_files/jquery-ui-1.8.custom.css" media="screen" rel="stylesheet" type="text/css">
+  <SCRIPT src="./location_files/jquery-1.4.2.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="./location_files/jquery-ui-1.8.custom.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="./location_files/jquery.validate.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="./location_files/jquery.lightbox.js" type="text/javascript"></SCRIPT>
 <SCRIPT src="./location_files/application.js" type="text/javascript"></SCRIPT>
-<STYLE type="text/css">@media print{.gmnoprint{display:none}}@media screen{.gmnoscreen{display:none}}</STYLE><SCRIPT type="text/javascript" charset="UTF-8" src="./location_files/{mod_drag,mod_ctrapi,mod_scrwh}.js"></SCRIPT></HEAD><BODY>
+<SCRIPT src="./location_files/star_rating.js" type="text/javascript"></SCRIPT>
+	<SCRIPT type="text/javascript">
+		$(function(){
+			$.Lightbox.construct({
+				show_linkback:	false,
+				opacity: 0.6,
+			});
+		});</SCRIPT>
+<LINK type="text/css" rel="stylesheet" media="screen" href="./location_files/jquery.lightbox.css" id="lightbox-stylesheet-lightbox"><SCRIPT type="text/javascript" src="./location_files/jquery.lightbox(1).js" id="lightbox-script-lightbox"></SCRIPT></HEAD><BODY>
 	<DIV class="container_12">
 		
 		<DIV id="header">
 			<DIV class="grid_4 prefix_2">
-				<A href="http://localhost:3000/"><IMG alt="Logo" src="./location_files/logo.gif"></A>
+				<A href="http://localhost:3000/"><IMG alt="Logo" src="./location_files/logo.gif" width="220"></A>
 			</DIV>
 			<DIV class="grid_6">
 				<DIV id="messages">
@@ -34,7 +44,7 @@
 		<DIV id="content">
 			<DIV class="grid_2">
 				<DIV class="side_bar">
-  <DIV id="user-bar-greeting">hello <A href="http://localhost:3000/users/4" class="nickname" title="nadskram">nadskram</A></DIV>
+  <DIV id="user-bar-greeting">hello <A href="http://localhost:3000/users/3" class="nickname" title="textual">textual</A></DIV>
   <DIV id="user-bar-action">(<A href="http://localhost:3000/logout" title="Log out">Log out</A>)</DIV>
 </DIV>
 
@@ -42,228 +52,159 @@
 <UL id="navigation">
 	<LI><A href="http://localhost:3000/">home</A></LI>
 	<LI><A href="http://localhost:3000/locations">locations</A></LI>
+	<LI><A href="http://localhost:3000/events">events</A></LI>
 	<LI><A href="http://localhost:3000/posts">blog</A></LI>
 	
+		 <LI><A href="http://localhost:3000/admin">admin</A></LI>
+	
 </UL>
+<DIV class="ads">
+	<IMG src="./location_files/skyscraper.gif">
+</DIV>
 			</DIV>
-			<DIV class="grid_8" style="background-color:#ddd;">
-				<DIV class="grid_3" style="background-color:#eee; margin-left:0px;">
-	
-<DIV id="map" align="right" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(151, 151, 151); border-right-color: rgb(151, 151, 151); border-bottom-color: rgb(151, 151, 151); border-left-color: rgb(151, 151, 151); min-width: 218px; min-height: 218px; height: 218px; width: 218px; position: relative; background-color: rgb(229, 227, 223); "><DIV style="position: absolute; left: 0px; top: 0px; overflow-x: hidden; overflow-y: hidden; width: 100%; height: 100%; "><DIV style="left: 0px; top: 0px; z-index: 0; position: absolute; cursor: url(http://maps.gstatic.com/intl/en_us/mapfiles/openhand_8_8.cur), default; "><DIV style="position: absolute; left: 0px; top: 0px; display: none; "><DIV style="position: absolute; left: 0px; top: 0px; z-index: 0; "><IMG style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; " src="./location_files/transparent.png"><IMG style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; " src="./location_files/transparent.png"><IMG style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; " src="./location_files/transparent.png"><IMG style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; " src="./location_files/transparent.png"><IMG style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; " src="./location_files/transparent.png"><IMG style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; " src="./location_files/transparent.png"><IMG style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; " src="./location_files/transparent.png"><IMG style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; " src="./location_files/transparent.png"><IMG style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; " src="./location_files/transparent.png"></DIV></DIV><DIV style="position: absolute; left: 0px; top: 0px; "><DIV style="position: absolute; left: 0px; top: 0px; z-index: 0; "><IMG style="-webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; position: absolute; left: -135px; top: -254px; width: 256px; height: 256px; " src="./location_files/lyrs=m@118&hl=en&src=api&x=1429&y=3306&z=13&s=G"><IMG style="-webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; position: absolute; left: -135px; top: 2px; width: 256px; height: 256px; " src="./location_files/lyrs=m@118&hl=en&src=api&x=1429&y=3307&z=13&s=Ga"><IMG style="-webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; position: absolute; left: -135px; top: 258px; width: 256px; height: 256px; " src="./location_files/lyrs=m@118&hl=en&src=api&x=1429&y=3308&z=13&s=Gal"><IMG style="-webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; position: absolute; left: 121px; top: -254px; width: 256px; height: 256px; " src="./location_files/lyrs=m@118&hl=en&src=api&x=1430&y=3306&z=13&s=Gali"><IMG style="-webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; position: absolute; left: 121px; top: 2px; width: 256px; height: 256px; " src="./location_files/lyrs=m@118&hl=en&src=api&x=1430&y=3307&z=13&s=Galil"><IMG style="-webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; position: absolute; left: 121px; top: 258px; width: 256px; height: 256px; " src="./location_files/lyrs=m@118&hl=en&src=api&x=1430&y=3308&z=13&s=Galile"><IMG style="-webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; position: absolute; left: 377px; top: -254px; width: 256px; height: 256px; " src="./location_files/lyrs=m@118&hl=en&src=api&x=1431&y=3306&z=13&s=Galileo"><IMG style="-webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; position: absolute; left: 377px; top: 2px; width: 256px; height: 256px; " src="./location_files/lyrs=m@118&hl=en&src=api&x=1431&y=3307&z=13&s="><IMG style="-webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; position: absolute; left: 377px; top: 258px; width: 256px; height: 256px; " src="./location_files/lyrs=m@118&hl=en&src=api&x=1431&y=3308&z=13&s=G"></DIV></DIV><DIV style="position: absolute; left: 0px; top: 0px; z-index: 100; "></DIV><DIV style="position: absolute; left: 0px; top: 0px; z-index: 101; "></DIV><DIV style="position: absolute; left: 0px; top: 0px; z-index: 102; "><IMG style="width: 37px; height: 34px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; z-index: -1.04692e+08; position: absolute; left: 101px; top: 76px; " src="./location_files/shadow50.png" class="gmnoprint"><IMG style="width: 37px; height: 34px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; z-index: -1.04692e+08; position: absolute; left: 101px; top: 76px; " src="./location_files/dithshadow.gif" class="gmnoscreen"></DIV><DIV style="position: absolute; left: 0px; top: 0px; z-index: 103; "></DIV><DIV style="position: absolute; left: 0px; top: 0px; z-index: 104; cursor: default; "><IMG style="width: 20px; height: 34px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; z-index: -1.04692e+08; position: absolute; left: 101px; top: 76px; " src="./location_files/marker.png"></DIV><DIV style="position: absolute; left: 0px; top: 0px; z-index: 105; "></DIV><DIV style="position: absolute; left: 0px; top: 0px; z-index: 106; "><IMG style="width: 20px; height: 34px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; z-index: -1.04692e+08; cursor: pointer; position: absolute; left: 101px; top: 76px; " src="./location_files/markerTransparent.png" class="gmnoprint" id="mtgt_unnamed_0"></DIV><DIV style="position: absolute; left: 0px; top: 0px; z-index: 107; cursor: default; "></DIV></DIV></DIV><DIV class="gmnoprint" style="-webkit-user-select: none; z-index: 0; position: absolute; left: 2px; bottom: 2px; " id="logocontrol"><A title="Click to see this area on Google Maps" href="http://maps.google.com/maps?ll=32.716254,-117.160118&spn=0.031774,0.037766&z=13&key=ABQIAAAAdBD8zfYkYr-018qXmU9flhTsVWEftVMjtyZPkQinvvuXLmgWNRQacCnh1XxIIBAimN7uM4GXv1fNxA&mapclient=jsapi&oi=map_misc&ct=api_logo" target="_blank"><IMG style="width: 62px; height: 30px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; cursor: pointer; " src="./location_files/poweredby.png"></A></DIV><DIV style="-webkit-user-select: none; z-index: 0; position: absolute; right: 3px; bottom: 2px; font-family: Arial, sans-serif; font-size: 11px; white-space: nowrap; text-align: right; color: black; " dir="ltr"><SPAN></SPAN><SPAN>Map data ©2010  Google, INEGI - </SPAN><A href="http://www.google.com/intl/en_us/help/terms_maps.html" target="_blank" class="gmnoprint terms-of-use-link" style="color: rgb(119, 119, 204); ">Terms of Use</A><SPAN></SPAN></DIV><DIV style="-webkit-user-select: none; z-index: 0; position: absolute; left: 7px; top: 7px; overflow-x: hidden; overflow-y: hidden; text-align: left; width: 59px; height: 109px; " class="gmnoprint"><DIV style="position: absolute; left: 0px; top: 0px; width: 59px; height: 62px; "><DIV style="width: 59px; height: 62px; overflow-x: hidden; overflow-y: hidden; position: absolute; left: 0px; top: 0px; "><IMG style="position: absolute; left: 0px; top: 0px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; -webkit-user-drag: none; " src="./location_files/mapcontrols2.png"></DIV><DIV style="position: absolute; left: 20px; top: 0px; width: 18px; height: 18px; cursor: pointer; " title="Pan up" log="pan_up"></DIV><DIV style="position: absolute; left: 0px; top: 20px; width: 18px; height: 18px; cursor: pointer; " title="Pan left" log="pan_lt"></DIV><DIV style="position: absolute; left: 40px; top: 20px; width: 18px; height: 18px; cursor: pointer; " title="Pan right" log="pan_rt"></DIV><DIV style="position: absolute; left: 20px; top: 40px; width: 18px; height: 18px; cursor: pointer; " title="Pan down" log="pan_down"></DIV><DIV style="position: absolute; left: 20px; top: 20px; width: 18px; height: 18px; cursor: pointer; " title="Return to the last result" log="center_result"></DIV></DIV><DIV style="width: 59px; overflow-x: hidden; overflow-y: hidden; position: absolute; left: 0px; top: 62px; height: 24px; " id="lmcslider"><DIV style="width: 59px; height: 292px; overflow-x: hidden; overflow-y: hidden; "><IMG style="position: absolute; left: 0px; top: -62px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; -webkit-user-drag: none; " src="./location_files/mapcontrols2.png"></DIV><DIV style="position: absolute; left: 20px; top: 0px; width: 18px; height: 18px; cursor: pointer; " title="Zoom In"></DIV></DIV><DIV style="width: 59px; height: 30px; text-align: left; z-index: -1; position: absolute; left: 0px; top: 79px; "><DIV style="width: 59px; height: 30px; overflow-x: hidden; overflow-y: hidden; position: absolute; "><IMG style="position: absolute; left: 0px; top: -354px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; -webkit-user-drag: none; " src="./location_files/mapcontrols2.png"></DIV><DIV style="position: absolute; left: 20px; top: 11px; width: 18px; height: 18px; cursor: pointer; " title="Zoom Out"></DIV></DIV><DIV style="position: absolute; left: 19px; top: 86px; width: 22px; visibility: hidden; cursor: pointer; height: 10px; " id="lmczb"><DIV style="width: 22px; height: 14px; overflow-x: hidden; overflow-y: hidden; visibility: hidden; cursor: url(http://maps.gstatic.com/intl/en_us/mapfiles/openhand_8_8.cur), default; position: absolute; left: 0px; top: 48px; " title="Drag to zoom"><IMG style="position: absolute; left: 0px; top: -384px; -webkit-user-select: none; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; -webkit-user-drag: none; " src="./location_files/mapcontrols2.png"></DIV></DIV></DIV><DIV style="width: 60px; height: 40px; visibility: hidden; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; -webkit-user-select: none; z-index: 0; " id="map_magnifyingglass" class="gmnoprint"><DIV style="width: 6px; height: 4px; line-height: 1px; font-size: 1px; border-top-width: 2px; border-top-style: solid; border-top-color: rgb(255, 0, 0); border-right-width: 0px; border-right-style: initial; border-right-color: initial; border-bottom-width: 0px; border-bottom-style: initial; border-bottom-color: initial; border-left-width: 2px; border-left-style: solid; border-left-color: rgb(255, 0, 0); "></DIV><DIV style="width: 6px; height: 4px; line-height: 1px; font-size: 1px; border-top-width: 2px; border-top-style: solid; border-top-color: rgb(255, 0, 0); border-right-width: 2px; border-right-style: solid; border-right-color: rgb(255, 0, 0); border-bottom-width: 0px; border-bottom-style: initial; border-bottom-color: initial; border-left-width: 0px; border-left-style: initial; border-left-color: initial; "></DIV><DIV style="width: 6px; height: 4px; line-height: 1px; font-size: 1px; border-top-width: 0px; border-top-style: initial; border-top-color: initial; border-right-width: 2px; border-right-style: solid; border-right-color: rgb(255, 0, 0); border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: rgb(255, 0, 0); border-left-width: 0px; border-left-style: initial; border-left-color: initial; "></DIV><DIV style="width: 6px; height: 4px; line-height: 1px; font-size: 1px; border-top-width: 0px; border-top-style: initial; border-top-color: initial; border-right-width: 0px; border-right-style: initial; border-right-color: initial; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: rgb(255, 0, 0); border-left-width: 2px; border-left-style: solid; border-left-color: rgb(255, 0, 0); "></DIV></DIV></DIV>
-<SCRIPT src="./location_files/maps" type="text/javascript"></SCRIPT><SCRIPT src="./location_files/main.js" type="text/javascript"></SCRIPT>
-<SCRIPT type="text/javascript">
-  var map_location = new GLatLng(0, 0);
-  var map;
+			<DIV class="grid_10">
+				<H1>create event for tom and i</H1>
 
-  function show_path(id) {
-    var show_path = "/locations?id=REPLACEME";
-    return show_path.replace("REPLACEME", id);
-  }
-
-  function new_path() {
-    return "/locations";
-  }
-
-  function createMarker(point, label, html, id) {
-    var mark1 = new GMarker(point);
-    mark1.enableDragging();
-    mark1.bouncy = true;
-    GEvent.addListener(mark1, "click",
-      function() {
-        map_location = mark1.getPoint();
-        map.panTo(map_location);
-        var link = "";
-        if (id != "") {
-       
-		
-            link = "<br/><a href='/locations/" + id + "'>More...</a>";
-            mark1.openInfoWindowHtml("<div align='left'><strong>" + label + "</strong><br/>"
-              + html + link + "</div>");
-	
-       
-        } 
-		//else {
-			//alert("not adding info window");
-			//mark1.openInfoWindowHtml("<div align='left'><strong>" + label + "</strong><br/>" + html + link + "</div>");
-        //}
-      }
-    );
-    return mark1;
-  }
-  
- function initialize() {
-   if (GBrowserIsCompatible()) {
-     map = new GMap2(document.getElementById("map"));
-     map.setCenter(map_location, 16);
-     map.setZoom(2);
-     map.addControl(new GLargeMapControl());
-     //map.addControl(new GHierarchicalMapTypeControl());
-     map.enableScrollWheelZoom();
-     map.enableDoubleClickZoom();
-     map.setMapType(G_NORMAL_MAP);
-   }
- }  
-  
- function textFor(element, tag) {
-   return element.getElementsByTagName(tag)[0].firstChild.nodeValue;
- }
-
- function addPoints(points) {
-   var totlat = 0.0;
-   var totlon = 0.0;
-   var avcount = 0;
-   for (var i = 0; i < points.length; i++) {
-     m = points[i];
-     // obtain the attribues of each marker
-     var lat = parseFloat(textFor(m, "latitude"));
-     var lng = parseFloat(textFor(m, "longitude"));
-     totlat = totlat + lat;
-     totlon = totlon + lng;
-     avcount = avcount + 1;
-     var point = new GLatLng(lat,lng);
-     var html = textFor(m, "description");
-     var label = textFor(m, "title");
-     // create the marker
-     var id ="";
-     if (points.length > 1) {
-       id = textFor(m, "id");
-     }
-     var marker = createMarker(point,label,html, id);
-     map.addOverlay(marker);
-   }
-   return new GLatLng(totlat / avcount, totlon / avcount);
- }
-
- function loadXml(url) {
-   var request = GXmlHttp.create();
-   request.open("GET", url, true);
-   request.onreadystatechange = function() {
-     if (request.readyState == 4) {
-       var xmlDoc = GXml.parse(request.responseText);
-       var points = new Array();
-       points[0] = xmlDoc.documentElement;
-       var multi = (points[0].getElementsByTagName("datum").length > 0);
-       if (multi) {
-         points=points[0].getElementsByTagName("datum");
-       }
-       center = addPoints(points);
-       map.setCenter(center);
-       if (multi) {
-         map.setZoom(4);
-       } else {
-         map.setZoom(13);
-       }
-     }
-   }
-   request.send(null);
- }
- initialize();
-	loadXml('35.xml');
-
+<DIV class="grid_7 left_align">
+	<FORM action="http://localhost:3000/locations/49/events" class="new_event" id="new_event" method="post"><DIV style="margin:0;padding:0;display:inline"><INPUT name="authenticity_token" type="hidden" value="Hhp+DnGmzfMu1n9yKvk6+aLM+ueA/2IBE3IrmZYwWNs="></DIV>
+		<SCRIPT type="text/javascript">
+  //<![CDATA[
+    $().ready(function() {
+    	var template = jQuery.format($("#date_template").val());
+    	function addRow() {
+    		alert("adding a row");
+    		$(template(i)).appendTo("#date_holder");
+    		$('#date' + i).datepicker({
+    			showOn: 'button',
+    			buttonImage: '/images/icons/calendar.png',
+    			buttonImageOnly: true,
+    			showAnim: 'fadeIn'
+    		});
+    		i++;
+    	}
+    
+    	var i = 0;
+    	// start with one row
+    	addRow();
+    	// add more rows on click
+    	$(".add_date").click(addRow);
+    });
+    
+    $(function() {
+    		$("#tabs").tabs();
+    });
+  //]]>
 </SCRIPT>
 
-
-	<DIV class="photos" style="margin-top:10px;">
-		
-			<A href="./location_files/location.html"><IMG alt="4408652639_f108f34bc8_t" src="./location_files/4408652639_f108f34bc8_t.jpg"></A>
-		
-			<A href="http://farm5.static.flickr.com/4016/4409419984_334c857a8c_b.jpg"><IMG alt="4409419984_334c857a8c_t" src="./location_files/4409419984_334c857a8c_t.jpg"></A>
-		
-			<A href="./location_files/location.html"><IMG alt="4408622497_c6750dd012_t" src="./location_files/4408622497_c6750dd012_t.jpg"></A>
-		
-		<P>neighborhood images via flickr</P>
-	</DIV>
-	<div class-"grid_3">
-		criteria or something could occupy this space. maybe user sumbitted photos. who knows.
-	</div>
-</DIV>
-
-<DIV class="grid_5" style="background-color:#eee;margin-right:0px;width:380px;">
-	<h1>house of blues</h1>
-
-</div>
-<DIV class="grid_8">
-		
-		
-	<DIV class="grid_2">
-		
-		1055 5th Ave<BR>
-		San Diego CA&nbsp;<IMG alt="Us" src="./location_files/us.png"><BR>
-		
-			<A href="http://localhost:3000/locations/35/edit">Edit Address</A>
-		
-	</DIV>
-
-	<DIV class="grid_2">
-		phone: (619) 299-2583<BR>
-		website: www.houseofblues.com/<BR>
-		
-			<A href="http://localhost:3000/locations/profile/35">Edit Info</A>
-		
-	</DIV>
-	<DIV class="grid_4">
-		overall rating:
-		<UL class="rating nostar"> 
-			<LI class="one">1</LI> 
-			<LI class="two">2</LI> 
-			<LI class="three">3</LI> 
-			<LI class="four">4</LI> 
-			<LI class="five">5</LI> 
-		</UL>
-	</DIV>
-	
-	<DIV class="grid_4">// reviews</DIV>
-	
-	
-	 
-	
-		<DIV class="grid_4">
-		
-			<FORM action="http://localhost:3000/locations/35/reviews" class="new_review" id="new_review" method="post"><DIV style="margin:0;padding:0;display:inline"><INPUT name="authenticity_token" type="hidden" value="4sKdzvytQplp4+zQ28pYO9EaTBtcocNJ3f/YO8jyXlU="></DIV>
-  	
-  	<INPUT id="review_rating" name="review[rating]" type="hidden">
-  	<DIV class="grid_2">
-    	<UL class="rating nostar" id="reviewer_rating"> 
-			<LI class="one"><A href="http://localhost:3000/locations/35#" onclick="change_rating(1, &#39;one&#39;);" title="1 Star">1</A></LI> 
-			<LI class="two"><A href="http://localhost:3000/locations/35#" onclick="change_rating(2, &#39;two&#39;);" title="2 Stars">2</A></LI> 
-			<LI class="three"><A href="http://localhost:3000/locations/35#" onclick="change_rating(3, &#39;three&#39;);" title="3 Stars">3</A></LI> 
-			<LI class="four"><A href="http://localhost:3000/locations/35#" onclick="change_rating(4, &#39;four&#39;);" title="4 Stars">4</A></LI> 
-			<LI class="five"><A href="http://localhost:3000/locations/35#" onclick="change_rating(5, &#39;five&#39;);" title="5 Stars">5</A></LI> 
-		</UL>
-		<INPUT id="review_submit" name="commit" type="submit" value="post review">
-   	</DIV>
-	<DIV class="grid_2">
-	    <TEXTAREA cols="30" id="review_comment" name="review[comment]" rows="3"></TEXTAREA>
-	</DIV>
-
-</FORM>
-				
-			 <BR>
-			
-		</DIV>
-	
+<P>
+  <LABEL for="event_name">Name</LABEL>
+  <INPUT id="event_name" name="event[name]" size="30" type="text">
+</P>
+<P>
+  <LABEL for="event_type">Type</LABEL>
+  <SELECT id="event_event_type_id" name="event[event_type_id]"><OPTION value="">-choose event type</OPTION>
+  <OPTION value="2">concert</OPTION>
+  <OPTION value="4">fashion show</OPTION>
+  <OPTION value="3">festival</OPTION>
+  <OPTION value="5">fundraiser</OPTION>
+  <OPTION value="9">gallery opening</OPTION>
+  <OPTION value="1">happy hour</OPTION>
+  <OPTION value="8">lecture</OPTION>
+  <OPTION value="7">play / theatre</OPTION>
+  <OPTION value="10">special</OPTION>
+  <OPTION value="6">tournament</OPTION></SELECT>
+  </P><DIV id="tabs">
+    <UL>
+      <LI>
+        <A href="http://localhost:3000/locations/49/events/new#tabs-1">days</A>
+      </LI>
+      <LI>
+        <A href="http://localhost:3000/locations/49/events/new#tabs-2">dates</A>
+      </LI>
+    </UL>
+ 
+  <DIV id="tabs-1">
+    <SPAN class="day_check">
+      <INPUT id="event_event_dates_attributes_0_day" name="event[event_dates_attributes][0][day]" type="checkbox" value="0">
+      Sunday
+    </SPAN>
+    <SPAN class="day_check">
+      <INPUT id="event_event_dates_attributes_1_day" name="event[event_dates_attributes][1][day]" type="checkbox" value="1">
+      Monday
+    </SPAN>
+    <SPAN class="day_check">
+      <INPUT id="event_event_dates_attributes_2_day" name="event[event_dates_attributes][2][day]" type="checkbox" value="2">
+      Tuesday
+    </SPAN>
+    <SPAN class="day_check">
+      <INPUT id="event_event_dates_attributes_3_day" name="event[event_dates_attributes][3][day]" type="checkbox" value="3">
+      Wednesday
+    </SPAN>
+    <SPAN class="day_check">
+      <INPUT id="event_event_dates_attributes_4_day" name="event[event_dates_attributes][4][day]" type="checkbox" value="4">
+      Thursday
+    </SPAN>
+    <SPAN class="day_check">
+      <INPUT id="event_event_dates_attributes_5_day" name="event[event_dates_attributes][5][day]" type="checkbox" value="5">
+      Friday
+    </SPAN>
+    <SPAN class="day_check">
+      <INPUT id="event_event_dates_attributes_6_day" name="event[event_dates_attributes][6][day]" type="checkbox" value="6">
+      Saturday
+    </SPAN>
+  </DIV>
+  <DIV id="tabs-2">
+    <DIV id="date_holder"></DIV>
+    <A href="./location_files/location.html" class="add_date"><IMG alt="Add" src="./location_files/add.png"></A>
+  </DIV>
+ </DIV>
+  <HR>
+  desc:
+  <TEXTAREA cols="45" id="event_date_desc" name="event_date[desc]" rows="7"></TEXTAREA>
+  from: = time_select 'event_date', 'from', {:default =&gt; Time.now.change(:hour =&gt; 17), :simple_time_select =&gt; true, :minute_interval =&gt; 10, :time_separator =&gt; "" }
+  to: = time_select 'event_date', 'to', {:default =&gt; Time.now.change(:hour =&gt; 18), :simple_time_select =&gt; true, :minute_interval =&gt; 10, :time_separator =&gt; "" }
+  all day? = check_box_tag "event_date[all_day]"
+<P></P>
+<P>
+  <A href="http://localhost:3000/locations/49" class="medium red awesome">cancel</A>
+  <INPUT class="medium green awesome" id="event_submit" name="commit" type="submit" value="Create">
+</P>
+	</FORM>
 </DIV>
 
 
 
+<HR>
+<PRE class="debug_dump">--- &amp;id001 !ruby/object:Event 
+attributes: 
+&nbsp; name: 
+&nbsp; location_id: 49
+&nbsp; event_type_id: 
+&nbsp; created_at: 
+&nbsp; updated_at: 
+attributes_cache: {}
 
+changed_attributes: 
+&nbsp; location_id: 
+errors: !ruby/object:ActiveRecord::Errors 
+&nbsp; base: *id001
+&nbsp; errors: {}
 
+event_dates: []
 
+new_record: true
+</PRE>
 
-
-			</DIV>
-			<DIV class="grid_2">
-				<DIV class="ads">
-					ads
-				</DIV>
 			</DIV>
 			<DIV class="clear"></DIV>
 		</DIV>
-		
+
 		<DIV id="footer">
 			<DIV class="grid_8 prefix_2">
 				<DIV id="bottom">
 					<A href="http://localhost:3000/">home</A> | <A href="http://localhost:3000/posts">blog</A> | <A href="http://localhost:3000/locations">locations</A>
+					
+						 | <A href="http://localhost:3000/">admin</A>
 					
 				</DIV>
 			</DIV>
@@ -284,4 +225,4 @@
 	pageTracker._trackPageview();
 	} catch(err) {}</SCRIPT>
 
-</BODY></HTML>
+<DIV id="lightbox-overlay" style="width: 1290px; height: 1246px; display: none; "><DIV id="lightbox-overlay-text"><P><SPAN id="lightbox-overlay-text-close">Click to close</SPAN><BR>&nbsp;<SPAN id="lightbox-overlay-text-interact" style="display: none; ">Hover to interact</SPAN></P></DIV></DIV><DIV id="lightbox" style="display: none; left: 0px; top: 201.6px; "><DIV id="lightbox-imageBox"><DIV id="lightbox-imageContainer"><IMG id="lightbox-image"><DIV id="lightbox-nav"><A href="./location_files/location.html" id="lightbox-nav-btnPrev"></A><A href="./location_files/location.html" id="lightbox-nav-btnNext"></A></DIV><DIV id="lightbox-loading"><A href="./location_files/location.html" id="lightbox-loading-link"><IMG src="./location_files/loading.gif"></A></DIV></DIV></DIV><DIV id="lightbox-infoBox"><DIV id="lightbox-infoContainer"><DIV id="lightbox-infoHeader"><SPAN id="lightbox-caption"><A href="./location_files/location.html" title="Download." id="lightbox-caption-title"></A><SPAN id="lightbox-caption-seperator"></SPAN><SPAN id="lightbox-caption-description"></SPAN></SPAN></DIV><DIV id="lightbox-infoFooter"><SPAN id="lightbox-currentNumber"></SPAN><SPAN id="lightbox-close"><A href="./location_files/location.html" id="lightbox-close-button" title="You can also click anywhere outside the image to close.">Close X</A></SPAN></DIV><DIV id="lightbox-infoContainer-clear"></DIV></DIV></DIV></DIV></BODY></HTML>

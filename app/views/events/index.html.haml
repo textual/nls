@@ -1,0 +1,58 @@
+:javascript
+	$().ready(function() {
+		$('#date').datepicker({
+			showOn: 'button',
+			buttonImage: '/images/icons/calendar.png',
+			buttonImageOnly: true,
+			dateFormat: 'yy-mm-dd',
+			showAnim: 'fadeIn',
+			showOtherMonths: true, 
+			selectOtherMonths: true,
+			
+			onSelect: function(dateText, inst) {
+				$('#event_date_select').submit();				
+			}
+			
+		});
+		
+	});
+
+.grid_8.left_align
+	#title
+		%h1= @events_title
+	#event_date
+		= form_tag("/events/index", :id => "event_date_select")
+		%input( type="text" class="datepicker" id="date" name="date" value="#{@event_date.to_s}")
+		
+			
+	%hr
+	= render :partial => 'locations/map', :locals => {:data => @filename, :wide_map => true, :zoom_level => @zoom_level}
+	%ul
+		- @events.each do |event| 
+			%li.first_box
+				.event_location.first_box
+					.event_where
+						%h3= link_to event.location.name , event.location
+						= show_stars(event.location.rating)
+																		
+					.event_what
+						= link_to event.name, event
+						%br
+						= event.event_dates[0].date ? event.event_dates[0].date.to_date.strftime("%A %B #{event.event_dates[0].date.to_date.day.ordinalize}") : Date::DAYNAMES[event.event_dates[0].day].pluralize
+						- time_from = event.event_details[0].time_from
+						- time_to = event.event_details[0].time_to
+						- time_all_day = event.event_details[0].time_all_day
+						= time_from.strftime("from: %l%p") + time_to.strftime(" to: %l%p")
+						= ratings_for event.event_dates[0], :small => true
+					.event_what
+						= format_content(event.event_details[0].desc)
+						
+						
+						
+						
+						
+						
+					
+					
+		
+

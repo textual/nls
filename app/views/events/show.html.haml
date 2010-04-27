@@ -1,0 +1,33 @@
+%div.grid_3.left_align
+	= render :partial => 'locations/map_bar', :locals => {:loc_id => @event.id}
+
+%div.grid_7.left_align
+	%h1= @event.name + " @ " + @event.location.name
+	%p= format_content(@event.event_details[0].desc)
+	%p
+		= ("door price: " + real_currency(@event.event_details[0].price_at_door)) if @event.event_details[0].price_at_door
+		= (" advance price: " + real_currency(@event.event_details[0].price_advance)) if @event.event_details[0].price_advance
+	%p= @event.events_types.collect { |t| link_to(t.event_type.name, t.event_type) }.join(', ')
+
+	- for date in @event.event_dates
+		= date.date ? date.date.to_date.strftime("%A %B #{date.date.to_date.day.ordinalize}") : Date::DAYNAMES[date.day].pluralize
+		- if date.use_event_time
+			- time_from = date.event.event_details[0].time_from
+			- time_to = date.event.event_details[0].time_to
+			- time_all_day = date.event.event_details[0].time_all_day
+		= time_from.strftime("from: %l%p") + time_to.strftime(" to: %l%p")
+		= ratings_for date
+			
+		-# 
+			when i can edit dates, i will 
+			link_to 'edit event date', edit_event_date_path(date)
+	
+	%br
+	-# link_to 'edit event', edit_event_path(@event) | 
+	= link_to @event.location.name, location_path(@event.location)
+	
+	%br
+	- if request.post? 
+		= debug params
+
+

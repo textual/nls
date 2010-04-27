@@ -54,7 +54,7 @@ class CriteriasController < ApplicationController
   def rate_location
     @location = Location.find(params[:id])
     #@my_ratings = current_user.location_criteria_ratings.for_location(@location.id)
-    puts @location
+    #puts @location
     if request.post?
       params[:rating].each do |c|
               
@@ -68,13 +68,13 @@ class CriteriasController < ApplicationController
           end
           
           #@rating = LocationCriteriaRating.find_or_create_by_user_id(current_user, :locations_criteria_id => c[0])
-          puts 'save ' + c[0] + " as " + c[1] + " in " + @rating.to_s
+          #puts 'save ' + c[0] + " as " + c[1] + " in " + @rating.to_s
           @rating.locations_criteria_id = c[0]
           @rating.rating = c[1]
           @rating.user = current_user
           @rating.save
           
-          puts("save " + LocationCriteriaRating.average("rating", :conditions => "locations_criteria_id = #{c[0]}").to_s + " as average")
+          #puts("save " + LocationCriteriaRating.average("rating", :conditions => "locations_criteria_id = #{c[0]}").to_s + " as average")
           @location_criteria.rating = LocationCriteriaRating.average("rating", :conditions => "locations_criteria_id = #{c[0]}")
           @location_criteria.save
           

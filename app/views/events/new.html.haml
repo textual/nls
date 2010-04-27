@@ -1,0 +1,9 @@
+%h1= "create event for " + @location.name
+
+#div.grid_7.left_align
+	- form_for([@location, @event]) do |f|
+		= render :partial => 'form', :object => f
+
+%hr
+= debug params
+

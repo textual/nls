@@ -28,7 +28,7 @@
   var map;
 
   function show_path(id) {
-    var show_path = "<%= url_for(:controller=>controller.controller_name, :action=>show_action, :id=>'REPLACEME') %>";
+    var show_path = "<%= url_for(:controller=>:locations, :action=>show_action, :id=>'REPLACEME') %>";
     return show_path.replace("REPLACEME", id);
   }
 
@@ -58,7 +58,7 @@
             });      
        <% else %>
 		
-            link = "<br/><a href='/<%=controller.controller_name%>/" + id + "'>More...</a>";
+            link = "<br/><a href='/<%=:locations%>/" + id + "'>More...</a>";
             mark1.openInfoWindowHtml("<div align='left'><strong>" + label + "</strong><br/>"
               + html + link + "</div>");
 	

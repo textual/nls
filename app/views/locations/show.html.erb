@@ -1,17 +1,5 @@
 <div class="grid_3 left_align">
-	<%= render :partial => 'map', :locals => {:data => "#{@location.id}.xml", :show_action => false, :zoom_level => @zoom_level}%>
-
-	<div class="photos">
-		<% @photos.each do |photo| %>
-			<%= link_to image_tag( photo.url(:square), :width => 100), photo.url(:medium), :rel => 'lightbox-group', :title => photo.title %>
-		<% end %>
-		<p>neighborhood images via flickr</p>
-	</div>
-	
-	<div class="grid_3 left_align">
-		<%= render :partial => 'criterias/locations_criteria', :locals => {:location => @location} %>
-	</div>
-	
+	<%= render :partial => 'map_bar', :locals => {:loc_id => @location.id}%>	
 </div>
 
 <div class="grid_5">
@@ -42,15 +30,12 @@
 	</div>	
 </div>
 
-<div class="grid_2 right_align">
-	<div class="ads">
-		tools - coming soon!
-		<ul id="navigation">
-			<li>favorites</li>
-			<li>i want to go here</li>
-			<li>+ photos</li>
-		</ul>
-	</div>
+
+<div class="grid_7 right_align top_pad">
+	<%= render :partial => 'events/specials', :locals => {:specials => @location.specials, :shows => @location.shows }%>
+	<% if authorized? || current_user == @location.user%>
+		<%= link_to 'add event', new_location_event_path(@location) %>
+	<% end %>
 </div>
 
 <div class="grid_7 right_align top_pad">

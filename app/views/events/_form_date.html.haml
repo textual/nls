@@ -1,0 +1,53 @@
+:javascript
+	$().ready(function() {	
+		var template = jQuery.format($("#date_template").val());
+		function addRow() {
+			$(template(i)).appendTo("#date_holder");
+			$('#date' + i).datepicker({
+				showOn: 'button',
+				buttonImage: '/images/icons/calendar.png',
+				buttonImageOnly: true,
+				showAnim: 'fadeIn'
+			});
+			i++;
+		}
+
+		var i = 0;
+		// start with one row
+		addRow();
+		// add more rows on click
+		$(".add_date").click(addRow);
+
+	});
+
+%textarea( style="display:none" id="date_template")
+	%div
+		%input( type="text" class="datepicker" id="date{0}" name="event[event_dates_attributes][#{0}][date]")
+	
+= form.error_messages
+%p
+	= form.label :name
+	= form.text_field :name
+
+%p
+	= form.label :type
+	= collection_select(:event, :event_type_id, @event_types, :id , :name, options = {:prompt => "-choose event type"})
+
+	#date_holder
+		= link_to (image_tag "/images/icons/add.png"), "#", :class => 'add_date'
+
+	%hr
+	desc:
+	%br
+	= text_area_tag "event_date[desc]", (@event.event_dates[0].desc if @event.event_dates[0]) , :size => "45x7"
+	%br
+	from: 
+	= time_select 'event_date', 'from', {:default => Time.now.change(:hour => 17), :simple_time_select => true, :minute_interval => 10, :time_separator => "" } 
+	to: 
+	= time_select 'event_date', 'to', {:default => Time.now.change(:hour => 18), :simple_time_select => true, :minute_interval => 10, :time_separator => "" } 
+	all day? 
+	= check_box_tag "event_date[all_day]"
+  
+%p
+	= link_to "cancel", @location, :class => 'medium red awesome'
+	= form.submit 'Create', :class => 'medium green awesome'

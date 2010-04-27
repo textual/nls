@@ -64,12 +64,17 @@ $(document).ready(function () {
 	});
 	
 	$("#new_review").validate({
-			
-			
 		    rules: {
 			 "review[comment]":{required:true}
 			}
 	});	
+	
+	$("#new_event").validate({
+		rules:{
+			"event[desc]":{required:true}
+		
+		}
+	})
 	
 	$("#new_review").submitWithAjax();
 	

@@ -1,0 +1,24 @@
+.grid_10.left_align
+	%ul
+		- @events.each do |event| 
+			%li.first_box.event_listing
+				.event_where
+					= link_to event.location.name , event.location
+					= show_stars(event.location.rating)
+																
+				.event_what
+					= link_to event.name, event
+					%br
+					= event.event_dates[0].date ? event.event_dates[0].date.to_date.strftime("%A %B #{event.event_dates[0].date.to_date.day.ordinalize}") : Date::DAYNAMES[event.event_dates[0].day].pluralize
+					- time_from = event.event_details[0].time_from
+					- time_to = event.event_details[0].time_to
+					- time_all_day = event.event_details[0].time_all_day
+					= time_from.strftime("from: %l%p") + time_to.strftime(" to: %l%p")
+					= ratings_for event.event_dates[0], :static, :small => true
+					- if authorized?
+						= link_to 'Edit', edit_event_path(event)  	
+						= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
+					
+				.event_desc
+					= format_content(event.event_details[0].desc)
+				

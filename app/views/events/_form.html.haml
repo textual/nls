@@ -1,0 +1,113 @@
+:javascript
+	$().ready(function() {
+		$("#tabs").tabs();
+		$('#expiry_date').datepicker({
+			showOn: 'button',
+			buttonImage: '/images/icons/calendar.png',
+			buttonImageOnly: true,
+			dateFormat: 'yy-mm-dd',
+			showAnim: 'fadeIn'
+		});
+		
+		var template = jQuery.format($("#date_template").val());
+		function addRow() {
+			$(template(i)).appendTo("#date_holder");
+			$('#date' + i).datepicker({
+				showOn: 'button',
+				buttonImage: '/images/icons/calendar.png',
+				buttonImageOnly: true,
+				dateFormat: 'yy-mm-dd',
+				showAnim: 'fadeIn'
+			});
+			i++;
+		}
+
+		var i = 0;
+		// start with one row
+		addRow();
+		// add more rows on click
+		$(".add_date").click(addRow);
+	});
+
+	$(function() {
+			$("#tabs").tabs();
+	});
+
+%textarea( style="display:none" id="date_template")
+	%div
+		%input( type="text" class="datepicker" id="date{0}" name="event[event_dates_attributes][{0}][date]")
+	
+= form.error_messages
+
+.form_line
+	.form_label= form.label :name
+	.form_data= form.text_field :name
+
+.form_line
+	.form_label= "Types"
+	.form_data
+		- @event_types.each do |t|
+			%span.day_check
+				= check_box_tag "event[events_types_attributes][#{t.id}][event_type_id]", t.id, @event.event_types.include?(t)
+				= t.name
+				
+.form_line
+	.form_label= "when"
+	.form_data
+		#tabs
+			%ul
+				%li 
+					%a( href="#tabs-1") days
+				%li
+					%a( href="#tabs-2") dates
+			#tabs-1
+				#days_holder
+					- 7.times do |i|
+						- checked = false
+						- @event.event_dates.each do |d|
+							- checked = true if d.day == i
+						%span.day_check
+							= check_box_tag "event[event_dates_attributes][#{i}][day]", i, checked
+							= Date::DAYNAMES[i]
+			#tabs-2
+				#date_holder
+				= link_to (image_tag "/images/icons/add.png"), "#", :class => 'add_date'
+
+.form_line
+	.form_label= "Time"
+	.form_data
+		from: 
+		= time_select 'event_data', 'time_from', {:default => Time.now.change(:hour => 17), :simple_time_select => true, :minute_interval => 10, :time_separator => "" } 
+		to: 
+		= time_select 'event_data', 'time_to', {:default => Time.now.change(:hour => 18), :simple_time_select => true, :minute_interval => 10, :time_separator => "" } 
+		all day? 
+		= check_box_tag "event[event_details_attributes][0][time_all_day]"
+						
+.form_line
+	.form_label= "Description"
+	.form_data= text_area_tag "event[event_details_attributes][0][desc]", @event.event_details[0].desc  , :size => '45x7'
+
+
+			
+.form_line
+	.form_label= "Price"
+	.form_data
+		price at the door $
+		= text_field_tag "event[event_details_attributes][0][price_at_door]", @event.event_details[0].price_at_door, :size => 5
+		%br
+		price in advance $
+		= text_field_tag "event[event_details_attributes][0][price_advance]", @event.event_details[0].price_advance, :size => 5
+		expires
+		%input( type="text" class="datepicker" id="expiry_date" name="event[event_details_attributes][0][price_advance_expires]")
+		%br
+		purchase url:
+		= text_field_tag "event[event_details_attributes][0][purchase_url]", @event.event_details[0].purchase_url
+		
+
+
+  
+.form_line
+	.form_label= "&nbsp;"
+	.form_data.no_border
+		= link_to "cancel", @location, :class => 'medium red awesome'
+		= form.submit 'Create', :class => 'medium green awesome'

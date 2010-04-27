@@ -6,6 +6,7 @@
 	height:16px;
 	margin:0px; /* 0 20px 0;*/
 	padding:0;
+	line-height: 4px;
 	list-style:none;
 	clear:both;
 	position:relative;
@@ -54,3 +55,19 @@ ul.rating li.four a:hover {background-position:0 -144px}
 ul.rating li.five a:hover {background-position:0 -160px}
 /* end rating code */
 h3{margin:0 0 2px 0;font-size:110%}
+
+/* jquery stars */
+#rating_cont { background: #1E1D1C url(/images/rating_background.jpg) top left no-repeat; border: 1px solid #F9BA0D; width: 140px; height: 23px; text-align: left; margin-left: 6px;}
+	#rating_on { background: url(/images/rating_onbackground.jpg) top left no-repeat; width: 0px; height: 21px; position: relative; z-index: 50; top: -21px; }
+#rated { display: none; width: 138px; padding: 3px 0px 3px 2px; height: 23px; background-color: #1E1D1C; height: 17px;font-size: 11px;color: #FFC910;}
+	#rated div { display: block; float: left; }
+	#rating { font-size: 11px; font-family: Arial, Helvetica, sans-serif; color: #FFC910; padding-left: 3px; width: 22px; }
+	#small_stars { height: 11px; width: 69px; background-image: url(/images/stars_small_sprite.jpg); background-position: 0px -11px; font-size:1px; line-height: 11px; margin-top:3px; }
+	#rate_edit { line-height: 17px; font-size: 11px; font-family: Arial, Helvetica, sans-serif; color: #FFF; padding-left: 9px; cursor: pointer; }
+	#rate_edit:hover { text-decoration: underline; }
+ 
+	#rating_btns { position: relative; z-index: 100; width: 140px; height: 21px;}
+	#rating_btns ul, #rating_btns li  { padding: 0; margin: 0; }
+	#rating_btns li { float: left; width: 14px; height: 21px; display: block; font-size: 1px; cursor: pointer; color: #1E1D1C;
+	 }
+	

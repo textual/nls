@@ -5,6 +5,7 @@ body	{
 ul	{
 	list-style-type: none;
 }
+
 #header	{
 	height:80px;
 	margin: 0px;
@@ -74,14 +75,10 @@ text-align:left;
 	border: 1px solid #ccc;
 	
 	margin-top:20px;
-	padding:0px;
+	padding:5px;
 	padding-bottom:5px;
 }
-li	{
-	color:#333;
-	margin-left: 5px;
-	padding-top: 5px;
-}
+
 #map_holder {
 	background-color:#900;
 	color:#fff;
@@ -110,11 +107,11 @@ li	{
 	padding-right:10px;
 	position:relative;
 }
-.photos	{
+#photos	{
 	padding-top:10px;
 }
-.photos img	{
-	margin:4px;
+#photos img	{
+	padding:4px;
 }
 
 .border	{
@@ -248,4 +245,84 @@ padding: 0;
 }
 .caution p {
 	margin-bottom:10px;
+}
+#days_holder	{
+	height:55px;
+}
+.day_check {
+	display:block;
+	float:left;
+	margin:3px;
+	width:100px;
+}
+
+.form_line	{
+	background-color:#eee;
+	clear:both;
+	
+	
+}
+.form_label {
+	
+	float:left;
+	padding:2px;
+	text-align: right;
+	width:80px;
+}
+.form_data {
+	border-left:2px solid #999;
+	float:right;
+	margin-bottom: 10px;
+	padding-left:10px;
+	position:relative;
+	width:435px;
+}
+.no_border {
+	border-left:none;
+	
+}
+
+#title	{
+	float:left;
+}
+#event_date {
+	float:right;
+}
+
+.event_listing  {
+
+
+}
+.event_location h3 {
+
+}
+.event_desc	{
+		float:left;
+	width:350px;
+	margin-bottom:10px;
+}
+.event_where {
+	float:left;
+	width:200px;
+}
+.event_what {
+	float:left;
+	width: 200px;
+	margin-bottom:10px;
+}
+
+.event_rating {
+	float:left;
+	margin-right: 10px;
+	width:80px;
+}
+#search_bar	{
+	background-color:#333;
+	color:#DDD;
+	margin-bottom: 10px;
+	padding:10px;
+}
+#search_bar input {
+	font-size:20px;
+	font-weight: bold;
 }

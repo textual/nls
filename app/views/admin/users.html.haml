@@ -1,0 +1,8 @@
+.grid_10.left_align
+	%table
+		- @users.each do |user|
+			%tr
+				%td
+					= link_to user.login, user
+				%td 
+					edit link
