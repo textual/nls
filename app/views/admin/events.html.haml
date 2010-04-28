@@ -15,8 +15,10 @@
 					- time_to = event.event_details[0].time_to
 					- time_all_day = event.event_details[0].time_all_day
 					= time_from.strftime("from: %l%p") + time_to.strftime(" to: %l%p")
-					= ratings_for event.event_dates[0], :static, :small => true
+					-#
+						= ratings_for event.event_dates[0], :static, :small => true
 					- if authorized?
+						%br
 						= link_to 'Edit', edit_event_path(event)  	
 						= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
 					
