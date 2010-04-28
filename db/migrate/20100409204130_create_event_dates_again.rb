@@ -5,9 +5,9 @@ class CreateEventDatesAgain < ActiveRecord::Migration
       t.integer :day
       t.date :date
       
-      t.boolean :use_event_desc, :default => 1
-      t.boolean :use_event_time, :default => 1
-      t.boolean :use_event_price, :default => 1
+      t.boolean :use_event_desc, :default => true
+      t.boolean :use_event_time, :default => true
+      t.boolean :use_event_price, :default => true
       
       t.integer :rating
       
