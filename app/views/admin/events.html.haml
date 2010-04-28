@@ -9,7 +9,8 @@
 				.event_what
 					= link_to event.name, event
 					%br
-					= event.event_dates[0].date ? event.event_dates[0].date.to_date.strftime("%A %B #{event.event_dates[0].date.to_date.day.ordinalize}") : Date::DAYNAMES[event.event_dates[0].day].pluralize
+					-#
+						= event.event_dates[0].date ? event.event_dates[0].date.to_date.strftime("%A %B #{event.event_dates[0].date.to_date.day.ordinalize}") : Date::DAYNAMES[event.event_dates[0].day].pluralize
 					- time_from = event.event_details[0].time_from
 					- time_to = event.event_details[0].time_to
 					- time_all_day = event.event_details[0].time_all_day
