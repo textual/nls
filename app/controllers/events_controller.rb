@@ -41,7 +41,7 @@ class EventsController < ApplicationController
   def new
     @location = Location.find(params[:location_id])
     @event = @location.events.build
-    #@event.event_details.build
+    @event.event_details.build
     @event_types = EventType.all(:order => 'name')
 
     respond_to do |format|
