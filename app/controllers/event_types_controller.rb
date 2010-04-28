@@ -26,7 +26,7 @@ class EventTypesController < ApplicationController
     @filename = "/event_types/"+ @event_type.id.to_s + ".xml"
     respond_to do |format|
       format.html { render "events/index"}
-      format.xml {render :action => '../events/events_location.xml.builder'}
+      format.xml {render :action => 'event_types_location.xml.builder'}
     end
   end
 
