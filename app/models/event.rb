@@ -22,7 +22,7 @@ class Event < ActiveRecord::Base
               lambda { |*args|
                 {
                   :include => :event_dates,
-                  :conditions => ['event_dates.date = ? OR event_dates.day = ?', (args.first || Time.now().strftime("%F")), (args.first.to_date.wday || Time.now().to_date.wday) ]
+                  :conditions => ['event_dates.date = ? OR event_dates.day = ?', (args.first || Time.now().strftime("%F")), (args.first ? args.first.to_date.wday : Time.now().to_date.wday) ]
                 }
               }
               
