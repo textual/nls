@@ -2,7 +2,10 @@
 <% reviews.each do |r| %>
 <div class="grid_7 left_align review_box <%= cycle("even","odd") %>">
 	<div class="grid_2 left_align">
-	    <%=link_to r.user.login, user_path(r.user) %><br/>
+	    <%= link_to( (r.user.name || r.user.login), r.user) %><br/>
+			<% if r.user.facebook_user?%>
+				<fb:profile-pic uid="<%= r.user.fb_user_id%>" facebook-logo="true" size="thumb" ></fb:profile-pic><br/>
+			<% end %>
 		<%= distance_of_time_in_words_to_now(r.created_at) + " ago"%>
 	    <ul class="rating <%= (r.rating ? r.rating.en.numwords : "no") %>star"> 
 			<li class="one">1</li> 

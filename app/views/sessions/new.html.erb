@@ -14,3 +14,6 @@
 <p><%= submit_tag 'Log in' , :class => 'medium green awesome'%></p>
 <p><%= link_to 'Forgot Username / Password?', :forgot %> </p>
 <% end -%>
+
+<p>or login with Facebook connect</p>
+<%= fb_login_button("window.location = '/users/link_user_accounts';")%>

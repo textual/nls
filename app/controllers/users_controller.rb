@@ -70,4 +70,17 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+  
+  
+  def link_user_accounts
+    if self.current_user.nil?
+      #register with fb
+      User.create_from_fb_connect(facebook_session.user)
+    else
+      #connect accounts
+      self.current_user.link_fb_connect(facebook_session.user.id) unless self.current_user.fb_user_id == facebook_session.user.id
+    end
+    redirect_to '/'
+  end
+  
 end

@@ -1,12 +1,19 @@
 <div class="side_bar">
-<% if logged_in? -%>
-  <div id="user-bar-greeting">hello <%= link_to_current_user :content_method => :login %></div>
-  <div id="user-bar-action"  >(<%= link_to "Log out", logout_path, { :title => "Log out" }    %>)</div>
-<% else -%>
-  <div id="user-bar-greeting">Welcome guest</div>
-  <div id="user-bar-action"  ><%= link_to "Log in",  login_path,  { :title => "Log in" } %> /
-                               <%= link_to "Sign up", signup_path, { :title => "Create an account" } %></div>
-<% end -%>
+	<% if logged_in? %>
+		<% if current_user.facebook_user? %>
+			<div id="user-bar-greeting">You are logged in as <%= current_user.name %></div>
+			<fb:profile-pic uid="<%= current_user.fb_user_id%>" facebook-logo="true" size="thumb" ></fb:profile-pic>
+			<div id="user-bar-action"><a href="#" onclick='FB.Connect.logoutAndRedirect("/logout")'>Logout</a></div>
+		<% else %>
+			<div id="user-bar-greeting">You are logged in as <%= current_user.login %></div>
+			<p>why don't you connect with your facebook account</p>
+			<%= fb_login_button('window.location = "/users/link_user_accounts";')%>
+			<div id="user-bar-action"><%= link_to 'Logout', logout_path%></div>
+		<% end %>
+	<% else %>
+		<div id="user-bar-greeting">Welcome guest</div>
+		<div id="user-bar-action"><%= link_to 'Signup', signup_path%> or <%= link_to 'Login', login_path%></div>
+	<% end %>
 </div>
 
 

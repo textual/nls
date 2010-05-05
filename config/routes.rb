@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   
   map.resources :event_dates, :member => {:rate => :post}
-  map.resources :users, :member => {:rate => :post}
+  
   map.rate_event_dates '/event_dates/:id/rate', :controller => 'event_dates', :action => 'rate'
   
   map.resources :locations, :has_many => [:reviews, :criteria, :events]
@@ -14,6 +14,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :posts
   map.blog      '/blog', :controller => 'posts'
 
+  
+  
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
@@ -21,7 +23,8 @@ ActionController::Routing::Routes.draw do |map|
   map.forgot    '/forgot', :controller => 'users', :action => 'forgot'  
   map.reset     'reset/:reset_code', :controller => 'users', :action => 'reset'
   
-  map.resources :users, :has_many => :reviews
+  map.resources :users, :member => {:rate => :post}, :collection => {:link_user_accounts => :get}
+   
   map.resource :session
   
   

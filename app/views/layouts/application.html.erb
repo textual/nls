@@ -5,9 +5,12 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>nls</title>
+
+
+		
   <%= stylesheet_link_tag 'scaffold', 'reset', 'text', '960', 'style', 'stars', 'buttons', 'smoothness/jquery-ui-1.8.custom', 'jquery-jvert-tabs-1.1.3' %>
   <%= javascript_include_tag 'jquery.js', 'jquery-ui-1.8.custom.min', 'jquery.validate.js', 'jquery-lightbox/js/jquery.lightbox.js', 'jquery-jvert-tabs-1.1.3',  'star_rating', 'application'%>
-	
+	<%# javascript_include_tag :defaults, 'star_rating', 'application'%>
 	<%= ajaxful_rating_style %>
 	
 	<script type="text/javascript">
@@ -17,8 +20,15 @@
 				opacity: 0.6,
 			});
 		});</script>
+		
+		
+		
 </head>
 <body>
+	
+	<%= fb_connect_javascript_tag %>
+	<%= init_fb_connect "XFBML", :js => :jquery%>
+	
 	<div class="container_12">
 		
 		<div id="header">

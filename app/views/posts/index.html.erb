@@ -1,6 +1,9 @@
 <div class="grid_7 left_align">
 	<h1>Official nls blog</h1>
-
+	<% if authorized? %>
+		<div class="admin"><%= link_to 'New post', new_post_path %></div>
+	<% end %>
+	
 	<% @posts.each do |post| %>
 		<div class="blog_post">
 			<div class="blog_date">
