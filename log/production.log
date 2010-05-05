@@ -121,3 +121,29 @@ Processing CriteriasController#edit_location (for 127.0.0.1 at 2010-05-05 13:25:
 Rendering template within layouts/application
 Rendering criterias/edit_location
 Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/locations/1/criterias]
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-05-05 13:30:13) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"index"}
+Rendering template within layouts/application
+Rendering locations/index
+Completed in 222ms (View: 194, DB: 25) | 200 OK [http://localhost/locations]
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-05-05 13:30:14) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"index", "format"=>"xml"}
+Rendering locations/locations
+Completed in 4ms (View: 1, DB: 2) | 200 OK [http://localhost/locations.xml]
+
+
+Processing LocationsController#show (for 127.0.0.1 at 2010-05-05 13:30:18) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"show", "id"=>"1"}
+Rendering template within layouts/application
+Rendering locations/show
+Completed in 2648ms (View: 1916, DB: 20) | 200 OK [http://localhost/locations/1]
+
+
+Processing LocationsController#show to xml (for 127.0.0.1 at 2010-05-05 13:30:21) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"show", "id"=>"1", "format"=>"xml"}
+Rendering locations/location
+Completed in 661ms (View: 1, DB: 0) | 200 OK [http://localhost/locations/1.xml]
