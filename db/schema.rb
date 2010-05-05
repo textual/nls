@@ -41,10 +41,21 @@ ActiveRecord::Schema.define(:version => 20100428155053) do
     t.string  "purchase_url"
   end
 
+  create_table "event_info", :force => true do |t|
+    t.integer "info_id"
+    t.string  "info_type"
+    t.text    "desc"
+    t.time    "time_from"
+    t.time    "time_to"
+    t.boolean "time_all_day"
+    t.integer "price_at_door",         :limit => 10, :precision => 10, :scale => 0
+    t.integer "price_advance",         :limit => 10, :precision => 10, :scale => 0
+    t.date    "price_advance_expires"
+    t.string  "purchase_url"
+  end
+
   create_table "event_types", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name"
   end
 
   create_table "events", :force => true do |t|

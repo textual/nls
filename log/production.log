@@ -1,0 +1,123 @@
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-05-05 13:04:50) [GET]
+  Parameters: {"controller"=>"admin", "action"=>"index"}
+
+NoMethodError (undefined method `set_facebook_session' for #<AdminController:0x00000104339e00>):
+  haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-05-05 13:05:23) [GET]
+  Parameters: {"controller"=>"admin", "action"=>"index"}
+
+NoMethodError (undefined method `set_facebook_session' for #<AdminController:0x000001044a83a0>):
+  haml (2.2.22) lib/sass/plugin/rails.rb:20:in `process'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-05-05 13:24:18) [GET]
+  Parameters: {"controller"=>"admin", "action"=>"index"}
+Rendering template within layouts/application
+Rendering admin/index
+Completed in 64ms (View: 10, DB: 36) | 200 OK [http://localhost/admin]
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-05-05 13:24:27) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"index"}
+Rendering template within layouts/application
+Rendering locations/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/locations]
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-05-05 13:24:27) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"index", "format"=>"xml"}
+Rendering locations/locations
+Completed in 32ms (View: 1, DB: 30) | 200 OK [http://localhost/locations.xml]
+
+
+Processing LocationsController#new (for 127.0.0.1 at 2010-05-05 13:24:31) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"new"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/locations/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-05-05 13:24:31) [GET]
+  Parameters: {"controller"=>"sessions", "action"=>"new"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-05-05 13:24:33) [POST]
+  Parameters: {"authenticity_token"=>"IAPAs+hOdC9EQRZFwdgp9ZPDEaP6xuwLu3CfS/igw1g=", "login"=>"textual", "password"=>"123456", "commit"=>"Log in", "controller"=>"sessions", "action"=>"create"}
+Failed login for 'textual' from 127.0.0.1 at 2010-05-05 20:24:33 UTC
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/session]
+
+
+Processing UsersController#link_user_accounts (for 127.0.0.1 at 2010-05-05 13:24:48) [GET]
+  Parameters: {"controller"=>"users", "action"=>"link_user_accounts"}
+facebook.users.getInfo (0.952069044113159) fields = status,political,pic_small,name,quotes,is_app_user,tv,profile_update_time,meeting_sex,hs_info,timezone,relationship_status,hometown_location,about_me,wall_count,significant_other_id,pic_big,music,work_history,sex,religion,notes_count,activities,pic_square,movies,has_added_app,education_history,birthday,birthday_date,first_name,meeting_for,last_name,interests,current_location,pic,books,affiliations,locale,profile_url,proxied_email,email_hashes,allowed_restrictions,pic_with_logo,pic_big_with_logo,pic_small_with_logo,pic_square_with_logo,online_presence,verified,profile_blurb,username,website,is_blocked,family,email, uids = 768210391
+facebook.connect.registerUsers (0.285429954528809) accounts = [{"account_id":1,"email_hash":"0_d41d8cd98f00b204e9800998ecf8427e"}]
+facebook.connect.registerUsers (0.298877000808716) accounts = [{"account_id":1,"email_hash":"0_d41d8cd98f00b204e9800998ecf8427e"}]
+Redirected to http://localhost:3000/
+Completed in 1570ms (DB: 4) | 302 Found [http://localhost/users/link_user_accounts]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-05-05 13:24:50) [GET]
+  Parameters: {"controller"=>"events", "action"=>"index"}
+Rendering template within layouts/application
+Rendering events/index
+Completed in 52ms (View: 21, DB: 28) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index to xml (for 127.0.0.1 at 2010-05-05 13:24:50) [GET]
+  Parameters: {"date"=>"2010-05-05", "controller"=>"events", "action"=>"index", "format"=>"xml"}
+Rendering events/events_location
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/events.xml?date=2010-05-05]
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-05-05 13:24:59) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"index"}
+Rendering template within layouts/application
+Rendering locations/index
+Completed in 6ms (View: 4, DB: 2) | 200 OK [http://localhost/locations]
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-05-05 13:24:59) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"index", "format"=>"xml"}
+Rendering locations/locations
+Completed in 4ms (View: 1, DB: 2) | 200 OK [http://localhost/locations.xml]
+
+
+Processing LocationsController#new (for 127.0.0.1 at 2010-05-05 13:25:01) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"new"}
+Rendering template within layouts/application
+Rendering locations/new
+Completed in 13ms (View: 9, DB: 2) | 200 OK [http://localhost/locations/new]
+
+
+Processing LocationsController#create (for 127.0.0.1 at 2010-05-05 13:25:20) [POST]
+  Parameters: {"authenticity_token"=>"IAPAs+hOdC9EQRZFwdgp9ZPDEaP6xuwLu3CfS/igw1g=", "location"=>{"name"=>"origin", "full_address"=>"1211 hull st 21230", "address_2"=>""}, "commit"=>"continue >>", "controller"=>"locations", "action"=>"create"}
+Redirected to http://localhost:3000/locations/1/criterias
+Completed in 512ms (DB: 1) | 302 Found [http://localhost/locations]
+
+
+Processing CriteriasController#edit_location (for 127.0.0.1 at 2010-05-05 13:25:20) [GET]
+  Parameters: {"controller"=>"criterias", "action"=>"edit_location", "id"=>"1"}
+Rendering template within layouts/application
+Rendering criterias/edit_location
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/locations/1/criterias]
