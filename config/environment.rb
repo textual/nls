@@ -20,7 +20,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "geokit"
-  config.gem "flickr-fu"
+  #config.gem "flickr-fu"
   config.gem "linguistics"
   config.gem "acts_as_tree"
   config.gem "ajaxful_rating"
