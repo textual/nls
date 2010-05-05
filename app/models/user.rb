@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   has_many :locations
   has_many :reviews, :dependent => :destroy
   
-  has_many :location_criteria_ratings, :dependent => :destroy  do
+  has_many :location_criteria_ratings  do
     def for_location(location_id)
       all(:joins => :locations_criteria, :conditions => ["locations_criterias.location_id = ?", location_id])
     end
