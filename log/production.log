@@ -147,3 +147,175 @@ Processing LocationsController#show to xml (for 127.0.0.1 at 2010-05-05 13:30:21
   Parameters: {"controller"=>"locations", "action"=>"show", "id"=>"1", "format"=>"xml"}
 Rendering locations/location
 Completed in 661ms (View: 1, DB: 0) | 200 OK [http://localhost/locations/1.xml]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-05-05 13:37:48) [GET]
+  Parameters: {"session"=>"{\"session_key\":\"2.NdlZ8x_yR9n6YcG655gQ4g__.3600.1273096800-768210391\",\"uid\":768210391,\"expires\":1273096800,\"secret\":\"HEWCz0tX48Hm3nYeXQhEaw__\",\"sig\":\"e1541fe3b0bd465a8c64700a5e38b4dc\"}", "next"=>"http://www.thenightlifesite.com/xd_receiver.html?fb_login&fname=_opener&guid=0.3401255253702402", "controller"=>"events", "action"=>"index"}
+Rendering template within layouts/application
+Rendering events/index
+Completed in 111ms (View: 11, DB: 95) | 200 OK [http://localhost/?session=%7B%22session_key%22%3A%222.NdlZ8x_yR9n6YcG655gQ4g__.3600.1273096800-768210391%22%2C%22uid%22%3A768210391%2C%22expires%22%3A1273096800%2C%22secret%22%3A%22HEWCz0tX48Hm3nYeXQhEaw__%22%2C%22sig%22%3A%22e1541fe3b0bd465a8c64700a5e38b4dc%22%7D&next=http%3A%2F%2Fwww.thenightlifesite.com%2Fxd_receiver.html%3Ffb_login%26fname%3D_opener%26guid%3D0.3401255253702402]
+
+
+Processing EventsController#index to xml (for 127.0.0.1 at 2010-05-05 13:37:49) [GET]
+  Parameters: {"date"=>"2010-05-05", "controller"=>"events", "action"=>"index", "format"=>"xml"}
+Rendering events/events_location
+Completed in 4ms (View: 2, DB: 1) | 200 OK [http://localhost/events.xml?date=2010-05-05]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-05-05 13:38:16) [GET]
+  Parameters: {"session"=>"{\"session_key\":\"2.NdlZ8x_yR9n6YcG655gQ4g__.3600.1273096800-768210391\",\"uid\":768210391,\"expires\":1273096800,\"secret\":\"HEWCz0tX48Hm3nYeXQhEaw__\",\"sig\":\"e1541fe3b0bd465a8c64700a5e38b4dc\"}", "next"=>"http://www.thenightlifesite.com/xd_receiver.html?fb_login&fname=_opener&guid=0.11516466736793518", "controller"=>"events", "action"=>"index"}
+Rendering template within layouts/application
+Rendering events/index
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/?session=%7B%22session_key%22%3A%222.NdlZ8x_yR9n6YcG655gQ4g__.3600.1273096800-768210391%22%2C%22uid%22%3A768210391%2C%22expires%22%3A1273096800%2C%22secret%22%3A%22HEWCz0tX48Hm3nYeXQhEaw__%22%2C%22sig%22%3A%22e1541fe3b0bd465a8c64700a5e38b4dc%22%7D&next=http%3A%2F%2Fwww.thenightlifesite.com%2Fxd_receiver.html%3Ffb_login%26fname%3D_opener%26guid%3D0.11516466736793518]
+
+
+Processing EventsController#index to xml (for 127.0.0.1 at 2010-05-05 13:38:16) [GET]
+  Parameters: {"date"=>"2010-05-05", "controller"=>"events", "action"=>"index", "format"=>"xml"}
+Rendering events/events_location
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://localhost/events.xml?date=2010-05-05]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-05-05 13:44:53) [GET]
+  Parameters: {"controller"=>"events", "action"=>"index"}
+Rendering template within layouts/application
+Rendering events/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index to xml (for 127.0.0.1 at 2010-05-05 13:44:54) [GET]
+  Parameters: {"date"=>"2010-05-05", "controller"=>"events", "action"=>"index", "format"=>"xml"}
+Rendering events/events_location
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/events.xml?date=2010-05-05]
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-05-05 13:44:57) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"index"}
+Rendering template within layouts/application
+Rendering locations/index
+Completed in 28ms (View: 5, DB: 22) | 200 OK [http://localhost/locations]
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-05-05 13:44:57) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"index", "format"=>"xml"}
+Rendering locations/locations
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://localhost/locations.xml]
+
+
+Processing LocationsController#show (for 127.0.0.1 at 2010-05-05 13:44:59) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"show", "id"=>"1"}
+Rendering template within layouts/application
+Rendering locations/show
+Completed in 1807ms (View: 1018, DB: 1) | 200 OK [http://localhost/locations/1]
+
+
+Processing LocationsController#show to xml (for 127.0.0.1 at 2010-05-05 13:45:01) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"show", "id"=>"1", "format"=>"xml"}
+Rendering locations/location
+Completed in 624ms (View: 1, DB: 0) | 200 OK [http://localhost/locations/1.xml]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-05-05 13:45:10) [GET]
+  Parameters: {"controller"=>"sessions", "action"=>"destroy"}
+Redirected to http://localhost:3000/
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-05-05 13:45:10) [GET]
+  Parameters: {"controller"=>"events", "action"=>"index"}
+Rendering template within layouts/application
+Rendering events/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index to xml (for 127.0.0.1 at 2010-05-05 13:45:10) [GET]
+  Parameters: {"date"=>"2010-05-05", "controller"=>"events", "action"=>"index", "format"=>"xml"}
+Rendering events/events_location
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/events.xml?date=2010-05-05]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-05-05 13:45:14) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#link_user_accounts (for 127.0.0.1 at 2010-05-05 13:45:29) [GET]
+  Parameters: {"controller"=>"users", "action"=>"link_user_accounts"}
+facebook.users.getInfo (0.656926870346069) fields = status,political,pic_small,name,quotes,is_app_user,tv,profile_update_time,meeting_sex,hs_info,timezone,relationship_status,hometown_location,about_me,wall_count,significant_other_id,pic_big,music,work_history,sex,religion,notes_count,activities,pic_square,movies,has_added_app,education_history,birthday,birthday_date,first_name,meeting_for,last_name,interests,current_location,pic,books,affiliations,locale,profile_url,proxied_email,email_hashes,allowed_restrictions,pic_with_logo,pic_big_with_logo,pic_small_with_logo,pic_square_with_logo,online_presence,verified,profile_blurb,username,website,is_blocked,family,email, uids = 100001101210687
+facebook.connect.registerUsers (0.285819053649902) accounts = [{"account_id":2,"email_hash":"0_d41d8cd98f00b204e9800998ecf8427e"}]
+facebook.connect.registerUsers (0.275367975234985) accounts = [{"account_id":2,"email_hash":"0_d41d8cd98f00b204e9800998ecf8427e"}]
+Redirected to http://localhost:3000/
+Completed in 1290ms (DB: 49) | 302 Found [http://localhost/users/link_user_accounts]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-05-05 13:45:30) [GET]
+  Parameters: {"controller"=>"events", "action"=>"index"}
+Rendering template within layouts/application
+Rendering events/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index to xml (for 127.0.0.1 at 2010-05-05 13:45:31) [GET]
+  Parameters: {"date"=>"2010-05-05", "controller"=>"events", "action"=>"index", "format"=>"xml"}
+Rendering events/events_location
+Completed in 5ms (View: 2, DB: 2) | 200 OK [http://localhost/events.xml?date=2010-05-05]
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-05-05 13:45:39) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"index"}
+Rendering template within layouts/application
+Rendering locations/index
+Completed in 7ms (View: 4, DB: 2) | 200 OK [http://localhost/locations]
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-05-05 13:45:40) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"index", "format"=>"xml"}
+Rendering locations/locations
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://localhost/locations.xml]
+
+
+Processing LocationsController#new (for 127.0.0.1 at 2010-05-05 13:45:42) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"new"}
+Rendering template within layouts/application
+Rendering locations/new
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/locations/new]
+
+
+Processing LocationsController#create (for 127.0.0.1 at 2010-05-05 13:46:07) [POST]
+  Parameters: {"authenticity_token"=>"K54Q9aRQZ+wSiqqN2c49Etk9Ge0MetR22wELnLbapyI=", "location"=>{"name"=>"first california place", "full_address"=>"4776 lamont st 92109", "address_2"=>""}, "commit"=>"continue >>", "controller"=>"locations", "action"=>"create"}
+Redirected to http://localhost:3000/locations/2/criterias
+Completed in 578ms (DB: 1) | 302 Found [http://localhost/locations]
+
+
+Processing CriteriasController#edit_location (for 127.0.0.1 at 2010-05-05 13:46:08) [GET]
+  Parameters: {"controller"=>"criterias", "action"=>"edit_location", "id"=>"2"}
+Rendering template within layouts/application
+Rendering criterias/edit_location
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/locations/2/criterias]
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-05-05 13:46:12) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"index"}
+Rendering template within layouts/application
+Rendering locations/index
+Completed in 8ms (View: 5, DB: 2) | 200 OK [http://localhost/locations]
+
+
+Processing LocationsController#index to xml (for 127.0.0.1 at 2010-05-05 13:46:12) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"index", "format"=>"xml"}
+Rendering locations/locations
+Completed in 5ms (View: 1, DB: 2) | 200 OK [http://localhost/locations.xml]
+
+
+Processing LocationsController#show (for 127.0.0.1 at 2010-05-05 13:46:15) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"show", "id"=>"2"}
+Rendering template within layouts/application
+Rendering locations/show
+Completed in 1664ms (View: 1009, DB: 1) | 200 OK [http://localhost/locations/2]
+
+
+Processing LocationsController#show to xml (for 127.0.0.1 at 2010-05-05 13:46:17) [GET]
+  Parameters: {"controller"=>"locations", "action"=>"show", "id"=>"2", "format"=>"xml"}
+Rendering locations/location
+Completed in 600ms (View: 1, DB: 0) | 200 OK [http://localhost/locations/2.xml]
