@@ -3,7 +3,7 @@ class AddUsersFb < ActiveRecord::Migration
     add_column :users, :fb_user_id, :integer
     add_column :users, :email_hash, :string
     #if mysql
-    execute("ALTER TABLE users ALTER COLUMN fb_user_id BIGINT()")
+    #execute("ALTER TABLE users ALTER COLUMN fb_user_id BIGINT()")
   end
 
   def self.down
