@@ -1,6 +1,8 @@
 <div class="grid_8 left_align">
 
-	<%= render :partial => 'map', :locals => {:data => @filename, :wide_map => true, :zoom_level => @zoom_level}%>
+	<%= @map.div %>
+	
+	<%= will_paginate @locations %>
 	
 	<table>
 	<% @locations.each do |location| %>
@@ -21,6 +23,9 @@
 	  </tr>
 	<% end %>
 </table>
+
+<%= will_paginate @locations %>
+
 <%= link_to 'New location', new_location_path %>
 </div>
 

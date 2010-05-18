@@ -26,7 +26,7 @@ module Geokit
     # get the value.
     def store_ip_location
       session[:geo_location] ||= retrieve_location_from_cookie_or_service
-      cookies[:geo_location] = { :value => session[:geo_location].to_yaml, :expires => 30.days.from_now } if session[:geo_location]
+      #cookies[:geo_location] = { :value => session[:geo_location].to_xml, :expires => 30.days.from_now } if session[:geo_location]
     end    
     
     # Uses the stored location value from the cookie if it exists.  If
@@ -40,7 +40,7 @@ module Geokit
     # Returns the real ip address, though this could be the localhost ip
     # address.  No special handling here anymore.
     def get_ip_address
-      request.remote_ip
+      request.remote_ip == '127.0.0.1' ? '66.91.249.31' : request.remote_ip
     end
   end
 end

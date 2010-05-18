@@ -1,6 +1,19 @@
 class Location < ActiveRecord::Base
   
+  # will_paginate
+  cattr_reader :per_page
+  @@per_page = 10
+  # geokit
+  belongs_to :locatable, :polymorphic => true  
   acts_as_mappable #:auto_geocode=>{:field=>:full_address, :error_message=>'Could not geocode address'}
+  named_scope :within, lambda{|o, d| 
+                          origin = o
+                          distance_sql = self.distance_sql(origin)
+                          within = d
+                          {:select => "*, #{distance_sql} as distance",
+                           :conditions => "#{distance_sql} <= #{within}",
+                           :order => 'distance asc'}}
+ 
   belongs_to :user
   has_many :reviews, :order => "created_at DESC"
   has_many :recent_reviews, 

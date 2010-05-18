@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100505212020) do
+ActiveRecord::Schema.define(:version => 20100518213028) do
 
   create_table "criterias", :force => true do |t|
     t.string   "name"
@@ -35,16 +35,27 @@ ActiveRecord::Schema.define(:version => 20100505212020) do
     t.time    "time_from"
     t.time    "time_to"
     t.boolean "time_all_day"
-    t.integer "price_at_door",         :limit => 10, :precision => 10, :scale => 0
-    t.integer "price_advance",         :limit => 10, :precision => 10, :scale => 0
+    t.decimal "price_at_door"
+    t.decimal "price_advance"
+    t.date    "price_advance_expires"
+    t.string  "purchase_url"
+  end
+
+  create_table "event_info", :force => true do |t|
+    t.integer "info_id"
+    t.string  "info_type"
+    t.text    "desc"
+    t.time    "time_from"
+    t.time    "time_to"
+    t.boolean "time_all_day"
+    t.decimal "price_at_door"
+    t.decimal "price_advance"
     t.date    "price_advance_expires"
     t.string  "purchase_url"
   end
 
   create_table "event_types", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name"
   end
 
   create_table "events", :force => true do |t|
@@ -57,6 +68,16 @@ ActiveRecord::Schema.define(:version => 20100505212020) do
   create_table "events_types", :force => true do |t|
     t.integer "event_id"
     t.integer "event_type_id"
+  end
+
+  create_table "geometry_columns", :force => true do |t|
+    t.string  "f_table_catalog"
+    t.string  "f_table_schema"
+    t.string  "f_table_name"
+    t.string  "f_geometry_column"
+    t.integer "coord_dimension"
+    t.integer "srid"
+    t.string  "type"
   end
 
   create_table "location_criteria_ratings", :force => true do |t|
@@ -77,8 +98,6 @@ ActiveRecord::Schema.define(:version => 20100505212020) do
     t.string   "zip"
     t.string   "country_code"
     t.string   "province"
-    t.string   "lat"
-    t.string   "lng"
     t.string   "phone"
     t.string   "website"
     t.integer  "rating"
@@ -87,6 +106,8 @@ ActiveRecord::Schema.define(:version => 20100505212020) do
     t.integer  "user_id"
     t.integer  "status"
     t.string   "address_2"
+    t.decimal  "lat"
+    t.decimal  "lng"
   end
 
   create_table "locations_criterias", :force => true do |t|
