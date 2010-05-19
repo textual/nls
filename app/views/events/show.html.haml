@@ -1,5 +1,5 @@
 %div.grid_3.left_align
-	= render :partial => 'locations/map_bar', :locals => {:loc_id => @event.id}
+	= @map.div
 
 %div.grid_7.left_align
 	%h1= @event.name + " @ " + @event.location.name

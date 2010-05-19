@@ -1,4 +1,7 @@
 class EventTypesController < ApplicationController
+  
+  before_filter :show_map, :only => [:show]
+  
   # GET /event_types
   # GET /event_types.xml
   def index
@@ -23,7 +26,26 @@ class EventTypesController < ApplicationController
     else
       @events_title = "tonights " + @event_type.name.pluralize
     end
-    @filename = "/event_types/"+ @event_type.id.to_s + ".xml"
+    
+    @map = GMap.new("map_div")
+    @map.control_init(:large_map => true, :map_type => true)
+    sorted_latitudes = [] 
+    sorted_longitudes = []
+    
+    @events.each do |event|
+      @map.overlay_init(GMarker.new([event.location.lat,event.location.lng],:title => event.location.name, :info_window => event.location.name + "<br/>" + event.name))
+      sorted_latitudes << event.location.lat.to_s
+      sorted_longitudes << event.location.lng.to_s
+    end    
+    
+    sorted_latitudes.sort
+    sorted_longitudes.sort
+    
+    @map.center_zoom_on_bounds_init([
+      [sorted_latitudes.first, sorted_longitudes.first], 
+      [sorted_latitudes.last, sorted_longitudes.last]])
+  
+    
     respond_to do |format|
       format.html { render "events/index"}
       format.xml {render :action => 'event_types_location.xml.builder'}

@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  
+  before_filter :show_map, :only => [:index, :show]
+  
   # GET /events
   # GET /events.xml
   def index
@@ -7,13 +10,27 @@ class EventsController < ApplicationController
     @events_title = (@event_date == Time.now().strftime("%F") ) ? "Tonight : " : ""
     @events_title += @event_date.to_date.strftime("%A %B #{@event_date.to_date.day.ordinalize}"); 
     
-    @events = Event.on_date(@event_date)
-    #@events = Event.find_by_sql(["SELECT events.*, event_dates.rating FROM events LEFT JOIN event_dates on events.id = event_dates.event_id WHERE (event_dates.day = ? OR event_dates.date = ?) ORDER BY created_at DESC", @event_date.to_date.wday, @event_date])
-    #@events = Event.all(:joins => :event_dates, :include => :event_dates, :conditions => ["event_dates.day = ? OR event_dates.date = ?", @event_date.to_date.wday, @event_date], :order => "created_at DESC")
-    #@locations = Event.get_locations
-    @filename = "/events.xml?date=" + @event_date
-    @zoom_level = 10;
+    @events = Event.on_date(@event_date).find_within(500, :origin => session[:geo_location], :order => "distance")
     
+    @map = GMap.new("map_div")
+    @map.control_init(:large_map => true, :map_type => true)
+    sorted_latitudes = [] 
+    sorted_longitudes = []
+    
+    @events.each do |event|
+      @map.overlay_init(GMarker.new([event.location.lat,event.location.lng],:title => event.location.name, :info_window => event.location.name + "<br/>" + event.name))
+      sorted_latitudes << event.location.lat.to_s
+      sorted_longitudes << event.location.lng.to_s
+    end    
+    
+    sorted_latitudes.sort
+    sorted_longitudes.sort
+    
+    @map.center_zoom_on_bounds_init([
+      [sorted_latitudes.first, sorted_longitudes.first], 
+      [sorted_latitudes.last, sorted_longitudes.last]])
+  
+  
     respond_to do |format|
       format.html # show_all.html.erb
       format.xml {render :action => 'events_location.xml.builder'}
@@ -27,6 +44,13 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @location = @event.location
     get_flickr_photos(@location)
+    
+    @map = GMap.new("map_div_small")
+    @map.control_init(:small_zoom => true)
+    @map.center_zoom_init([@location.lat,@location.lng],12)
+    
+    @map.overlay_init(GMarker.new([@location.lat,@location.lng],:title => @location.name, :max_width => 100, :info_window => "<a href='http://maps.google.com/maps?daddr=" + @location.full_address + "' target='blank'>get directions</a>"))
+    
     
     respond_to do |format|
       format.html # show.html.erb
