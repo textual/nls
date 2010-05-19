@@ -1,5 +1,5 @@
 <div class="grid_3 left_align">
-	<%= render :partial => 'map_bar', :locals => {:loc_id => @location.id}%>	
+	<%= @map.div %>
 </div>
 
 <div class="grid_5">
@@ -32,7 +32,6 @@
 
 
 <div class="grid_7 right_align top_pad">
-	<%= render :partial => 'events/specials', :locals => {:specials => @location.specials, :shows => @location.shows }%>
 	<% if authorized? || current_user == @location.user%>
 		<%= link_to 'add event', new_location_event_path(@location) %>
 	<% end %>

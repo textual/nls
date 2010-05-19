@@ -78,7 +78,15 @@ text-align:left;
 	padding:5px;
 	padding-bottom:5px;
 }
-
+#map_div{
+	width:620px;
+  height:240px;
+}
+#map_div_small
+{
+	height:220px;
+	width:220px;
+}
 #map_holder {
 	background-color:#900;
 	color:#fff;

@@ -5,16 +5,28 @@ class LocationsController < ApplicationController
   
   before_filter :login_required, :only => [:create, :edit, :update, :new]
   before_filter :authorized?, :only => [:destroy]
+  before_filter :show_map, :only => [:index, :show, :city, :search]
   
   # GET /locations
   # GET /locations.xml
   def index
-    @locations = Location.all(:order => "created_at DESC")
-    @filename = "/locations.xml"
-    @zoom_level = 4;
+    @locations = Location.find(:all, :origin => session[:geo_location], :order => "distance").paginate :page => params[:page]
+    #locations = Location.find(:all, :origin => session[:geo_location], :order => "distance").paginate :page => params[:page]
+    #@locations = Location.within(session[:geo_location], 500).paginate :page => params[:page]
+    @map = GMap.new("map_div")
+    @map.control_init(:large_map => true, :map_type => true)
+    #@map.center_zoom_init([session[:geo_location].lat, session[:geo_location].lng],5)
+    sorted_latitudes = @locations.collect(&:lat).compact.sort
+    sorted_longitudes = @locations.collect(&:lng).compact.sort
+    @map.center_zoom_on_bounds_init([
+      [sorted_latitudes.first, sorted_longitudes.first], 
+      [sorted_latitudes.last, sorted_longitudes.last]])
+  
+    @locations.each do |location|
+      @map.overlay_init(GMarker.new([location.lat,location.lng],:title => location.name, :info_window => location.name + "<br/>" + location.full_address))
+    end
     
     get_cities
-    #@cities = Location.find_by_sql("SELECT city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
       
     respond_to do |format|
       format.html 
@@ -23,12 +35,23 @@ class LocationsController < ApplicationController
   end
   
   def city
-    @locations = Location.all(:conditions => ["city = ?", params[:id]], :order => "created_at DESC")
+    @locations = Location.all(:conditions => ["city = ?", params[:id]], :order => "created_at DESC").paginate
     get_cities
     #@cities = Location.find_by_sql("SELECT city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
     
-    @filename =  "/locations/city/" + params[:id] + ".xml"
-    @zoom_level = 11
+    @map = GMap.new("map_div")
+    @map.control_init(:large_map => true, :map_type => true)
+    #@map.center_zoom_init([session[:geo_location].lat, session[:geo_location].lng],5)
+    sorted_latitudes = @locations.collect(&:lat).compact.sort
+    sorted_longitudes = @locations.collect(&:lng).compact.sort
+    @map.center_zoom_on_bounds_init([
+      [sorted_latitudes.first, sorted_longitudes.first], 
+      [sorted_latitudes.last, sorted_longitudes.last]])
+  
+  
+    @locations.each do |location|
+      @map.overlay_init(GMarker.new([location.lat,location.lng],:title => location.name, :info_window => location.name + "<br/>" + location.full_address))
+    end
     
     respond_to do |format|
       format.html {render :action => 'index'}
@@ -41,7 +64,14 @@ class LocationsController < ApplicationController
   def show    
     
     @location = Location.find(params[:id])
-    @zoom_level = 13
+    
+    @map = GMap.new("map_div_small")
+    @map.control_init(:small_zoom => true)
+    @map.center_zoom_init([@location.lat,@location.lng],12)
+    
+ 
+    @map.overlay_init(GMarker.new([@location.lat,@location.lng],:title => @location.name, :max_width => 100, :info_window => "<a href='http://maps.google.com/maps?daddr=" + @location.full_address + "' target='blank'>get directions</a>"))
+    
     
     get_flickr_photos(@location)
     
@@ -124,15 +154,40 @@ class LocationsController < ApplicationController
   
   def search
     @query = params[:query]
-    @locations = Location.search(@query)
-    get_cities
-    
-    @filename =  "/locations.xml"
-    
-     respond_to do |format|
-        format.html {render :action => 'index'}
-        format.xml {render :action => 'locations.xml.builder'}
+    @city = params[:city]
+    if @city
+      @geo = Geokit::Geocoders::MultiGeocoder.geocode(@city)
+      if @geo.success
+        session[:geo_location] = @geo
       end
+    end
+    
+    if @query
+      @locations = Location.within(session[:geo_location], 500).search(@query).paginate :page => params[:page]
+   
+      get_cities
+    
+      @map = GMap.new("map_div")
+      @map.control_init(:large_map => true, :map_type => true)
+      #@map.center_zoom_init([session[:geo_location].lat, session[:geo_location].lng],5)
+      sorted_latitudes = @locations.collect(&:lat).compact.sort
+      sorted_longitudes = @locations.collect(&:lng).compact.sort
+      @map.center_zoom_on_bounds_init([
+        [sorted_latitudes.first, sorted_longitudes.first], 
+        [sorted_latitudes.last, sorted_longitudes.last]])
+    
+      @locations.each do |location|
+        @map.overlay_init(GMarker.new([location.lat,location.lng],:title => location.name, :info_window => location.name + "<br/>" + location.full_address))
+      end
+    
+       respond_to do |format|
+          format.html {render :action => 'index'}
+          format.xml {render :action => 'locations.xml.builder'}
+        end
+    else
+      redirect_to :action => "index"
+    end
+    
   end
   
   # PRIVATE
