@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  belongs_to :location, :as => :locatable  # also works for belongs_to associations
+  belongs_to :location #, :as => :locatable  # also works for belongs_to associations
   acts_as_mappable :through => :location
   
   has_many :event_details, :as => :info, :dependent => :destroy

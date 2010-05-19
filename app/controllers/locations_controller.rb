@@ -10,13 +10,18 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.xml
   def index
-    #@locations = Location.find(:all, :origin => session[:geo_location], :order => "distance")
+    @locations = Location.find(:all, :origin => session[:geo_location], :order => "distance").paginate :page => params[:page]
     #locations = Location.find(:all, :origin => session[:geo_location], :order => "distance").paginate :page => params[:page]
-    @locations = Location.within(session[:geo_location], 500).paginate :page => params[:page]
+    #@locations = Location.within(session[:geo_location], 500).paginate :page => params[:page]
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true, :map_type => true)
-    @map.center_zoom_init([session[:geo_location].lat, session[:geo_location].lng],5)
-    
+    #@map.center_zoom_init([session[:geo_location].lat, session[:geo_location].lng],5)
+    sorted_latitudes = @locations.collect(&:lat).compact.sort
+    sorted_longitudes = @locations.collect(&:lng).compact.sort
+    @map.center_zoom_on_bounds_init([
+      [sorted_latitudes.first, sorted_longitudes.first], 
+      [sorted_latitudes.last, sorted_longitudes.last]])
+  
     @locations.each do |location|
       @map.overlay_init(GMarker.new([location.lat,location.lng],:title => location.name, :info_window => location.name + "<br/>" + location.full_address))
     end
@@ -30,14 +35,20 @@ class LocationsController < ApplicationController
   end
   
   def city
-    @locations = Location.all#(:conditions => ["city = ?", params[:id]], :order => "created_at DESC")
+    @locations = Location.all(:conditions => ["city = ?", params[:id]], :order => "created_at DESC").paginate
     get_cities
     #@cities = Location.find_by_sql("SELECT city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
     
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true, :map_type => true)
-    @map.center_zoom_init([session[:geo_location].lat, session[:geo_location].lng],5)
-
+    #@map.center_zoom_init([session[:geo_location].lat, session[:geo_location].lng],5)
+    sorted_latitudes = @locations.collect(&:lat).compact.sort
+    sorted_longitudes = @locations.collect(&:lng).compact.sort
+    @map.center_zoom_on_bounds_init([
+      [sorted_latitudes.first, sorted_longitudes.first], 
+      [sorted_latitudes.last, sorted_longitudes.last]])
+  
+  
     @locations.each do |location|
       @map.overlay_init(GMarker.new([location.lat,location.lng],:title => location.name, :info_window => location.name + "<br/>" + location.full_address))
     end
@@ -152,14 +163,19 @@ class LocationsController < ApplicationController
     end
     
     if @query
-      @locations = Location.search(@query).paginate :page => params[:page]
+      @locations = Location.within(session[:geo_location], 500).search(@query).paginate :page => params[:page]
    
       get_cities
     
       @map = GMap.new("map_div")
       @map.control_init(:large_map => true, :map_type => true)
-      @map.center_zoom_init([session[:geo_location].lat, session[:geo_location].lng],5)
-
+      #@map.center_zoom_init([session[:geo_location].lat, session[:geo_location].lng],5)
+      sorted_latitudes = @locations.collect(&:lat).compact.sort
+      sorted_longitudes = @locations.collect(&:lng).compact.sort
+      @map.center_zoom_on_bounds_init([
+        [sorted_latitudes.first, sorted_longitudes.first], 
+        [sorted_latitudes.last, sorted_longitudes.last]])
+    
       @locations.each do |location|
         @map.overlay_init(GMarker.new([location.lat,location.lng],:title => location.name, :info_window => location.name + "<br/>" + location.full_address))
       end

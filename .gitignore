@@ -6,3 +6,5 @@ db/data.yml
 *.*~
 .bundle
 public/images/mocks
+.loadpath
+.project

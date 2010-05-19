@@ -74,6 +74,7 @@ class EventsController < ApplicationController
     params[:event_data].delete([:"time_to(5i)"])
     
     @event = @location.events.create(params[:event])
+    @event.location = @location
     @event.event_dates.each do |ed|
       ed.destroy unless ed.day || ed.date       
     end
