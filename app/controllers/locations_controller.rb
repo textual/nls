@@ -11,11 +11,8 @@ class LocationsController < ApplicationController
   # GET /locations.xml
   def index
     @locations = Location.find(:all, :origin => session[:geo_location], :order => "distance").paginate :page => params[:page]
-    #locations = Location.find(:all, :origin => session[:geo_location], :order => "distance").paginate :page => params[:page]
-    #@locations = Location.within(session[:geo_location], 500).paginate :page => params[:page]
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true, :map_type => true)
-    #@map.center_zoom_init([session[:geo_location].lat, session[:geo_location].lng],5)
     sorted_latitudes = @locations.collect(&:lat).compact.sort
     sorted_longitudes = @locations.collect(&:lng).compact.sort
     @map.center_zoom_on_bounds_init([
@@ -37,11 +34,9 @@ class LocationsController < ApplicationController
   def city
     @locations = Location.all(:conditions => ["city = ?", params[:id]], :order => "created_at DESC").paginate
     get_cities
-    #@cities = Location.find_by_sql("SELECT city, count(city) AS count FROM locations GROUP BY city ORDER BY count DESC" )
     
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true, :map_type => true)
-    #@map.center_zoom_init([session[:geo_location].lat, session[:geo_location].lng],5)
     sorted_latitudes = @locations.collect(&:lat).compact.sort
     sorted_longitudes = @locations.collect(&:lng).compact.sort
     @map.center_zoom_on_bounds_init([
