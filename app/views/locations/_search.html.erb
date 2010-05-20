@@ -1,5 +1,5 @@
 <div id="search_bar">
-	<% form_tag :controller => :locations, :action => 'search'  do |form| %>
+	<% form_tag search_path, :method => 'get'  do |form| %>
 		<%= text_field_tag "query", @query || nil, :size => 30 %>
 		<%= text_field_tag "city", session[:geo_location].city, :size => 15 %>
 		<%= submit_tag 'search', :class => 'medium green awesome'%>

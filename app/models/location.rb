@@ -13,7 +13,9 @@ class Location < ActiveRecord::Base
                           {:select => "*, #{distance_sql} as distance",
                            :conditions => "#{distance_sql} <= #{within}",
                            :order => 'distance asc'}}
- 
+                           
+  named_scope :distinct, :select => "distinct locations.*" 
+  
   belongs_to :user
   has_many :reviews, :order => "created_at DESC"
   has_many :recent_reviews, 

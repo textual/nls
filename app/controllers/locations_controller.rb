@@ -34,26 +34,8 @@ class LocationsController < ApplicationController
   
   def city
     #@locations = Location.all(:conditions => ["city = ?", params[:id]], :order => "created_at DESC").paginate
-    @locations = Location.city_like(params[:id]).paginate :page => params[:page]
-    get_cities
-    
-    @map = GMap.new("map_div")
-    @map.control_init(:large_map => true, :map_type => true)
-    sorted_latitudes = @locations.collect(&:lat).compact.sort
-    sorted_longitudes = @locations.collect(&:lng).compact.sort
-    @map.center_zoom_on_bounds_init([
-      [sorted_latitudes.first, sorted_longitudes.first], 
-      [sorted_latitudes.last, sorted_longitudes.last]])
-  
-  
-    @locations.each do |location|
-      @map.overlay_init(GMarker.new([location.lat,location.lng],:title => location.name, :info_window => location.name + "<br/>" + location.full_address))
-    end
-    
-    respond_to do |format|
-      format.html {render :action => 'index'}
-      format.xml {render :action => 'locations.xml.builder'}
-    end
+    set_city(params[:id]) if params[:id]
+    redirect_to :action => 'index'
   end
   
   # GET /locations/1
@@ -155,8 +137,10 @@ class LocationsController < ApplicationController
     set_city(@city) if @city
     
     if @query
-      @locations = Location.within(session[:geo_location], 500).search(@query).paginate :page => params[:page]
-   
+      #@locations = Location.within(session[:geo_location], 500).search(@query).paginate :page => params[:page]
+      #@locations = Location.search(@query).criterias_name_like(@query).paginate :page => params[:page]
+      @locations = Location.criterias_name_or_name_like(@query).distinct.paginate(:page => params[:page])
+      
       get_cities
     
       @map = GMap.new("map_div")
@@ -175,7 +159,7 @@ class LocationsController < ApplicationController
        respond_to do |format|
           format.html {render :action => 'index'}
           format.xml {render :action => 'locations.xml.builder'}
-        end
+       end
     else
       redirect_to :action => "index"
     end
