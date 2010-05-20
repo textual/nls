@@ -47,7 +47,7 @@ class EventsController < ApplicationController
     
     @map = GMap.new("map_div_small")
     @map.control_init(:small_zoom => true)
-    @map.center_zoom_init([@location.lat,@location.lng],12)
+    @map.center_zoom_init([@location.lat,@location.lng],13)
     
     @map.overlay_init(GMarker.new([@location.lat,@location.lng],:title => @location.name, :max_width => 100, :info_window => "<a href='http://maps.google.com/maps?daddr=" + @location.full_address + "' target='blank'>get directions</a>"))
     

@@ -10,7 +10,8 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.xml
   def index
-    @locations = Location.find(:all, :origin => session[:geo_location], :order => "distance").paginate :page => params[:page]
+    #@locations = Location.find(:all, :origin => session[:geo_location], :order => "distance").paginate
+    @locations = Location.within(session[:geo_location], 100).paginate :page => params[:page]
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true, :map_type => true)
     sorted_latitudes = @locations.collect(&:lat).compact.sort
@@ -32,7 +33,8 @@ class LocationsController < ApplicationController
   end
   
   def city
-    @locations = Location.all(:conditions => ["city = ?", params[:id]], :order => "created_at DESC").paginate
+    #@locations = Location.all(:conditions => ["city = ?", params[:id]], :order => "created_at DESC").paginate
+    @locations = Location.city_like(params[:id]).paginate :page => params[:page]
     get_cities
     
     @map = GMap.new("map_div")

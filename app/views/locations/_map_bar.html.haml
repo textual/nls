@@ -1,4 +1,4 @@
-= render :partial => 'locations/map', :locals => {:data => "#{loc_id}.xml", :show_action => false, :zoom_level => @zoom_level}
+= @map.div
 
 #photos
 	- @photos.each do |photo|
