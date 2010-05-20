@@ -152,12 +152,7 @@ class LocationsController < ApplicationController
   def search
     @query = params[:query]
     @city = params[:city]
-    if @city
-      @geo = Geokit::Geocoders::MultiGeocoder.geocode(@city)
-      if @geo.success
-        session[:geo_location] = @geo
-      end
-    end
+    set_city(@city) if @city
     
     if @query
       @locations = Location.within(session[:geo_location], 500).search(@query).paginate :page => params[:page]

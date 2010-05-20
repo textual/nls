@@ -32,5 +32,12 @@ class ApplicationController < ActionController::Base
    @show_map = true
  end
  
+ def set_city(use_city)
+   @geo = Geokit::Geocoders::MultiGeocoder.geocode(use_city)
+    if @geo.success
+      session[:geo_location] = @geo
+    end
+ end
+ 
  
 end
