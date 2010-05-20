@@ -4,6 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.rate_event_dates '/event_dates/:id/rate', :controller => 'event_dates', :action => 'rate'
   
+  map.search 'locations/search/:id', :controller => 'locations', :action => 'search'
   map.resources :locations, :has_many => [:reviews, :criteria, :events]
   map.resources :events
   

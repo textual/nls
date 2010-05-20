@@ -10,4 +10,8 @@ class AdminController < ApplicationController
     @users = User.all(:order => "created_at DESC")
   end
   
+  def loc_search
+    @search = Location.search(params[:search])
+  end
+  
 end
