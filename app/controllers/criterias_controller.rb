@@ -4,7 +4,7 @@ class CriteriasController < ApplicationController
   before_filter :authorized?, :only => [:index, :create, :destroy]
    
   def index
-    @parents = Criteria.parents #(:all, :conditions => "parent_id IS NULL", :order => 'name')
+    @parents = Criteria.find(:all, :conditions => "parent_id IS NULL", :order => 'name')
     @criteria = Criteria.new
   end
   
