@@ -10,4 +10,8 @@ class Criteria < ActiveRecord::Base
     Criteria.find(:all, :conditions => "parent_id IS NULL", :order => 'name')
   end
   
+  def self.random
+    Criteria.find_by_id rand(Quote.count) + 1
+  end
+  
 end
