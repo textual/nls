@@ -10,7 +10,7 @@ class Location < ActiveRecord::Base
                           origin = o
                           distance_sql = self.distance_sql(origin)
                           within = d
-                          {:select => "*, #{distance_sql} as distance",
+                          {:select => " distinct locations.*, #{distance_sql} as distance",
                            :conditions => "#{distance_sql} <= #{within}",
                            :order => 'distance asc'}}
                            

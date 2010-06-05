@@ -48,7 +48,7 @@ class CriteriasController < ApplicationController
   
   def edit_location
     @location = Location.find(params[:id])
-    @parents = Criteria.parents
+    @parents = Criteria.find(:all, :conditions => "parent_id IS NULL", :order => 'name')
   end
   
   def rate_location

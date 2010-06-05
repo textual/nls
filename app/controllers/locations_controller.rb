@@ -16,6 +16,7 @@ class LocationsController < ApplicationController
     @map.control_init(:large_map => true, :map_type => true)
     sorted_latitudes = @locations.collect(&:lat).compact.sort
     sorted_longitudes = @locations.collect(&:lng).compact.sort
+        
     @map.center_zoom_on_bounds_init([
       [sorted_latitudes.first, sorted_longitudes.first], 
       [sorted_latitudes.last, sorted_longitudes.last]])
@@ -139,7 +140,8 @@ class LocationsController < ApplicationController
     if @query
       #@locations = Location.within(session[:geo_location], 500).search(@query).paginate :page => params[:page]
       #@locations = Location.search(@query).criterias_name_like(@query).paginate :page => params[:page]
-      @locations = Location.criterias_name_or_name_like(@query).distinct.paginate(:page => params[:page])
+      #@locations = Location.name_or_criterias_name_like(@query).distinct.paginate(:page => params[:page])
+      @locations = Location.within(session[:geo_location], 500).name_or_criterias_name_like(@query).paginate(:page => params[:page])
       
       get_cities
     

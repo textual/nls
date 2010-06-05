@@ -23,12 +23,12 @@ class EventsController < ApplicationController
       sorted_longitudes << event.location.lng.to_s
     end    
     
-    sorted_latitudes.sort
-    sorted_longitudes.sort
+    sorted_latitudes.sort!
+    sorted_longitudes.sort!
     
     @map.center_zoom_on_bounds_init([
-      [sorted_latitudes.first, sorted_longitudes.first], 
-      [sorted_latitudes.last, sorted_longitudes.last]])
+      [sorted_latitudes.last, sorted_longitudes.last], 
+      [sorted_latitudes.first, sorted_longitudes.first]])
   
   
     respond_to do |format|

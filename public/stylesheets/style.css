@@ -1,15 +1,19 @@
 body	{
+	/*
 	background-image:url('/images/border.gif');
 	background-repeat:repeat-x;
+	*/
 }
 ul	{
 	list-style-type: none;
 }
+.logo {
+	margin-top:2px;
+}
 
-#header	{
-	height:80px;
-	margin: 0px;
-	padding: 0px;
+#header	{		
+	background-color:#990000;
+	height:39px;
 }
 
 #content, #footer	{
@@ -135,8 +139,8 @@ text-align:left;
 	padding:5px;
 	
 }
-/*
 
+/*
 .container_12 {
 	background: #fff url(/images/12_col.gif) repeat-y;
 	margin-bottom: 20px;
@@ -328,9 +332,11 @@ padding: 0;
 	background-color:#333;
 	color:#DDD;
 	margin-bottom: 10px;
-	padding:10px;
+	padding:5px;
 }
 #search_bar input {
+	/*
 	font-size:20px;
 	font-weight: bold;
+	*/
 }
