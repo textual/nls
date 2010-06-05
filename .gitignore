@@ -10,3 +10,4 @@ db/data.yml
 public/images/mocks
 *.dat
 .DS_Store
+*/.DS_Store
