@@ -34,23 +34,21 @@
 	<%= init_fb_connect "XFBML", :js => :jquery%>
 	
 	<div class="container_12">
-		
 		<div id="header">
-			<div class="grid_4 prefix_2">
-				<%= link_to( (image_tag 'logo.gif', :width => 220), :root)%>
+			<div class="grid_2 logo">
+				<%= link_to( image_tag("nls_logo.gif") , :root)%>
 			</div>
-			<div class="grid_6">
-				<div id="messages">
-					<p style="color: green"><%= flash[:notice] %></p>
-					<p style="color: red"><%= flash[:alert] %></p>
-					<p style="color: red"><%= flash[:error] %></p>
-				</div>
+			<div class="grid_10 right_align">
+				<%= render :partial => 'locations/search' %>
 			</div>
-			<div class="clear"></div>
 		</div>
-		<div class="grid_10 prefix_2">
-			<%= render :partial => 'locations/search' %>
+				
+		<div id="messages" class="grid_10 prefix_2">
+			<p style="color: green"><%= flash[:notice] %></p>
+			<p style="color: red"><%= flash[:alert] %></p>
+			<p style="color: red"><%= flash[:error] %></p>
 		</div>
+		
 		<div id="content">		
 			<div class="grid_2">
 				<%= render :partial => 'users/user_bar'%>
